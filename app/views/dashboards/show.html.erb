@@ -1,6 +1,15 @@
 <h1>EasyContacts</h1>
 
+<div class="searchbar">
+  <%= form_tag dashboard_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Je cherche..."
+    %>
+  <% end %>
 
+<<<<<<< HEAD
 <%= form_tag dashboard_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -36,12 +45,32 @@
 
     <% @contacts.each do |contact| %>
     <%= contact.avatar%> <%= contact.first_name%> <%=contact.last_name%> <%= contact.phone_number %>
+=======
+</div>
+
+<div class="welcome">
+  <h3>Bienvenue <%=current_user.first_name.capitalize%> !</h3>
+</div>
+
+<div class="search_result">
+  <% if @contacts.present? %>
+    <% if @contacts.any?%>
+      <h4>----- Résultat de ma recherche</h4>
+      <% @contacts.each do |contact| %>
+      <%= contact.avatar%> <%= contact.first_name%> <%=contact.last_name%> <%= contact.phone_number %>
+      <% end %>
+    <% else %>
+      <p>Aucun contact ne correspond à votre recherche.</p>
+>>>>>>> 12cf915c1f3a5ffd33b175aa62732a25848f6e50
     <% end %>
-  <% else %>
-    <p>Aucun contact ne correspond à votre recherche.</p>
+    <% else %>
   <% end %>
-<% end %>
+</div>
 
-
+<script type="text/javascript">
+    $(function(){
+        $(document).on('click','input[type=text]',function(){ this.select(); });
+    });
+</script>
 
 
