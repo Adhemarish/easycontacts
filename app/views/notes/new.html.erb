@@ -1,0 +1,11 @@
+<p><%= @contact.first_name %></p>
+<p><%= @contact.last_name %></p>
+
+<div class="list-group">
+    <div class="list-group-item">
+      <p></p>
+    </div>
+</div>
+<%= link_to 'Sauvegarder', contact_notes_path %>
+<%= link_to 'Retour', contact_path(@contact) %>
+

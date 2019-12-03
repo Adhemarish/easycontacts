@@ -1,5 +1,10 @@
-class NoteController < ApplicationController
+class NotesController < ApplicationController
   before_action :set_note, only: [:edit, :update, :destroy]
+
+  def new
+    @contact = Contact.find(params[:contact_id])
+    @note = Note.new
+  end
 
   def edit
 
