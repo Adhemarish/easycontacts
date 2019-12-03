@@ -1,7 +1,6 @@
 class ContactsController < ApplicationController
 
   def index
-    logger.debug "------------INDEX__________"
     @contacts = current_user.contacts
   end
 

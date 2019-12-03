@@ -5,7 +5,9 @@ Tag.destroy_all
 User.destroy_all
 
 puts "Creating database..."
+
 ludo = User.create!(first_name: "Ludo", last_name: "Easy", email: "ludo@easy.fr", password: "ludoeasy")
+
 
 tg1 = Tag.create!(user: ludo, label: 'Ski')
 tg2 = Tag.create!(user: ludo, label: 'React JS')
