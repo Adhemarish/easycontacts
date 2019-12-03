@@ -1,11 +1,11 @@
 class NoteController < ApplicationController
+  before_action :set_note, only: [:edit, :update, :destroy]
 
   def edit
-    @note = Note.find(params[:id])
+
   end
 
   def update
-    @note = Note.find(params[:id])
     if @note.update(note_params)
       redirect_to contact_notes_path(@note.contact)
     else
@@ -14,9 +14,14 @@ class NoteController < ApplicationController
   end
 
   def destroy
+    @note.destroy
   end
 
   private
+
+  def set_note
+    @note = Note.find(params[:id])
+  end
 
   def note_params
     params.require(:note).permit(:content)
