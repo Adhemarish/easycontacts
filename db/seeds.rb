@@ -6,8 +6,6 @@ User.destroy_all
 
 puts "Creating database..."
 
-ludo = User.create!(first_name: "Ludo", last_name: "Easy", email: "ludo@easy.fr", password: "ludoeasy")
-caro = User.create!(first_name: 'Caro', last_name: 'Easy', email: "caro@easy.fr",password: 'caroeasy')
 
 #faten = User.new(first_name: 'Faten', last_name: 'Easy', email: 'faten@feasycontactscom', password: 'fateneasy')
 # faten.avatar = File.open(Rails.root.join('db/fixtures/faten.jpeg'))
