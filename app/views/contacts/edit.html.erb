@@ -11,3 +11,5 @@
   <%= f.input :avatar %>
   <%= f.button :submit, 'Soumettre', method: :patch, class: 'btn btn-primary' %>
 <% end %>
+
+<%= link_to "Supprimer", contact_path(@contact), method: :delete, data: { confirm: "Êtes-vous sûr(e)?" }, class: 'btn btn-primary'  %>
