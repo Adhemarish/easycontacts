@@ -9,8 +9,25 @@
   %>
 <% end %>
 
+<p>Search bar vide</p>
+  <div class="search-bar d-flex justify-content-between">
+    <div></div>
+    <p class="placeholder-search mt-2 ml-4">je cherche...</p>
+    <i class="fas fa-search mr-2 mt-2"></i>
+  </div>
+
+  <p class="mt-4">Search bar home</p>
+  <div class="search-bar d-flex justify-content-between">
+    <p class="ml-3 mt-2 tag">TAG</p>
+    <p class="placeholder-search mt-2">je cherche...</p>
+    <i class="fas fa-search mr-2 mt-2"></i>
+  </div>
+
 <h3>Bienvenue <%=current_user.first_name.capitalize%> !</h3>
 
+<div class="timeline">
+  <h1>TIMELINE</h1>
+</div>
 
 <% if @contacts.present? %>
 
