@@ -1,9 +1,17 @@
 class DashboardsController < ApplicationController
   def show
-     if params[:query].present?
-      sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
+    if params[:query].present?
+      sql_query = " \
+        contacts.first_name @@ :query \
+        OR contacts.last_name @@ :query \
+        "
       @contacts = Contact.where(sql_query, query: "%#{params[:query]}%")
-          # puts "Aucun contact ne correspond à votre recherche."
+    else
+      @contacts = Contact.all
     end
   end
 end
+
+
+
+

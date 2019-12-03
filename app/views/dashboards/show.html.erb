@@ -1,18 +1,25 @@
-<h1>EasyContacts</h1>
+<!--  <div class="logo">
+        <h1><i class="fas fa-users"></i> <em>EasyContacts</em></h1>
+      </div> -->
 
 
-<%= form_tag dashboard_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Je cherche..."
-  %>
-<% end %>
+<div class="search-bar d-flex justify-content-between mt-3">
+  <p class="ml-3 mt-2 tag">TAG</p>
+  <%= form_tag dashboard_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "placeholder-search",
+      placeholder: "Je cherche..."
+    %>
+  <% end %>
+  <i class="fas fa-search mr-2 mt-2"></i>
+</div>
+
 
 <h3>Bienvenue <%=current_user.first_name.capitalize%> !</h3>
 
 
-<% if @contacts.present? %>
+<%if params[:query].present?  %>
 
   <% if @contacts.any?%>
     <h4>----- Résultat de ma recherche</h4>
@@ -24,6 +31,25 @@
     <p>Aucun contact ne correspond à votre recherche.</p>
   <% end %>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- à conserver sur cette page -->
+<script type="text/javascript">
+    $(function(){
+        $(document).on('click','input[type=text]',function(){ this.select(); });
+    });
+</script>
 
 
 
