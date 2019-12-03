@@ -1,15 +1,12 @@
 class ContactsController < ApplicationController
 
   def index
-    if params[:query].present?
-      sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
-      @contacts = Contact.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @contacts = Contact.all
-    end
+    @contacts = current_user.contacts
   end
 
   def show
+    @contact = Contact.find(params[:id])
+    @notes = @contact.notes
   end
 
   def new
@@ -28,9 +25,16 @@ class ContactsController < ApplicationController
   end
 
   def edit
+    @contact = Contact.find(params[:id])
   end
 
   def update
+    @contact = Contact.find(params[:id])
+    if @contact.update(contact_params)
+      redirect_to contact_path(@contact)
+    else
+      render :edit
+    end
   end
 
   def destroy
