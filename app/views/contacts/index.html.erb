@@ -1,2 +1,11 @@
 <h1>Contacts#index</h1>
 <p>Find me in app/views/contacts/index.html.erb</p>
+
+<div class="list-group">
+  <% @contacts.each do |contact| %>
+  <div class="list-group-item">
+    <%= link_to "#{contact.first_name} #{contact.last_name}", contact_path(contact) %>
+  </div>
+  <% end %>
+</div>
+
