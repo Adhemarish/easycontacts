@@ -1,2 +1,12 @@
 <h1>Contacts#new</h1>
-<p>Find me in app/views/contacts/new.html.erb</p>
+
+<%= simple_form_for(@contact) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.input :company %>
+  <%= f.input :location %>
+  <%= f.input :phone_number %>
+  <%= f.input :avatar %>
+  <%= f.button :submit, 'Soumettre', class: 'btn btn-primary' %>
+<% end %>
