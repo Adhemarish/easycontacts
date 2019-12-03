@@ -1,14 +1,30 @@
-h1>EasyContacts</h1>
+<h1>EasyContacts</h1>
 
 
-<%= form_tag contacts_path, method: :get do %>
+<%= form_tag dashboard_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Je cherche..."
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
-<h2>Bienvenue <%=current_user.first_name.capitalize%> !</h2>
+<h3>Bienvenue <%=current_user.first_name.capitalize%> !</h3>
+
+
+<% if @contacts.present? %>
+
+  <% if @contacts.any?%>
+    <h4>----- Résultat de ma recherche</h4>
+
+    <% @contacts.each do |contact| %>
+    <%= contact.avatar%> <%= contact.first_name%> <%=contact.last_name%> <%= contact.phone_number %>
+    <% end %>
+  <% else %>
+    <p>Aucun contact ne correspond à votre recherche.</p>
+  <% end %>
+<% end %>
+
+
+
 

@@ -1,12 +1,12 @@
 class ContactsController < ApplicationController
 
   def index
-    # if params[:query].present?
-    #   sql_query = "title ILIKE :query OR syllabus ILIKE :query"
-    #   @movies = Movie.where(sql_query, query: "%#{params[:query]}%")
-    # else
-    #   @movies = Movie.all
-    # end
+    if params[:query].present?
+      sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
+      @contacts = Contact.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @contacts = Contact.all
+    end
   end
 
   def show
