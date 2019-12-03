@@ -1,0 +1,13 @@
+<h1>EasyContacts</h1>
+
+
+<%= form_tag contacts_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a movie"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<h2>Bienvenue <%=current_user.first_name.capitalize%> !</h2>
