@@ -1,9 +1,10 @@
+
 Alert.destroy_all
 Contact.destroy_all
 Tag.destroy_all
 User.destroy_all
 
-puts 'Creating database...'
+puts "Creating database..."
 
 ludo = User.create!(first_name: "Ludo", last_name: "Easy", email: "ludo@easy.fr", password: "ludoeasy")
 caro = User.create!(first_name: 'Caro', last_name: 'Easy', email: "caro@easy.fr",password: 'caroeasy')
@@ -13,7 +14,22 @@ caro = User.create!(first_name: 'Caro', last_name: 'Easy', email: "caro@easy.fr"
 # faten.create!
 # neven = User.new(name: 'Neven', email: 'neven@easycontacts.com', password: 'neveneasy')
 # neven.avatar = File.open(Rails.root.join('db/fixtures/neven.jpeg'))
-# neven.create!
+# neven.create!=======
+puts "Creating database..."
+
+ludo = User.create!(first_name: 'Ludo', last_name: 'Easy', email: 'ludo@easy.fr', password:'ludoeasy')
+
+
+caro = User.create!(first_name: 'Caro', last_name: 'Easy', email: 'caro@easy.fr',password: 'caroeasy')
+
+#faten = User.new(first_name: 'Faten', last_name: 'Easy', email: 'faten@feasycontactscom', password: 'fateneasy')
+#faten.avatar = File.open(Rails.root.join('db/fixtures/faten.jpeg'))
+#faten.create!
+
+#neven = User.new(name: 'Neven', email: 'neven@easycontacts.com', password: 'neveneasy')
+#neven.avatar = File.open(Rails.root.join('db/fixtures/neven.jpeg'))
+#neven.create!
+
 
 tg1 = Tag.create!(user: ludo, label: 'Ski')
 tg2 = Tag.create!(user: ludo, label: 'React JS')
@@ -22,6 +38,7 @@ tg4 = Tag.create!(user: ludo, label: 'Rails')
 tg5 = Tag.create!(user: ludo, label: 'CSS')
 tg6 = Tag.create!(user: ludo, label: 'EM Lyon')
 tg7 = Tag.create!(user: ludo, label: 'TypeForm')
+
 tg8 = Tag.create!(user: caro, label: 'Cuisine')
 tg9 = Tag.create!(user: caro, label: 'Décoration')
 tg10 = Tag.create!(user: caro, label: 'Python')
@@ -29,6 +46,7 @@ tg11 = Tag.create!(user: caro, label: 'Ruby')
 tg12 = Tag.create!(user: caro, label: 'CSS')
 tg13 = Tag.create!(user: caro, label: 'EDHEC')
 tg14 = Tag.create!(user: caro, label: 'TypeForm')
+
 listct = []
 ct1 = Contact.create!(first_name: 'Jean',last_name: 'Dupont', email: "jean@easy.fr", user: ludo)
 listct << ct1
@@ -70,4 +88,3 @@ ntag7 = NoteTag.create!(tag: tg10, note: nt4)
 ntag8 = NoteTag.create!(tag: tg11, note: nt5)
 ntag9 = NoteTag.create!(tag: tg12, note: nt6)
 ntag10 = NoteTag.create!(tag: tg13, note: nt7)
-

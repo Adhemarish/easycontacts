@@ -1,0 +1,12 @@
+<h1>Contacts#new</h1>
+
+<%= simple_form_for(@contact) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.input :company %>
+  <%= f.input :location %>
+  <%= f.input :phone_number %>
+  <%= f.input :avatar %>
+  <%= f.button :submit %>
+<% end %>
