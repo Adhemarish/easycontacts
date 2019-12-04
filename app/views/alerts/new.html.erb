@@ -1,16 +1,33 @@
-<h1>Alerts#new</h1>
+<div class="d-flex justify-content-between header-new-rappel">
+  <p class="blue-text">Annuler</p>
+  <p class="blue-light-text">Nouveau rappel</p>
+  <p class="blue-text">OK</p>
+</div>
 
-<h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
+<div class="text-center mt-2 mb-4">
+  <p class="name"><%= @contact.first_name %> <%= @contact.last_name.upcase %></p>
+</div>
 
-<%  if @upcoming_alerts.any? %>
-  <% @upcoming_alerts.each do |alert| %>
-  <p><%= alert.title %></p>
-  <p><%= alert.datetime %></p>
+<div class="">
+  <p class="name-rappel">Rappels</p>
+</div>
+
+<div class="mb-5">
+  <%  if @upcoming_alerts.any? %>
+    <% @upcoming_alerts.each do |alert| %>
+    <div class="rappel d-flex justify-content-between">
+      <p class="rappel-title pl-2 pt-2"><%= alert.title %></p>
+      <p class="rappel-date pt-2 px-2"><%= alert.datetime %></p>
+    </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<%= simple_form_for [@contact, @alert] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :datetime %>
-  <%= f.button :submit, 'Créer', class: 'btn btn-primary' %>
-<% end %>
+<div>
+  <%= simple_form_for [@contact, @alert] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :datetime %>
+    <%= f.button :submit, 'Créer', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
