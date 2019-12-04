@@ -1,19 +1,58 @@
+// Search dashboard
+
 .search-bar {
   width: 300px;
   // border:1px solid #D7D7D9;
-  height:30px;
-  border-radius:10px;
+  height:40px;
+  border-radius:15px;
   box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
   background-color: #FEFBFB;
 }
 
-.tag {
-  color: #3283F7;
+.tag-search {
+  color: #0582FF;
   font-size:12px;
   font-weight:bold;
+}
+
+.margintop-15 {
+  margin-top:15px;
 }
 
 .placeholder-search {
   color: #C2CCD5;
   font-size:12px;
+}
+
+// Search Signup
+
+.signup-champ {
+  width:280px;
+  height:40px;
+  background-color: #FEFBFB;
+  border-radius:15px;
+  border: 1px solid #0582FF;
+}
+
+.signup-champ .fas {
+  color:#0582FF;
+}
+
+.signup-champ .placeholder-search {
+  color: #6290C3;
+  margin-left: 80px;
+  font-size:10px;
+}
+
+.signup-start {
+  width:280px;
+  height:40px;
+  background-color: #0582FF;
+  border-radius:15px;
+}
+
+.signup-start .placeholder-search {
+  color: white;
+  margin-left: 90px;
+  font-size:18px;
 }

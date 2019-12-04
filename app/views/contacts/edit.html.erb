@@ -1,2 +1,15 @@
 <h1>Contacts#edit</h1>
 <p>Find me in app/views/contacts/edit.html.erb</p>
+
+<%= simple_form_for(@contact) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.input :company %>
+  <%= f.input :location %>
+  <%= f.input :phone_number %>
+  <%= f.input :avatar %>
+  <%= f.button :submit, 'Soumettre', method: :patch, class: 'btn btn-primary' %>
+<% end %>
+
+<%= link_to "Supprimer", contact_path(@contact), method: :delete, data: { confirm: "Êtes-vous sûr(e)?" }, class: 'btn btn-primary'  %>

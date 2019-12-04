@@ -1,0 +1,58 @@
+.timeline {
+  height:300px;
+  background-color:white;
+  border-radius:10px;
+}
+.bell-elems {
+  // border-right: 1px solid black;
+  height:300px;
+  width:80px;
+}
+
+.bullet {
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background-color: #024A91;
+}
+
+.bullet-one {
+  position:absolute;
+  left:-5px;
+  top:15px;
+}
+
+.bullet-second {
+  position:absolute;
+  left:-5px;
+  bottom:15px;
+}
+
+.bullet-third {
+  position:absolute;
+  left:-5px;
+  top:140px;
+}
+
+.timeline-date {
+  font-size:12px;
+}
+
+.title-rappel-dash {
+  font-size: 10px;
+  margin-top:2px;
+}
+
+.name-rappel-dash {
+  font-size:14px;
+  margin-bottom:2px;
+}
+
+.infos {
+  position:relative;
+  border-left: 1px solid #024A91;
+  height:300px;
+  width:300px;
+}
+
+
