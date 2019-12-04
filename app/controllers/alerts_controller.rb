@@ -1,6 +1,11 @@
 class AlertsController < ApplicationController
-  before_action :set_contact, only: [:new, :create]
-  before_action :set_alerts, only: [:new, :create]
+  before_action :set_contact, only: [:new, :create, :index]
+  before_action :set_alerts, only: [:new, :create, :index]
+
+  def index
+    @all_alerts = @contact.alerts
+    @upcoming_alerts = set_alerts
+  end
 
   def new
     @alert = Alert.new
