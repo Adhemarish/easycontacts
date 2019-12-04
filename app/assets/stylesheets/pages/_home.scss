@@ -1,1 +1,100 @@
 // Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("land-mains.jpg");
+  height: 300px;
+  // background-color: #EAEAEA;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+// .banner p {
+//   font-size: 20px;
+//   color: white;
+//   opacity: .7;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+// }
+
+// .card-sm-home {
+//   background-color: #D73D2B;
+//   border-radius: 10px;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+// }
+
+.card-text p {
+  color: black;
+}
+
+.card-title {
+  color: white;
+  font-weight: 800;
+  text-align: center;
+  margin: 5px;
+}
+
+.cards-home {
+    background-color: #EAEAEA;
+  }
+
+.card-body {
+  background-color: #D73D2B;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 40px;
+  color: #EAEAEA;
+}
+
+.card-body h6 {
+  color: #EAEAEA;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.card-sm-home {
+  margin-top: 10px;
+}
+
+.fa-user-tag, .fa-comments {
+  font-size: 40px;
+}
+
+// FOOTER STYLES
+
+.footer {
+  background: #0582FF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+
+}
+
+.footer-links {
+  display: flex;
+  text-align: left;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 0px 10px;
+  color: white;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer-copyright {
+  text-align: right;
+}

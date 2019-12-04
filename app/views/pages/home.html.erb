@@ -1,31 +1,50 @@
-<div class="banner d-flex flex-column">
 
-  <div class="container">
+
+<div class="banner text-center">
+
+  <!-- <div class="cont"> -->
     <h1>Gardez la <strong>mémoire</strong> de vos <strong>rencontres</strong></h1>
-    <!-- <p>XXXXXXXXXXX</p> -->
-    <a class="btn btn-ghost home" href="#">Me connecter</a>
-    <a class="btn btn-flat home" href="#">Créer un compte</a>
-  </div>
+    <div class="btn btn-flat-login mt-3"><%= link_to "Me connecter", new_user_session_path %></div>
+    <div class="btn btn-flat-signup mt-3"><%= link_to "Créer un compte", new_user_registration_path %></div>
+  <!-- </div> -->
 
-  <div class="cards-home d-flex justify-content-center">
+</div>
+  <div class="cards-home d-flex align-items-center flex-column mt-2 mb-2">
 
-    <div class="card" style="width: 18rem;">
+    <div class="card-sm-home" style="width: 23rem;">
       <div class="card-body">
-        <h5 class="card-title">TAGS</h5>
-        <h6 class="card-subtitle mb-2 text-muted text-center">Personnalise le tri de vos contacts !</h6>
-        <p class="card-text text-justify">Créez vos tags et classez vos contacts selon votre propre logique.</p>
+        <h6 class="card-subtitle mb-2 text-center">Personnalise le tri de vos contacts !</h6>
+        <div class="card-title"><i class="fas fa-user-tag"></i></div>
+        <p class="card-text text-justify"><em>Créez vos tags et classez vos contacts selon votre propre logique.</em></p>
       </div>
     </div>
 
-    <div class="card" style="width: 18rem;">
+    <div class="card-sm-home" style="width: 23rem;">
       <div class="card-body">
-        <h5 class="card-title">+</h5>
-        <h6 class="card-subtitle mb-2 text-muted text-center">Facilite la gestion de vos relations !</h6>
-        <p class="card-text text-justify">Notez les informations qui comptent en quelques clics.</p>
+        <h6 class="card-subtitle mb-2 text-center">Facilite la gestion de vos relations !</h6>
+        <div class="card-title"><i class="fas fa-comments"></i></div>
+        <p class="card-text text-justify"><em>Notez les informations qui comptent en quelques clics.</em></p>
       </div>
     </div>
 
   </div>
+
+
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      © EasyContacts 2019
+    </div>
+  </div>
+
+<!-- </div> -->
+</body>
+</html>
+
 
 </div>
 
