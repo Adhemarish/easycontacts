@@ -1,27 +1,17 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-  <div class="navbar-logo"><i class="fas fa-users"></i><em>EasyContact</em></div>
-  <!-- link to home à faire -->
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
-<!-- toujours pas de dropdown sur le fontawesome -->
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-         <li class="nav-item dropdown">
-          <div class="dropdown-toggle", id= "navbarDropdown", data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
-            <%= link_to "Mon compte", "#", class: "dropdown-item" %>
-            <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
+  <button class="btn btn-menu dropdown-toggle pr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% if user_signed_in? %>
+      <%= link_to "Mon compte", "#", class: "dropdown-item" %>
+      <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    <% else %>
+      <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
+    <% end %>
   </div>
+  <div class="navbar-logo"><%= link_to "#" do %> <i class="fas fa-users"></i><em>EasyContact</em><%end%>
+  </%></div>
+  </div>
+
 </div>
-
-
