@@ -8,7 +8,7 @@
 
 <div class="liste-champs-add d-flex">
 
-  <div class="">
+  <div class="mt-2">
     <%= cl_image_tag @contact.avatar, height: 150, width: 150, crop: :fill, class: "frame-picture mx-3" %>
   </div>
 
@@ -16,7 +16,7 @@
 
     <div class="champ-texte-add fiche">
       <p class="placeholder-search"><input class="string required" type="text" value=<%= @contact.first_name %> name="contact[first_name]" id="contact_first_name"></p>
-      <p class="placeholder-search"><input class="string required" type="text" value=<%= @contact.last_name %> name="contact[last_name]" id="contact_last_name"></p>
+      <p class="placeholder-search"><input class="string required" type="text" value=<%= @contact.last_name.upcase %> name="contact[last_name]" id="contact_last_name"></p>
     </div>
 
   </div>
