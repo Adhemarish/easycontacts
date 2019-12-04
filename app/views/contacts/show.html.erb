@@ -1,15 +1,7 @@
-<p><%= @contact.first_name %></p>
-<p><%= @contact.last_name %></p>
+<%= link_to 'dashboard', dashboard_path %>
+<%= render 'contacts/contactnotes', the_methode: @the_methode, contact: @contact, notes: @notes %>
 
-<div class="list-group">
-  <% if @notes.empty? %>
-    <p>No notes yet</p>
-  <% else %>
-    <div class="list-group-item">
-      <% @notes.each do |note| %>
-        <%= note.content %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-<%= link_to 'Nouvelle note', new_contact_note_path(@contact) %>
+<p><%= link_to 'Nouvelle note', new_contact_note_path(@contact) %></p>
+<p><%= link_to 'List contacts', contacts_path  %></p>
+
+

@@ -1,2 +1,10 @@
-<h1>Note#edit</h1>
-<p>Find me in app/views/note/edit.html.erb</p>
+<h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
+
+<div class="container">
+  <div class="row ">
+    <%= render 'notes/formcontent', contact: @contact, note: @note %>
+  </div>
+</div>
+
+<%= link_to 'Retour', contact_path(@contact) %>
+

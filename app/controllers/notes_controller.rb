@@ -3,16 +3,28 @@ class NotesController < ApplicationController
 
   def new
     @contact = Contact.find(params[:contact_id])
-    @note = Note.new
+  end
+
+  def create
+    @contact = Contact.find(params[:contact_id])
+    @note = Note.new(note_params)
+    @note.contact = @contact
+    if @note.save
+      redirect_to contact_path(@contact)
+    else
+      render :new
+    end
   end
 
   def edit
-
+    @note = Note.find(params[:id])
+    @contact = @note.contact
   end
 
   def update
+    @note = Note.find(params[:id]) # modif en :id
     if @note.update(note_params)
-      redirect_to contact_notes_path(@note.contact)
+      redirect_to contact_path(@note.contact) ## reload...
     else
       render :edit
     end
@@ -20,6 +32,7 @@ class NotesController < ApplicationController
 
   def destroy
     @note.destroy
+    redirect_to contact_path(@note.contact)
   end
 
   private
