@@ -1,11 +1,13 @@
 // Specific CSS for your home-page
 .banner {
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  flex-direction: column;
   background-size: cover;
   background-position: center;
-  padding: 80px 0;
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("land-mains.jpg");
   height: 300px;
-  // background-color: #EAEAEA;
 }
 
 .banner h1 {
@@ -29,8 +31,9 @@
 //   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 // }
 
-.card-text p {
-  color: black;
+.card-body p {
+  color: white;
+  font-size: 18px;
 }
 
 .card-title {
@@ -55,7 +58,7 @@
 .card-body h6 {
   color: #EAEAEA;
   font-weight: 900;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .card-sm-home {
@@ -76,7 +79,7 @@
   height: 70px;
   padding: 10px;
   color: white;
-  font-size: 14px;
+  font-size: 16px;
 
 }
 

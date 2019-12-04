@@ -41,32 +41,48 @@
 
 .btn-flat-signup a {
   color: white;
-  padding: 8px 24px;
+  padding: 15px 30px;
   margin: 10px;
   border-radius: 50px;
   background: #0582FF;
   transition: background 0.3s ease;
   font-weight: 700;
+  font-size: 18px;
 }
 
-.btn-flat-signup:hover {
+.btn-flat-signup a:hover {
   background: #D73D2B;
   color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  margin: 10px;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .btn-flat-login a {
   color: gray;
-  padding: 8px 24px;
+  padding: 15px 30px;
   margin: 10px;
   border-radius: 50px;
   background: white;
   transition: background 0.3s ease;
   font-weight: 700;
+  font-size: 18px;
 }
 
-.btn-flat-login:hover {
+.btn-flat-login a:hover {
   background: white;
   color: #0582FF;
+  padding: 15px 30px;
+  margin: 10px;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 
