@@ -1,0 +1,23 @@
+// RAPPEL dans ADD RAPPEL
+
+.rappel {
+  height:30px;
+  margin: 5px 20px;
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px rgba(0,0,0, 0.2);
+  background-color: #F9FBFB;
+  color: rgba(0,0,0,0.6);
+}
+
+.rappel-title {
+  font-size:12px;
+  // border: 1px solid black;
+  height:30px;
+  width:80%;
+}
+
+.rappel-date {
+  border-left: 1px solid #C2CCD5;
+  height:30px;
+  font-size:12px;
+}
