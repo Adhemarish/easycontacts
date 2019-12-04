@@ -1,5 +1,5 @@
 <%= link_to 'dashboard', dashboard_path %>
-<%= render 'contacts/contactnotes', the_methode: @the_methode, contact: @contact, notes: @notes %>
+<%= render 'contacts/contactnotes', contact: @contact, notes: @notes %>
 
 <p><%= link_to 'Nouvelle note', new_contact_note_path(@contact) %></p>
 <p><%= link_to 'List contacts', contacts_path  %></p>
