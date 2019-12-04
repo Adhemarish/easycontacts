@@ -1,0 +1,11 @@
+<div class="form-group">
+  <%= note.content %>
+  <div class="d-flex">
+    <% tags.each do |t| %>
+    <div class="tag small-tag red-tag">
+      <p class="margin-tag"><%= t.label %></p>
+    </div>
+  <% end %>
+
+  </div>
+</div>

@@ -4,6 +4,29 @@
   background-color:#F0F0F0;
 }
 
+
+
+body {
+  font-family: 'Tajawal', sans-serif;
+}
+
+h1, h2, h3, h4, h5, p, span {
+  font-family: 'Tajawal', sans-serif;
+}
+
+// LOGO
+
+.logo, .fas.fa-users {
+  border-top: none;
+  color: #0582FF;
+}
+
+h1 {
+  color: #0582FF;
+  font-weight: 900;
+  font-size: 25px;
+}
+
 .blue-light-text {
   color:#0582FF;
   font-weight:bold;
@@ -18,5 +41,12 @@
 
 .name {
   color:#024A91;
-  font-size:15px;
+  font-size:16px;
+}
+
+.name-rappel {
+  color:#024A91;
+  font-size:14px;
+  padding-left:20px;
+  margin-bottom:10px;
 }

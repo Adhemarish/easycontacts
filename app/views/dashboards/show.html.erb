@@ -1,4 +1,6 @@
-<h1>EasyContacts</h1>
+<!--  <div class="logo">
+        <h1><i class="fas fa-users"></i> <em>EasyContacts</em></h1>
+      </div> -->
 
 <div class="searchbar">
   <%= form_tag dashboard_path, method: :get do %>
@@ -8,24 +10,83 @@
       placeholder: "Je cherche..."
     %>
   <% end %>
+  
+<%= form_tag dashboard_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Je cherche..."
+  %>
+<% end %>
 
+<p>Search bar vide</p>
+  <div class="search-bar d-flex justify-content-between">
+    <div></div>
+    <p class="placeholder-search mt-2 ml-4">je cherche...</p>
+    <i class="fas fa-search mr-2 mt-2"></i>
+  </div>
+
+  <p class="mt-4">Search bar home</p>
+  <div class="search-bar d-flex justify-content-between">
+    <p class="ml-3 mt-2 tag">TAG</p>
+    <p class="placeholder-search mt-2">je cherche...</p>
+    <i class="fas fa-search mr-2 mt-2"></i>
+  </div>
+
+<h3>Bienvenue <%=current_user.first_name.capitalize%> !</h3>
+
+<div class="timeline">
+  <h1>TIMELINE</h1>
 </div>
 
-<div class="welcome">
-  <h3>Bienvenue <%=current_user.first_name.capitalize%> !</h3>
+<% if @contacts.present? %>
+
+  <% if @contacts.any?%>
+    <h4>----- Résultat de ma recherche</h4>
+
+    <% @contacts.each do |contact| %>
+    <%= contact.avatar%> <%= contact.first_name%> <%=contact.last_name%> <%= contact.phone_number %>
 </div>
 
-<div class="search_result">
-  <% if @contacts.present? %>
-    <% if @contacts.any?%>
-      <h4>----- Résultat de ma recherche</h4>
-      <% @contacts.each do |contact| %>
-      <%= contact.avatar%> <%= contact.first_name%> <%=contact.last_name%> <%= contact.phone_number %>
-      <% end %>
-    <% else %>
-      <p>Aucun contact ne correspond à votre recherche.</p>
+<div class="search-bar d-flex justify-content-between m-3">
+  <p class="ml-3 mt-2 tag">TAG</p>
+  <%= form_tag dashboard_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "placeholder-search",
+      placeholder: "Je cherche..."
+    %>
+  <% end %>
+  <i class="fas fa-search mr-2 mt-2"></i>
+</div>
+
+
+<h3>Bienvenue <%=current_user.first_name.capitalize%> !</h3>
+
+
+<%if params[:query].present?  %>
+
+  <% if @contacts.any?%>
+    <h4>Nous avons trouvé :</h4>
+
+    <ul class="list-group ml-3">
+    <% @contacts.each do |contact| %>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+      <div class="avatar">
+        <p><em>Avatar</em></p>
+      <%#= cl_image_tag contact.avatar%>
+      </div>
+      <div class="contact-name">
+      <%= contact.first_name%> <%=contact.last_name%>
+      </div>
+      <div class="lg-btn "><i class="fas fa-phone ml-3 mt-3"></i></div>  <!-- contact.phone_number %> -->
+      </li>
+      </div>
     <% end %>
-    <% else %>
+    </ul>
+  <% else %>
+    <p>Aucun contact ne correspond à votre recherche.</p>
+
   <% end %>
 </div>
 
@@ -34,5 +95,24 @@
         $(document).on('click','input[type=text]',function(){ this.select(); });
     });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- à conserver sur cette page -->
+<script type="text/javascript">
+    $(function(){
+        $(document).on('click','input[type=text]',function(){ this.select(); });
+    });
+</script>
+
+
 
 
