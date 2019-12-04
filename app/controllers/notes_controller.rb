@@ -22,9 +22,9 @@ class NotesController < ApplicationController
   end
 
   def update
-    @note = Note.find(params[:id]) # modif en :id
+    @note = Note.find(params[:id])
     if @note.update(note_params)
-      redirect_to contact_path(@note.contact) ## reload...
+      redirect_to contact_path(@note.contact)
     else
       render :edit
     end
