@@ -2,7 +2,6 @@
 
 .champs-texte-add {
   // border:1px solid black;
-  margin-left: 10px;
   width:300px;
 }
 
@@ -11,8 +10,42 @@
   margin-right:10px;
 }
 
-.champs-texte-add .champ-texte-add {
-  margin-right:25px;
+.champ-texte-add.fiche {
+  margin-bottom:20px;
+}
+
+p.placeholder-search {
+  margin-bottom:3px;
+}
+
+input#contact_first_name {
+  background-color:#F4F4F4;
+  border:none;
+}
+
+input#contact_last_name {
+  background-color:#F4F4F4;
+  border:none;
+}
+
+input#contact_phone_number {
+  background-color:#F4F4F4;
+  border:none;
+}
+
+input#contact_company {
+  background-color:#F4F4F4;
+  border:none;
+}
+
+input#contact_email {
+  background-color:#F4F4F4;
+  border:none;
+}
+
+input#contact_location {
+  background-color:#F4F4F4;
+  border:none;
 }
 
 .champ-texte-add .placeholder-search {
@@ -31,7 +64,10 @@
   border:none;
 }
 
-// FICHE CONTACT
+.grey-onglet {
+  font-weight:bold;
+  color: #7F868D;
+}
 
 .fiche .placeholder-search {
   width: 180px;
@@ -39,6 +75,9 @@
   color: rgba(0,0,0,0.8);
   border-bottom: 1px solid #024A91;
 }
+
+// FICHE CONTACT
+
 
 .liste-info {
 
@@ -54,12 +93,12 @@
 
 .info-title {
   color: #024A91;
-  font-size:12px;
+  font-size:14px;
   font-weight:bold;
 }
 
 .info-description {
-  font-size:12px;
+  font-size:14px;
   padding-bottom:2px;
   border-bottom:1px solid #024A91;
   width:150px;

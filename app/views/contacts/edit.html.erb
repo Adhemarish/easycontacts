@@ -1,16 +1,83 @@
-<h1>Contacts#edit</h1>
-
-<%= cl_image_tag @contact.avatar, height: 150, width: 150, crop: :fill, class: "frame-picture" %>
+<div class="text-center mt-3">
+  <p class="blue-light-text">Contact</p>
+</div>
 
 <%= simple_form_for(@contact) do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.input :company %>
-  <%= f.input :location %>
-  <%= f.input :phone_number %>
-  <%= f.input :avatar %>
-  <%= f.button :submit, 'Soumettre', method: :patch, class: 'btn btn-primary' %>
+
+<!-- PHOTO & PRENOM / NOM -->
+
+<div class="liste-champs-add d-flex">
+
+  <div class="">
+    <%= cl_image_tag @contact.avatar, height: 150, width: 150, crop: :fill, class: "frame-picture mx-3" %>
+  </div>
+
+  <div class="champs-texte-add d-flex">
+
+    <div class="champ-texte-add fiche">
+      <p class="placeholder-search"><input class="string required" type="text" value=<%= @contact.first_name %> name="contact[first_name]" id="contact_first_name"></p>
+      <p class="placeholder-search"><input class="string required" type="text" value=<%= @contact.last_name %> name="contact[last_name]" id="contact_last_name"></p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Notes / Rappels -->
+
+<div class="d-flex justify-content-center mt-2 mb-5">
+    <p class="grey-onglet mr-5">Notes</p>
+    <p class="grey-onglet">Rappels</p>
+</div>
+
+
+<!-- Autres champs  -->
+
+<div class="liste-info d-flex mx-4">
+
+  <div class="infos-fiche ">
+
+    <div class="info-fiche mb-4">
+      <p class="info-title">Email</p>
+      <p class="info-description"><input class="info-description email" placeholder="Email" type="email" value=<%= @contact.email %> name="contact[email]" id="contact_email"></p>
+    </div>
+
+    <div class="info-fiche">
+      <p class="info-title">Entreprise</p>
+      <p class="info-description"><input class="" placeholder="Nom d'entreprise" type="text" name="contact[company]" id="contact_company"></p>
+    </div>
+  </div>
+
+  <div class="infos-fiche">
+
+    <div class="info-fiche mb-4">
+      <p class="info-title">Ville</p>
+      <p class="info-description"><input class="info-description" placeholder="Ville" type="text" name="contact[location]" id="contact_location"></p>
+    </div>
+
+    <div class="info-fiche">
+      <p class="info-title">Telephone</p>
+      <p class="info-description"><input class="info-description tel" placeholder="Numéro de téléphone" type="tel" name="contact[phone_number]" id="contact_phone_number"></p>
+    </div>
+
+  </div>
+</div>
+
+
+  <div class="validate-button">
+    <button type="submit" name="commit" value="Créer" method="patch" class="d-flex align-items-center justify-content-center md-btn absolute" data-disable-with="...">
+      <i class="fas fa-check"></i>
+    </button>
+
+  </div>
+
 <% end %>
 
-<%= link_to "Supprimer", contact_path(@contact), method: :delete, data: { confirm: "Êtes-vous sûr(e)?" }, class: 'btn btn-primary'  %>
+<%= link_to contact_path(@contact), method: :delete, data: { confirm: "Êtes-vous sûr(e)?" } do  %>
+  <div class="d-flex justify-content-center trash">
+    <div class="md-btn d-flex align-items-center justify-content-center mt-3">
+      <i class="fas fa-trash-alt"></i>
+    </div>
+  </div>
+<% end %>
+

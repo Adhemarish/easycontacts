@@ -22,6 +22,29 @@
   border-radius:50%;
 }
 
+// Button TRASH
+
+.trash .md-btn {
+  background-color : #E72B2B;
+}
+
+// EDIT CONTACT
+
+.validate-button {
+  position:relative;
+}
+
+.absolute {
+  position:absolute;
+  top:-390px;
+  right:20px;
+}
+
+button.md-btn.absolute {
+  background-color: #65CD5F;
+  border:none;
+}
+
 
 
 .btn-ghost {
