@@ -5,6 +5,7 @@
 }
 
 
+
 body {
   font-family: 'Tajawal', sans-serif;
 }
@@ -24,4 +25,21 @@ h1 {
   color: #0582FF;
   font-weight: 900;
   font-size: 25px;
+
+.blue-light-text {
+  color:#0582FF;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.blue-text {
+  color:#024A91;
+  font-weight:bold;
+  font-size:15px;
+}
+
+.name {
+  color:#024A91;
+  font-size:15px;
+
 }

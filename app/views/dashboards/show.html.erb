@@ -2,6 +2,15 @@
         <h1><i class="fas fa-users"></i> <em>EasyContacts</em></h1>
       </div> -->
 
+<div class="searchbar">
+  <%= form_tag dashboard_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Je cherche..."
+    %>
+  <% end %>
+
 
 <div class="search-bar d-flex justify-content-between m-3">
   <p class="ml-3 mt-2 tag">TAG</p>
@@ -41,10 +50,15 @@
     </ul>
   <% else %>
     <p>Aucun contact ne correspond à votre recherche.</p>
+
   <% end %>
-<% end %>
+</div>
 
-
+<script type="text/javascript">
+    $(function(){
+        $(document).on('click','input[type=text]',function(){ this.select(); });
+    });
+</script>
 
 
 

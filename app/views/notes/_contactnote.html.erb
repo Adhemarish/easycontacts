@@ -1,0 +1,5 @@
+<%= simple_form_for [ contact, note ], wrapper: :inline_form,
+  html: { class: "form-inline" }  do |f| %>
+  <%= f.input_field :content, as: :text %>
+  <%= f.button :submit, 'Sauvegarder', class: 'btn btn-primary' %>
+<% end %>

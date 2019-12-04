@@ -17,6 +17,12 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'rails-i18n'
+gem 'devise-i18n'
+
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

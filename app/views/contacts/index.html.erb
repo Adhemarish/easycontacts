@@ -1,0 +1,9 @@
+<div class="list-group">
+  <% @contacts.each do |contact| %>
+  <div class="list-group-item">
+    <%= link_to "#{contact.first_name} #{contact.last_name}", contact_path(contact) %>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to "Ajouter", new_contact_path, class: 'btn btn-primary'  %>

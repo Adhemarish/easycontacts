@@ -1,0 +1,31 @@
+<h2><%= contact.first_name %><%= contact.last_name %></h2>
+
+<div class="container">
+  <% if notes.empty? %>
+    <p>No notes yet</p>
+  <% else %>
+    <% notes.each do |une_note|%>
+      <div class="row">
+        <div class="col-md-10" data-note-id="<%= une_note.id %>" >
+          <%# if the_methode != 'contact' %>
+            <%#= render 'notes/formcontent',note: une_note  %>
+          <%# else %>
+            <%= render 'notes/content', note: une_note %>
+          <%# end %>
+        </div>
+        <div class="col-md-1">
+          <%= link_to 'Editer', edit_note_path(une_note)%>
+        </div>
+        <br>
+        <div class="col-md-1">
+          <%= link_to 'Supprimer', note_path(une_note), method: :delete %>
+        </div>
+
+      </div>
+    <% end %>
+  <% end %>
+</div>
+</div>
+<br>
+
+

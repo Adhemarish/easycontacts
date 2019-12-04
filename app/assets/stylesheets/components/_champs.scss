@@ -1,0 +1,71 @@
+// ADD CONTACT
+
+.champs-texte-add {
+  // border:1px solid black;
+  margin-left: 10px;
+  width:300px;
+}
+
+.liste-champs-add .frame-picture {
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.champs-texte-add .champ-texte-add {
+  margin-right:25px;
+}
+
+.champ-texte-add .placeholder-search {
+  width: 130px;
+  color: rgba(0,0,0,0.6);
+  border-bottom: 1px solid #C2CCD5;
+}
+
+.liste-champs-add .frame-picture .placeholder-search {
+  color:#0582FF;
+  margin-top:16px;
+}
+
+.liste-champs-add .frame-picture {
+  background-color: #DDEEFF;
+  border:none;
+}
+
+// FICHE CONTACT
+
+.fiche .placeholder-search {
+  width: 180px;
+  padding-bottom:2px;
+  color: rgba(0,0,0,0.8);
+  border-bottom: 1px solid #024A91;
+}
+
+.liste-info {
+
+}
+
+.infos-fiche {
+  margin: 0 20px;
+}
+
+.info-fiche {
+
+}
+
+.info-title {
+  color: #024A91;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.info-description {
+  font-size:12px;
+  padding-bottom:2px;
+  border-bottom:1px solid #024A91;
+  width:150px;
+  color:rgba(0,0,0,0.8)
+}
+
+p.info-title {
+  margin-bottom:8px;
+}
