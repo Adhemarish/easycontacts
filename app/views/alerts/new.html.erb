@@ -13,15 +13,15 @@
   </div>
 
   <div class="mb-5">
-    <%  if @upcoming_alerts.any? %>
-      <% @upcoming_alerts.each do |alert| %>
-      <div class="rappel d-flex justify-content-between">
-        <p class="rappel-title pl-2 pt-2"><%= alert.title %></p>
-        <p class="rappel-date pt-2 px-2"><%= alert.datetime %></p>
-      </div>
-      <% end %>
+  <%  if @upcoming_alerts.any? %>
+    <% @upcoming_alerts.each do |alert| %>
+    <div class="rappel d-flex justify-content-between">
+      <p class="rappel-title pl-2 pt-2"><%= alert.title %></p>
+      <p class="rappel-date pt-2 px-2"><%= I18n.l(alert.datetime, format: :short) %></p>
+    </div>
     <% end %>
-  </div>
+  <% end %>
+</div>
 
   <div class="new-rappel">
 
@@ -33,7 +33,7 @@
         </div>
 
         <div>
-          <div class="input-label"><%= f.input :datetime, label: 'Date:', placeholder:"Choisissez une date" %></div>
+          <div class="input-label"><%= f.input :datetime, as: :string, required: false, input_html: {class: "datepicker"}, label: 'Date:', placeholder:"Choisissez une date" %></div>
         </div>
       </div>
 
@@ -45,6 +45,3 @@
 
     <% end %>
   </div>
-
-
-
