@@ -5,12 +5,12 @@
 <%  if @upcoming_alerts.any? %>
   <% @upcoming_alerts.each do |alert| %>
   <p><%= alert.title %></p>
-  <p><%= alert.datetime %></p>
+  <p><%= I18n.l(alert.datetime, format: :short) %></p>
   <% end %>
 <% end %>
 
 <%= simple_form_for [@contact, @alert] do |f| %>
   <%= f.input :title %>
-  <%= f.input :datetime %>
+  <%= f.input :datetime, as: :string, required: false, input_html: {class: "datepicker"} %>
   <%= f.button :submit, 'Créer', class: 'btn btn-primary' %>
 <% end %>
