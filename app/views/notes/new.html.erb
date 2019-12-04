@@ -1,10 +1,22 @@
-<h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
+<div class="d-flex justify-content-between header-new-rappel">
+  <p class="blue-text"><%= link_to 'List contacts', contacts_path  %></p>
+  <p class="blue-light-text name"><%= @contact.first_name %> <%= @contact.last_name.upcase %></p>
+  <p class="blue-text"><%= link_to 'Retour notes', contact_path(@contact) %>
+  </p>
+</div>
 
+<div class="container">
+  <% @contact.notes.each do |une_note| %>
+  <div class="row">
+    <%= render 'notes/contenttag', note: une_note, tags: une_note.tags %>
+  </div>
+  <% end %>
+</div>
 <div class="container">
   <div class="row ">
     <%= render 'contactnote', contact: @contact, note: @note, tags: @tags %>
   </div>
 </div>
 
-<%= link_to 'Retour', contact_path(@contact) %>
+
 

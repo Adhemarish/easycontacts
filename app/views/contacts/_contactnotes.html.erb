@@ -1,27 +1,16 @@
-<h2><%= contact.first_name %><%= contact.last_name %></h2>
-
 <div class="container">
   <% if notes.empty? %>
-    <p>No notes yet</p>
+    <p>Pas de notes</p>
   <% else %>
     <% notes.each do |une_note|%>
       <div class="row">
-        <div class="col-md-10" data-note-id="<%= une_note.id %>" >
-            <%= render 'notes/contenttag', note: une_note, tags: une_note.tags %>
+        <div class="col-md-10 d-flex justify-content-between" data-note-id="<%= une_note.id %>" >
+          <span><%= render 'notes/contenttag', note: une_note, tags: une_note.tags %></span>
+          <span><%= link_to 'Editer', edit_note_path(une_note)%><%= link_to 'Supprimer', note_path(une_note), method: :delete %></span>
         </div>
-        <div class="col-md-1">
-          <%= link_to 'Editer', edit_note_path(une_note)%>
-        </div>
-        <br>
-        <div class="col-md-1">
-          <%= link_to 'Supprimer', note_path(une_note), method: :delete %>
-        </div>
-
       </div>
     <% end %>
   <% end %>
 </div>
-</div>
-<br>
 
 
