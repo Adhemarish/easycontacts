@@ -1,0 +1,16 @@
+<h1>Alerts#new</h1>
+
+<h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
+
+<%  if @upcoming_alerts.any? %>
+  <% @upcoming_alerts.each do |alert| %>
+  <p><%= alert.title %></p>
+  <p><%= alert.datetime %></p>
+  <% end %>
+<% end %>
+
+<%= simple_form_for [@contact, @alert] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :datetime %>
+  <%= f.button :submit, 'Créer', class: 'btn btn-primary' %>
+<% end %>

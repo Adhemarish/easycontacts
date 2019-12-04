@@ -8,7 +8,9 @@
   <%= f.input :location %>
   <%= f.input :phone_number %>
   <%= f.input :avatar %>
+  <%= f.input :avatar_cache, as: :hidden %>
   <%= f.button :submit, 'Créer', class: 'btn btn-primary' %>
 <% end %>
 
 <%= link_to "Retour", contacts_path, class: 'btn btn-primary' %>
+
