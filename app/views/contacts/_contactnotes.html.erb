@@ -7,11 +7,7 @@
     <% notes.each do |une_note|%>
       <div class="row">
         <div class="col-md-10" data-note-id="<%= une_note.id %>" >
-          <%# if the_methode != 'contact' %>
-            <%#= render 'notes/formcontent',note: une_note  %>
-          <%# else %>
-            <%= render 'notes/content', note: une_note %>
-          <%# end %>
+            <%= render 'notes/contenttag', note: une_note, tags: une_note.tags %>
         </div>
         <div class="col-md-1">
           <%= link_to 'Editer', edit_note_path(une_note)%>
