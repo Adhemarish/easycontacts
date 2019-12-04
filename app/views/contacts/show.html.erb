@@ -35,9 +35,11 @@
     <p class="contact-button-notes active">Notes</p>
   </div>
 
+  <%= link_to contact_alerts_path(@contact) do  %>
   <div class="mt-3 fiche-contact-button">
     <p class="contact-button-rappels inactive">Rappels</p>
   </div>
+  <% end %>
 
 </div>
 
@@ -45,6 +47,8 @@
 <!-- Notes -->
 
 <%= render 'contacts/contactnotes', contact: @contact, notes: @notes %>
+
+<!-- Button new note -->
 
 <%= link_to new_contact_note_path(@contact) do %>
   <div class="d-flex justify-content-center mt-5">
