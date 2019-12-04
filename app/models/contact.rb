@@ -1,4 +1,5 @@
 class Contact < ApplicationRecord
+  mount_uploader :avatar, PhotoUploader
 
   has_many :notes, dependent: :destroy
   has_many :alerts, dependent: :destroy
