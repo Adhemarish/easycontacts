@@ -1,22 +1,5 @@
-<h1>Contacts#show</h1>
-<p>Find me in app/views/contacts/show.html.erb</p>
+<%= link_to 'dashboard', dashboard_path %>
+<%= render 'contacts/contactnotes', the_methode: @the_methode, contact: @contact, notes: @notes %>
 
-<p><%= @contact.first_name %></p>
-<p><%= @contact.last_name %></p>
-
-<div class="list-group">
-  <% if @notes.empty? %>
-    <p>No notes yet</p>
-  <% else %>
-    <div class="list-group-item">
-      <% @notes.each do |note| %>
-        <%= note.content %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-
-
-
-<%= link_to "Modifier", edit_contact_path(@contact), class: 'btn btn-primary'  %>
-<%= link_to "Retour", contacts_path, class: 'btn btn-primary' %>
+<p><%= link_to 'Nouvelle note', new_contact_note_path(@contact) %></p>
+<p><%= link_to 'List contacts', contacts_path  %></p>

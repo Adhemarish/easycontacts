@@ -7,10 +7,10 @@ class ContactsController < ApplicationController
   def show
     @contact = Contact.find(params[:id])
     @notes = @contact.notes
+    #@the_methode = 'contact'
   end
 
   def new
-    @contact = Contact.new
   end
 
   def create
