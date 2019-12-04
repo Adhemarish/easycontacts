@@ -1,9 +1,17 @@
+<div class="d-flex justify-content-between header-new-rappel">
+    <p class="blue-text">Recherche</p>
+    <p class="blue-light-text">Tous mes contacts</p>
+    <p class="blue-text"><%= link_to "Ajouter", new_contact_path, class: 'btn btn-primary'  %></p>
+  </div>
+
+
 <div class="list-group">
   <% @contacts.each do |contact| %>
-  <div class="list-group-item">
-    <%= link_to "#{contact.first_name} #{contact.last_name}", contact_path(contact) %>
+  <div class="list-group-item d-flex justify-content-between">
+    <span> <%= link_to "#{contact.first_name} #{contact.last_name}", contact_path(contact) %></span><span><%= link_to 'Supprimer', contact_path(contact), method: :delete  %></span>
+
   </div>
   <% end %>
 </div>
 
-<%= link_to "Ajouter", new_contact_path, class: 'btn btn-primary'  %>
+
