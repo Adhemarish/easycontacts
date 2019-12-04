@@ -2,6 +2,8 @@
   color:white;
 }
 
+// Icons Button
+
 .lg-btn .fas.fa-plus {
   font-size:10px;
 }
@@ -14,6 +16,10 @@
   font-size:20px;
 }
 
+.lg-btn .fas .fa-phone {
+  font-size: 20px;
+}
+
 .md-btn .fas.fa-user-alt {
   font-size:14px;
 }
@@ -21,14 +27,54 @@
   font-size: 8px;
 }
 
+// Icons Search
+
 .search-bar .fa-search {
-  color: #3283F7;
+  color: #0582FF;
 }
 
 .search-bar-home .fa-search {
-  color: #3283F7;
+  color: #0582FF;
 }
 
+// Icons Timeline
+
 .timeline .fa-bell {
-  color:#3283F7;
+  color:#0582FF;
 }
+
+// Icons Contacts Dash
+
+.contact-dash-icon i {
+  color: #8BBBF1;
+}
+
+.contact-dash-icon .fa-plus {
+  font-size: 10px;
+}
+
+.contact-dash-icon .fa-bell {
+  font-size:28px;
+}
+
+.contact-dash-icon .fa-sticky-note {
+  font-size:28px;
+}
+
+// Icon Tags
+
+.tag .fa-plus {
+  transform: rotate(45deg);
+  margin-top:3px;
+  margin-left:2px;
+  margin-right:5px;
+}
+
+.md-btn .fa-check {
+  font-size:18px;
+}
+
+.sm-btn .fas {
+  font-size:12px;
+}
+

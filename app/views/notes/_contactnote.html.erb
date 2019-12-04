@@ -1,0 +1,12 @@
+<%= simple_form_for [ contact, note ], wrapper: :inline_form,
+  html: { class: "form-inline" }  do |f| %>
+  <%= f.input_field :content, as: :text %>
+  <div class="d-flex">
+    <div>
+      <%= f.association :tags, collection: tags, label_method: :label, value_method: :id, include_blank: false, as: :check_boxes , wrapper: :horizontal_collection_inline %>
+      <%= f.button :submit, 'Sauvegarder', class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
+
+

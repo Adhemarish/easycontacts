@@ -1,0 +1,46 @@
+// RAPPEL dans ADD RAPPEL
+
+.rappel {
+  height:30px;
+  margin: 5px 20px;
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px rgba(0,0,0, 0.2);
+  background-color: #F9FBFB;
+  color: rgba(0,0,0,0.6);
+}
+
+.rappel-title {
+  font-size:12px;
+  // border: 1px solid black;
+  height:30px;
+  width:80%;
+}
+
+.rappel-date {
+  border-left: 1px solid #C2CCD5;
+  height:30px;
+  font-size:12px;
+}
+
+.new-rappel {
+  background-color:#E7E7E7;
+  height:70vh;
+}
+
+.text-center .name {
+  font-size:25px;
+}
+
+.input-label {
+  margin: 10px 15px;
+  color: rgba(0,0,0,0.6);
+}
+
+#alert_title.form-control {
+  height:50px;
+  border-radius:8px;
+  border:none;
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+  background-color: #FDF9F9;
+}
+

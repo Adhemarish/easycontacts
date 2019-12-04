@@ -31,11 +31,37 @@
 
 fr:
   activerecord:
+    errors:
+       messages:
+         record_invalid: 'La validation a échoué : %{errors}'
+         restrict_dependent_destroy:
+           has_one: Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record}
+             dépendant(e) existe
+           has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
+             dépendants existent
+    date:
+       abbr_month_names:
+       - jan.
+       - fév.
+       - mar.
+       - avr.
+       - mai
+       - juin
+       - juil.
+       - août
+       - sept.
+       - oct.
+       - nov.
+       - déc.
+       formats:
+         short: "%e %B"
+
     models:
       user: "Utilisateur"
       contact: "Contact"
       note: "Note"
       tag: "Tag"
+      alert: "Rappel"
 
     attributes:
       user:
@@ -58,3 +84,6 @@ fr:
         content: "Contenu"
       tag:
         label: "Etiquette"
+      alert:
+        title: "Titre"
+        datetime: "Date"

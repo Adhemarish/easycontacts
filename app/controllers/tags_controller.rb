@@ -1,5 +1,4 @@
 class TagsController < ApplicationController
-
   def new
     @tag = Tag.new
   end
@@ -22,9 +21,3 @@ class TagsController < ApplicationController
   end
 
 end
-
-
-<%= simple_form_for(@contact) do |f| %>
-  <%= f.input :label %>
-  <%= f.button :submit, 'Créer un nouveau tag', class: 'btn btn-primary' %>
-<% end %>
