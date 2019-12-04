@@ -1,19 +1,18 @@
 <div class="d-flex justify-content-between header-new-rappel">
-  <p class="blue-text">Annuler</p>
-  <p class="blue-light-text">Nouveau rappel</p>
-  <p class="blue-text">OK</p>
-</div>
+    <p class="blue-text">Annuler</p>
+    <p class="blue-light-text">Nouveau rappel</p>
+    <p class="blue-text">OK</p>
+  </div>
 
-<div class="text-center mt-2 mb-4">
-  <p class="name"><%= @contact.first_name %> <%= @contact.last_name.upcase %></p>
-</div>
+  <div class="text-center mt-2 mb-4">
+    <p class="name"><%= @contact.first_name %> <%= @contact.last_name.upcase %></p>
+  </div>
 
+  <div class="">
+    <p class="name-rappel">Rappels</p>
+  </div>
 
-<div class="">
-  <p class="name-rappel">Rappels</p>
-</div>
-
-<div class="mb-5">
+  <div class="mb-5">
   <%  if @upcoming_alerts.any? %>
     <% @upcoming_alerts.each do |alert| %>
     <div class="rappel d-flex justify-content-between">
@@ -24,10 +23,25 @@
   <% end %>
 </div>
 
-<div>
-  <%= simple_form_for [@contact, @alert] do |f| %>
-    <%= f.input :title %>
-    <%= f.input :datetime, as: :string, required: false, input_html: {class: "datepicker"} %>
-    <%= f.button :submit, 'Créer', class: 'btn btn-primary' %>
-  <% end %>
-</div>
+  <div class="new-rappel">
+
+    <%= simple_form_for [@contact, @alert] do |f| %>
+
+      <div class="pt-2">
+        <div>
+          <div class="input-label"><%= f.input :title, label: 'Description:', placeholder: 'Taper ici...' %></div>
+        </div>
+
+        <div>
+          <div class="input-label"><%= f.input :datetime, as: :string, required: false, input_html: {class: "datepicker"}, label: 'Date:', placeholder:"Choisissez une date" %></div>
+        </div>
+      </div>
+
+
+
+        <button type="submit" name="commit" value="Créer" class="d-flex align-items-center justify-content-center md-btn" data-disable-with="...">
+          <i class="fas fa-check"></i>
+        </button>
+
+    <% end %>
+  </div>
