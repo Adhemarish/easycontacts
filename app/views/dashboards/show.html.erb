@@ -10,7 +10,43 @@
       placeholder: "Je cherche..."
     %>
   <% end %>
+  
+<%= form_tag dashboard_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Je cherche..."
+  %>
+<% end %>
 
+<p>Search bar vide</p>
+  <div class="search-bar d-flex justify-content-between">
+    <div></div>
+    <p class="placeholder-search mt-2 ml-4">je cherche...</p>
+    <i class="fas fa-search mr-2 mt-2"></i>
+  </div>
+
+  <p class="mt-4">Search bar home</p>
+  <div class="search-bar d-flex justify-content-between">
+    <p class="ml-3 mt-2 tag">TAG</p>
+    <p class="placeholder-search mt-2">je cherche...</p>
+    <i class="fas fa-search mr-2 mt-2"></i>
+  </div>
+
+<h3>Bienvenue <%=current_user.first_name.capitalize%> !</h3>
+
+<div class="timeline">
+  <h1>TIMELINE</h1>
+</div>
+
+<% if @contacts.present? %>
+
+  <% if @contacts.any?%>
+    <h4>----- Résultat de ma recherche</h4>
+
+    <% @contacts.each do |contact| %>
+    <%= contact.avatar%> <%= contact.first_name%> <%=contact.last_name%> <%= contact.phone_number %>
+</div>
 
 <div class="search-bar d-flex justify-content-between m-3">
   <p class="ml-3 mt-2 tag">TAG</p>

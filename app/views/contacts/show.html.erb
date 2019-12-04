@@ -1,5 +1,5 @@
 <%= link_to 'dashboard', dashboard_path %>
-<%= render 'contacts/contactnotes', the_methode: @the_methode, contact: @contact, notes: @notes %>
+<%= render 'contacts/contactnotes', contact: @contact, notes: @notes %>
 
 <%= cl_image_tag @contact.avatar, height: 150, width: 150, crop: :fill, class: "frame-picture" %>
 
@@ -7,3 +7,4 @@
 <p><%= link_to 'List contacts', contacts_path  %></p>
 
 <%= link_to "Modifier", edit_contact_path(@contact), class: "btn btn-primary" %>
+
