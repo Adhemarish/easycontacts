@@ -10,7 +10,7 @@
       placeholder: "Je cherche..."
     %>
   <% end %>
-  
+
 <%= form_tag dashboard_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -19,7 +19,7 @@
   %>
 <% end %>
 
-<p>Search bar vide</p>
+  <p>Search bar vide</p>
   <div class="search-bar d-flex justify-content-between">
     <div></div>
     <p class="placeholder-search mt-2 ml-4">je cherche...</p>
@@ -95,9 +95,6 @@
         $(document).on('click','input[type=text]',function(){ this.select(); });
     });
 </script>
-
-
-
 
 
 
