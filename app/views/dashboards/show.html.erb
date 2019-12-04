@@ -9,7 +9,6 @@
     %>
   <% end %>
 
-<<<<<<< HEAD
 <%= form_tag dashboard_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -45,7 +44,6 @@
 
     <% @contacts.each do |contact| %>
     <%= contact.avatar%> <%= contact.first_name%> <%=contact.last_name%> <%= contact.phone_number %>
-=======
 </div>
 
 <div class="welcome">
@@ -61,7 +59,6 @@
       <% end %>
     <% else %>
       <p>Aucun contact ne correspond à votre recherche.</p>
->>>>>>> 12cf915c1f3a5ffd33b175aa62732a25848f6e50
     <% end %>
     <% else %>
   <% end %>
