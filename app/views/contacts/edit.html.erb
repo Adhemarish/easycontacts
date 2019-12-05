@@ -39,12 +39,12 @@
 
     <div class="info-fiche mb-4">
       <p class="info-title">Email</p>
-      <p class="info-description"><input class="info-description email" placeholder="Email" type="email" value=<%= @contact.email %> name="contact[email]" id="contact_email"></p>
+      <p class="info-description"><input class="info-description email" placeholder="Email" type="email" value="<%= @contact.email %>" name="contact[email]" id="contact_email"></p>
     </div>
 
     <div class="info-fiche">
       <p class="info-title">Entreprise</p>
-      <p class="info-description"><input class="" placeholder="Nom d'entreprise" type="text" name="contact[company]" id="contact_company"></p>
+      <p class="info-description"><input class="" placeholder="Nom d'entreprise" value="<%= @contact.company %>" type="text" name="contact[company]" id="contact_company"></p>
     </div>
   </div>
 
@@ -52,12 +52,12 @@
 
     <div class="info-fiche mb-4">
       <p class="info-title">Ville</p>
-      <p class="info-description"><input class="info-description" placeholder="Ville" type="text" name="contact[location]" id="contact_location"></p>
+      <p class="info-description"><input class="info-description" placeholder="Ville" value="<%= @contact.location %>" type="text" name="contact[location]" id="contact_location"></p>
     </div>
 
     <div class="info-fiche">
       <p class="info-title">Telephone</p>
-      <p class="info-description"><input class="info-description tel" placeholder="Numéro de téléphone" type="tel" name="contact[phone_number]" id="contact_phone_number"></p>
+      <p class="info-description"><input class="info-description tel" value="<%= @contact.phone_number %>" placeholder="Numéro de téléphone" type="tel" name="contact[phone_number]" id="contact_phone_number"></p>
     </div>
 
   </div>

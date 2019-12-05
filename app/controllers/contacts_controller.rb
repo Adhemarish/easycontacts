@@ -31,7 +31,7 @@ class ContactsController < ApplicationController
 
   def update
     @contact = Contact.find(params[:id])
-    if @contact.update(contact_params)
+    if @contact.update!(contact_params)
       redirect_to contact_path(@contact)
     else
       render :edit
