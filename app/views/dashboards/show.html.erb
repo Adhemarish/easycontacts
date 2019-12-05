@@ -4,7 +4,24 @@
 
 <div class="dash-searchbar">
   <div class="search-bar d-flex justify-content-center mb-3">
-    <p class="ml-3  dashboard-tag">TAG</p>
+
+
+    <p class="ml-3 mt-2 tag">TAG</p>
+
+    <%= link_to "TAG" do %>
+      <% if @tags.any? %>
+      <ul>
+        <% @tags.each do |tag| %>
+          <li><p><%= tag.label %></p></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <% end %>
+
+
+
+
+
     <%= form_tag dashboard_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
@@ -16,20 +33,22 @@
   </div>
 </div>
 
-
-<div class="timeline-dash d-flex justify-content-center flex-column">
+<div class="timeline-dash">
   <%  if @upcoming_contacts_alerts.any? %>
-    <% @upcoming_contacts_alerts.each do |alert| %>
-    <div class="rappel d-flex justify-content-between">
-      <p class="rappel-contact pl-2 pt-2"><%= alert.contact.first_name.capitalize %> <%= alert.contact.last_name.upcase %></p>
-      <p class="rappel-title pl-2 pt-2"><%= alert.title %></p>
-      <p class="rappel-date pt-2 px-2"><%= I18n.l(alert.datetime, format: :short) %></p>
-    </div>
+    <% @upcoming_contacts_alerts.first(3).each do |alert| %>
+      <ul class="list-group-timeline">
+        <li class="list-group-item-timeline d-flex justify-content-between align-items-center">
+          <p><%= I18n.l(alert.datetime, format: :short) %></p>
+          <p><%= alert.contact.first_name.capitalize %> <%= alert.contact.last_name.upcase %></p>
+          <p><%= alert.title %></p>
+        </li>
+      </ul>
     <% end %>
   <% else %>
     <p>Vous n'avez pas d'alerte à venir.</p>
   <% end %>
 </div>
+
 
   <%if params[:query].present?  %>
 
