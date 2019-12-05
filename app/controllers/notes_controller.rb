@@ -11,6 +11,7 @@ class NotesController < ApplicationController
     @contact = Contact.find(params[:contact_id])
     @note = Note.new(note_params)
     @note.contact = @contact
+
     if @note.save
       redirect_to contact_path(@contact)
     else
