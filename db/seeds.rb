@@ -9,13 +9,13 @@ puts "Creating database..."
 ludo = User.create!(first_name: "Ludo", last_name: "Easy", email: "ludo@easy.fr", password: "ludoeasy")
 
 
-tg1 = Tag.create!(user: ludo, label: 'Ruby')
-tg2 = Tag.create!(user: ludo, label: 'React')
-tg3 = Tag.create!(user: ludo, label: 'Javascript')
-tg4 = Tag.create!(user: ludo, label: 'Rails')
-tg5 = Tag.create!(user: ludo, label: 'Freelance')
-tg6 = Tag.create!(user: ludo, label: 'Patron')
-tg7 = Tag.create!(user: ludo, label: 'Dev 3 ans xp')
+tg1 = Tag.create!(user: ludo, label: 'Ruby', color:'red')
+tg2 = Tag.create!(user: ludo, label: 'React', color: 'yellow')
+tg3 = Tag.create!(user: ludo, label: 'Javascript',color: 'orange')
+tg4 = Tag.create!(user: ludo, label: 'Rails',color: 'green')
+tg5 = Tag.create!(user: ludo, label: 'Freelance', color: 'green')
+tg6 = Tag.create!(user: ludo, label: 'Patron',color: 'red')
+tg7 = Tag.create!(user: ludo, label: 'Dev 3 ans xp',color: 'yellow')
 
 
 
