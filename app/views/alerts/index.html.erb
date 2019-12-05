@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between header-new-rappel">
   <p class="blue-text">Annuler</p>
-  <p class="blue-light-text">Nouveau rappel</p>
+  <p class="blue-light-text">Time Line</p>
   <p class="blue-text">OK</p>
 </div>
 
@@ -10,4 +10,10 @@
 
 <div class="">
   <p class="name-rappel">Rappels</p>
+</div>
+
+<div class="row">
+  <% @upcoming_alerts.each do |alert| %>
+    <p><%= alert.datetime.strftime("%d-%b") %></p> | <%= alert.title %></p>
+  <% end %>
 </div>
