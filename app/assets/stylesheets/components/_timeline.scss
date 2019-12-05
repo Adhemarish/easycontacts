@@ -1,12 +1,26 @@
-.timeline {
-  height:300px;
+.timeline-frame {
   background-color:white;
+  border-radius:10px;
+  margin:0px 20px;
+}
+
+.timeline {
+  height:70px;
+  background-color:rgba(0,0,0,0);
   border-radius:10px;
 }
 .bell-elems {
   // border-right: 1px solid black;
-  height:300px;
+  height:70px;
   width:80px;
+  // border:1px solid black;
+}
+
+.infos {
+  height:70px;
+  position:relative;
+  border-left: 1px solid #0582FF;
+  width:300px;
 }
 
 .bullet {
@@ -19,28 +33,17 @@
 .bullet-one {
   position:absolute;
   left:-5px;
-  top:15px;
-}
-
-.bullet-second {
-  position:absolute;
-  left:-5px;
-  bottom:15px;
-}
-
-.bullet-third {
-  position:absolute;
-  left:-5px;
-  top:140px;
+  top:30px;
 }
 
 .timeline-date {
-  font-size:12px;
+  font-size:16px;
+  margin-top:20px;
 }
 
 .title-rappel-dash {
-  font-size: 10px;
-  margin-top:2px;
+  font-size: 16px;
+  margin-top:22px;
 }
 
 .name-rappel-dash {
@@ -48,11 +51,5 @@
   margin-bottom:2px;
 }
 
-.infos {
-  position:relative;
-  border-left: 1px solid #024A91;
-  height:300px;
-  width:300px;
-}
 
 
