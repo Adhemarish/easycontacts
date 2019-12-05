@@ -1,25 +1,24 @@
 <div class="d-flex justify-content-between header-new-rappel">
 
-    <%= link_to dashboard_path do %>
-      <p class="blue-text">Dashboard</p>
+    <%= link_to contact_path(@contact) do %>
+      <p class="blue-text">Annuler</p>
     <% end %>
-    <p class="blue-light-text">Contact</p>
+    <p class="blue-light-text">Nouvelle note</p>
 
-    <%= link_to edit_contact_path(@contact) do %>
-    <p class="blue-text">Modifier</p>
+    <%= link_to contact_path(@contact) do %>
+    <p class="blue-text"></p>
     <% end %>
 </div>
 
-<div class="container">
-  <% @contact.notes.each do |une_note| %>
-  <div class="row">
-    <%= render 'notes/contenttag', note: une_note, tags: une_note.tags %>
-  </div>
-  <% end %>
+<!-- Prenom & NOM  -->
+
+<div class="text-center mt-2 mb-4">
+  <p class="name"><%= @contact.first_name %> <%= @contact.last_name.upcase %></p>
 </div>
-<div class="container">
-  <div class="row ">
-    <%= render 'contactnote', contact: @contact, note: @note, tags: @tags %>
-  </div>
-</div>
+
+<!-- New Note -->
+
+
+<%= render 'contactnote', contact: @contact, note: @note, tags: @tags %>
+
 
