@@ -13,14 +13,16 @@
   </div>
 
   <div class="mb-5">
-  <%  if @upcoming_alerts.any? %>
-    <% @upcoming_alerts.each do |alert| %>
-    <div class="rappel d-flex justify-content-between">
-      <p class="rappel-title pl-2 pt-2"><%= alert.title %></p>
-      <p class="rappel-date pt-2 px-2"><%= I18n.l(alert.datetime, format: :short) %></p>
-    </div>
+    <%  if @upcoming_alerts.any? %>
+      <% @upcoming_alerts.each do |alert| %>
+      <div class="rappel d-flex justify-content-between">
+        <p class="rappel-title pl-2 pt-2"><%= alert.title %></p>
+        <p class="rappel-date pt-2 px-2"><%= I18n.l(alert.datetime, format: :short) %></p>
+      </div>
+      <% end %>
+    <% else %>
+      <p>"Vous n'avez pas d'alerte à venir."</p>
     <% end %>
-  <% end %>
 </div>
 
   <div class="new-rappel">

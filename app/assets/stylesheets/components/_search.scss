@@ -12,15 +12,15 @@
 }
 
 
-.tag {
-  color: #FD7E14;
+.dashboard-tag {
+  color: #D73D2B;
   font-size:16px;
 
-  font-weight:bold;
+  font-weight:700;
   height:40px;
   padding-top:12px;
   padding-right:10px;
-  border-right:1px solid #024A91;
+  // border-right: 2px solid #D73D2B;
 }
 
 .margin-search {
@@ -87,3 +87,4 @@ ul.list-group {
   margin-left: 90px;
   font-size:18px;
 }
+
