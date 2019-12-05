@@ -20,6 +20,12 @@
 <div class="container">
   <div class="row ">
     <%= render 'contactnote', contact: @contact, note: @note, tags: @tags %>
+    <div id='container-tag'>
+      <%= simple_form_for (@tag, remote: true) do |f| %>
+        <%= f.text_field :label %>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
 </div>
 

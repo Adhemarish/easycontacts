@@ -5,6 +5,7 @@ class NotesController < ApplicationController
     @contact = Contact.find(params[:contact_id])
     @note = Note.new
     @tags = current_user.tags
+    @tag = Tag.new
   end
 
   def create
@@ -44,6 +45,7 @@ class NotesController < ApplicationController
   end
 
   def note_params
-    params.require(:note).permit(:content, tag_ids: [])
+    params.require(:note).permit(:content, tag_ids: [])#, :tag)
+    #params.require(:note).permit(:content, tags_attributes: [:id, :label])
   end
 end
