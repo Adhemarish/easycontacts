@@ -12,6 +12,8 @@ class ContactsController < ApplicationController
 
   def new
     @contact = Contact.new
+    @alert = Alert.new
+    @alert.contact = @contact
     @note = Note.new
     @note.contact = @contact
     @tags = current_user.tags
@@ -52,6 +54,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :email, :company, :location, :phone_number, :avatar, notes_attributes: [:content])
+    params.require(:contact).permit(:first_name, :last_name, :email, :company, :location, :phone_number, :avatar, notes_attributes: [:content], alerts_attributes: [:title, :datetime])
   end
 end

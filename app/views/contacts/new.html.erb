@@ -36,45 +36,25 @@
 
   </div>
 
+<!-- NOTES -->
   <div>
     <p class="name ml-3">Notes</p>
   </div>
 
-  <%= f.simple_fields_for @note do |notes_form| %>
-    <%=  notes_form.input :content, input_html: { name: "contact[notes_attributes][][content]"} %>
-  <% end %>
+  <div class="notes empty d-flex justify-content-between flex-column">
+    <%= f.simple_fields_for @note do |notes_form| %>
+      <div class="notes-add">
+        <%=  notes_form.input :content, label: false, input_html: { name: "contact[notes_attributes][][content]"}, placeholder: 'Ecrire ici...' %>
 
-  <div class="validate-button">
-    <%= f.button :submit, 'OK', class: 'mt-5 absolute-create-contact' %>
+        <div class="tag-add">
+          <p class="placeholder-search">Tags</p>
+        </div>
+
+        <%= f.button :submit, 'OK Note', class: "btn btn-primary"%>
+      </div>
+    <% end %>
   </div>
 
-<% end %>
-
-
-<!-- NOTES -->
-
-
-
-
-<%  if false %>
-  <%= simple_form_for(@note) do |f| %>
-    <div class="notes empty d-flex justify-content-between flex-column">
-
-      <div class="notes-add">
-        <p class="placeholder-search"><%=  f.input :content, placeholder: 'Ecrire ici...' %></p>
-        <!-- <p class="placeholder-search">Ecrire ici...</p> -->
-      </div>
-
-      <div class="validate-button">
-        <%= f.button :submit, 'OK'%>
-      </div>
-
-      <div class="tag-add">
-        <p class="placeholder-search">Tags</p>
-      </div>
-    </div>
-  <% end %>
-<% end %>
 <!-- Button new note -->
 
   <div class="d-flex justify-content-center mt-3">
@@ -83,13 +63,26 @@
     </div>
   </div>
 
+
+<!-- RAPPELS -->
+
+  <div>
+    <p class="name ml-3">Rappels</p>
+  </div>
+
+  <%= f.simple_fields_for @alert do |alerts_form| %>
+    <%=  alerts_form.input :title, input_html: { name: "contact[alerts_attributes][][title]"}, placeholder: 'Ecrire ici...' %>
+    <%=  alerts_form.input :datetime, as: :string, required: false, input_html: { name: "contact[alerts_attributes][][datetime]", class: "datepicker"}, placeholder: 'Choisissez une date' %>
+    <%= f.button :submit, 'OK Rappel', class: "btn btn-primary"%>
+  <% end %>
+
+  <div class="validate-button">
+    <%= f.button :submit, 'OK', class: 'mt-5 absolute-create-contact' %>
+  </div>
+<% end %>
+
+
 <%= link_to "Retour", contacts_path, class: 'btn btn-primary mt-5' %>
-
-<!-- New Alert -->
-
-<div>
-  <p class="name ml-3">Rappels</p>
-</div>
 
 
 
