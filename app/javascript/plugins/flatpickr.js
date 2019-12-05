@@ -7,4 +7,5 @@ flatpickr(".datepicker", {
   altFormat: "l j F Y",
   position: 'below',
   locale: French,
+  inline: true,
 })
