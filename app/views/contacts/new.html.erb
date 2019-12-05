@@ -1,16 +1,81 @@
-<h1>Contacts#new</h1>
+<div class="d-flex justify-content-between header-new-rappel mb-3">
+    <p class="blue-text">Annuler</p>
+    <p class="blue-light-text">Nouveau contact</p>
+    <p class="blue-text"></p>
+</div>
+
+<!-- Formulaire infos de base -->
 
 <%= simple_form_for(@contact) do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.input :company %>
-  <%= f.input :location %>
-  <%= f.input :phone_number %>
-  <%= f.input :avatar %>
-  <%= f.input :avatar_cache, as: :hidden %>
-  <%= f.button :submit, 'Créer', class: 'btn btn-primary' %>
+
+<div class="liste-champs-add d-flex">
+
+  <div class="frame-picture">
+    <input class="form-control-file file optional" type="file" name="contact[avatar]" id="contact_avatar">
+    <%= f.input :avatar_cache, as: :hidden %>
+    <div class="text-center">
+      <p class="placeholder-search">Photo</p>
+    </div>
+  </div>
+
+  <div class="champs-texte-add d-flex">
+
+    <div class="champ-texte-add">
+      <p class="placeholder-search"><input class="required" placeholder="Prénom" type="text" name="contact[first_name]" id="contact_first_name"></p>
+      <p class="placeholder-search"><input class="required" placeholder="Nom" type="text" name="contact[last_name]" id="contact_last_name"></p>
+      <p class="placeholder-search"><input class="optional" placeholder="Ville" type="text" name="contact[location]" id="contact_location"></p>
+    </div>
+
+    <div class="champ-texte-add">
+      <p class="placeholder-search"><input class="email optional" placeholder="Email" type="email" name="contact[email]" id="contact_email"></p>
+      <p class="placeholder-search"><input class="tel optional" placeholder="Telephone" type="tel" name="contact[phone_number]" id="contact_phone_number"></p>
+      <p class="placeholder-search"><input class="optional" placeholder="Entreprise" type="text" name="contact[company]" id="contact_company"></p>
+    </div>
+
+  </div>
+
+</div>
+
+  <div class="validate-button">
+    <%= f.button :submit, 'OK', class: 'mt-5 absolute-create-contact' %>
+  </div>
+
 <% end %>
 
-<%= link_to "Retour", contacts_path, class: 'btn btn-primary' %>
+
+<!-- NOTES -->
+
+
+<div>
+  <p class="name ml-3">Notes</p>
+</div>
+
+<div class="notes empty d-flex justify-content-between flex-column">
+
+  <div class="notes-add">
+    <p class="placeholder-search">Ecrire ici...</p>
+  </div>
+
+  <div class="tag-add">
+    <p class="placeholder-search">Tags</p>
+  </div>
+</div>
+
+<!-- Button new note -->
+
+  <div class="d-flex justify-content-center mt-3">
+    <div class="md-btn d-flex align-items-center justify-content-center">
+      <i class="fas fa-plus"></i>
+    </div>
+  </div>
+
+<%= link_to "Retour", contacts_path, class: 'btn btn-primary mt-5' %>
+
+<!-- New Alert -->
+
+<div>
+  <p class="name ml-3">Rappels</p>
+</div>
+
+
 

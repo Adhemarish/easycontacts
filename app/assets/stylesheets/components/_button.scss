@@ -22,6 +22,40 @@
   border-radius:50%;
 }
 
+// Button TRASH
+
+.trash .md-btn {
+  background-color : #E72B2B;
+}
+
+// CREATE CONTACT
+
+.absolute-create-contact {
+  position:relative;
+  top:-217px;
+  left:366px;
+  color:#024A91;
+  font-weight:bold;
+  font-size:15px;
+}
+
+// EDIT CONTACT
+
+.validate-button {
+  position:relative;
+}
+
+.absolute {
+  position:absolute;
+  top:-390px;
+  right:20px;
+}
+
+button.md-btn.absolute {
+  background-color: #65CD5F;
+  border:none;
+}
+
 
 
 .btn-ghost {
@@ -41,32 +75,48 @@
 
 .btn-flat-signup a {
   color: white;
-  padding: 8px 24px;
+  padding: 15px 30px;
   margin: 10px;
   border-radius: 50px;
   background: #0582FF;
   transition: background 0.3s ease;
   font-weight: 700;
+  font-size: 18px;
 }
 
-.btn-flat-signup:hover {
+.btn-flat-signup a:hover {
   background: #D73D2B;
   color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  margin: 10px;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .btn-flat-login a {
   color: gray;
-  padding: 8px 24px;
+  padding: 15px 30px;
   margin: 10px;
   border-radius: 50px;
   background: white;
   transition: background 0.3s ease;
   font-weight: 700;
+  font-size: 18px;
 }
 
-.btn-flat-login:hover {
+.btn-flat-login a:hover {
   background: white;
   color: #0582FF;
+  padding: 15px 30px;
+  margin: 10px;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 
@@ -104,7 +154,7 @@
   font-weight: bold;
   font-size:14px;
   margin-left:25px;
-  padding-top:1px;
+  padding-top:4px;
 }
 
 
@@ -113,5 +163,6 @@
   font-weight: bold;
   font-size:14px;
   margin-left:20px;
+  padding-top:4px;
 }
 
