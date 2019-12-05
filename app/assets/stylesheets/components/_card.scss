@@ -1,4 +1,75 @@
+// NEW DESIGN
 
+.frame-picture {
+  width:70px;
+  height:70px;
+  border-radius:50%;
+}
+
+.card-category {
+  width:160px;
+  height:100px;
+  border-radius:5px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.category-notes {
+  position:absolute;
+  bottom:-80px;
+  left:30px;
+}
+
+.category-rappels {
+  position:absolute;
+  bottom:-80px;
+  left:200px;
+}
+
+.category-infos {
+  position:absolute;
+  bottom:-80px;
+  left:280px;
+}
+
+.category-notes.active {
+  background-color:#70B59E;
+}
+
+.category-rappels.active {
+  background-color:#F5B87C;
+}
+
+.category-infos.active {
+  background-color:#7DD0FF;
+}
+
+.card-category.inactive {
+  background-color:white;
+}
+
+.active .info-stats-text {
+  color: #DDEEFF;
+  font-weight:400px;
+  font-size:12px;
+}
+
+.active .info-category-text {
+  color: #DDEEFF;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.inactive .info-stats-text {
+  color: rgba(0,0,0,0.4);
+  font-weight:400px;
+  font-size:12px;
+}
+
+.inactive .info-category-text {
+  color: rgba(0,0,0,0.4);
+  font-weight:bold;
+  font-size:18px;
+}
 // CARD DASH CONTACT
 
 .contact-dash {
@@ -6,13 +77,6 @@
   border-bottom: 1px solid #EFECEC;
 }
 
-.frame-picture {
-  width:55px;
-  height:55px;
-  border: 1px solid #E7E0E0;
-  border-radius:50%;
-  margin-left:30px;
-}
 
 .contact-dash-infos .name-contact-dash {
   color: #024A91;
