@@ -1,4 +1,8 @@
 // Search dashboard
+.dash-searchbar {
+  display: flex;
+  justify-content: center;
+}
 
 .search-bar {
   width: 300px;
@@ -41,7 +45,7 @@ li {
 }
 
 ul.list-group {
-  width: 300px;
+  width: 320px;
 }
 
 // .list-group-item {
@@ -51,8 +55,11 @@ ul.list-group {
 // }
 
 .contact-name {
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  color: gray;
+  text-align: left;
+
 }
 
 // Search Signup
@@ -88,3 +95,35 @@ ul.list-group {
   font-size:18px;
 }
 
+
+.fa-bell.dash, .fa-sticky-note.dash {
+  font-size: 18px;
+}
+
+.fa-plus.dash {
+  font-size: 12px;
+}
+
+.list-group-item {
+  font-size: 16px;
+  width: 340px;
+  margin-bottom: 3px;
+  height: 60px;
+}
+
+// .fa-phone.dash {
+//   color: #0582FF;
+// }
+
+
+.welcome h3 {
+  font-family: tajawal;
+  font-weight: 700;
+  font-size: 30px;
+  color: #d73d2b;
+  text-align: center;
+}
+
+.timeline-dash {
+  width: 380px;
+}
