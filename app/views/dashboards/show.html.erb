@@ -1,19 +1,23 @@
+<div class="welcome p-3">
 <h3>Bienvenue <%=current_user.first_name.capitalize%> !</h3>
+</div>
 
-<div class="search-bar d-flex justify-content-between m-3">
-  <p class="ml-3  dashboard-tag">TAG</p>
-  <%= form_tag dashboard_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "placeholder-search",
-      placeholder: "Je cherche..."
-    %>
-  <% end %>
-  <i class="fas fa-search mr-2 mt-2"></i>
+<div class="dash-searchbar">
+  <div class="search-bar d-flex justify-content-center mb-3">
+    <p class="ml-3  dashboard-tag">TAG</p>
+    <%= form_tag dashboard_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "placeholder-search",
+        placeholder: "Je cherche..."
+      %>
+    <% end %>
+    <i class="fas fa-search mr-2 mt-2"></i>
+  </div>
 </div>
 
 
-<!-- <div class="timeline"> -->
+<div class="timeline-dash d-flex justify-content-center flex-column">
   <%  if @upcoming_contacts_alerts.any? %>
     <% @upcoming_contacts_alerts.each do |alert| %>
     <div class="rappel d-flex justify-content-between">
@@ -25,7 +29,7 @@
   <% else %>
     <p>Vous n'avez pas d'alerte à venir.</p>
   <% end %>
-<!-- </div> -->
+</div>
 
   <%if params[:query].present?  %>
 
@@ -33,14 +37,28 @@
       <ul class="list-group ml-3">
       <% @contacts.each do |contact| %>
         <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="mt-2">
-          <%= cl_image_tag contact.avatar, height: 40, width: 40, crop: :fill, class: "avatar" %>
+        <div class="mt-0">
+          <%= cl_image_tag contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
         </div>
-        <div class="contact-name">
+        <div class="contact-name ml-2 text-left">
           <%= contact.first_name%> <%=contact.last_name%>
         </div>
-        <div class="lg-btn ">
-          <i class="fas fa-phone ml-3 mt-3"></i>
+        <!-- <div class=" ">
+          <i class="fas fa-phone dash ml-3 mt-3"></i>
+        </div> -->
+        <div class="d-flex mr-3">
+          <%= link_to new_contact_note_path(contact) do%>
+          <div class="d-flex contact-dash-icon mr-3">
+            <i class="fas fa-bell dash ml-3"></i>
+            <i class="fas fa-plus dash"></i>
+          </div>
+          <% end %>
+          <%= link_to new_contact_alert_path(contact) do%>
+          <div class="d-flex contact-dash-icon ml-2">
+            <i class="fas fa-sticky-note dash"></i>
+            <i class="fas fa-plus dash" style="margin-left:3px;"></i>
+          </div>
+          <% end %>
         </div>
         </li>
         </div>
@@ -52,7 +70,7 @@
   <% end %>
 </div>
 
-<div class="btn-dash-add-contact">
+<div class="btn-dash-add-contact d-flex align-items-center">
   <%= link_to new_contact_path do%>
   <div class="lg-btn d-flex align-items-center justify-content-center" style="margin-right:120px;">
       <i class="fas fa-user-alt ml-1"></i>
