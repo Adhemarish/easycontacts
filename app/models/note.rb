@@ -6,4 +6,5 @@ class Note < ApplicationRecord
   has_many :tags, through: :note_tags
 
   validates :content, presence: true
+
 end
