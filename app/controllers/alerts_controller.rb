@@ -3,7 +3,7 @@ class AlertsController < ApplicationController
   before_action :set_alerts, only: [:new, :create, :index]
 
   def index
-    @all_alerts = @contact.alerts
+    @all_alerts = @contact.alerts.order(:datetime)
     @upcoming_alerts = set_alerts
   end
 
