@@ -2,7 +2,7 @@
 <h3>Bienvenue <%=current_user.first_name.capitalize%> !</h3>
 </div>
 
-<div class="dash-searchbar">
+<div class="dash-searchbar d-flex justify-content-center">
   <div class="search-bar d-flex justify-content-center mb-3">
 
 
@@ -22,12 +22,14 @@
   </div>
 </div>
 
-  <%if params[:query].present?  %>
 
+<div class="results-container-dash d-flex justify-content-center align-items-center flex-column">
+  <%if params[:query].present?  %>
+  <div class="results-container">
     <% if @contacts.any?%>
-      <ul class="list-group ml-3">
+      <ul class="list-group">
       <% @contacts.each do |contact| %>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li class="list-group-item d-flex justify-content-center align-items-center">
         <div class="mt-0">
           <%= cl_image_tag contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
         </div>
@@ -41,13 +43,13 @@
           <%= link_to new_contact_alert_path(contact) do%>
           <div class="d-flex contact-dash-icon mr-3">
             <i class="fas fa-bell dash ml-3"></i>
-            <i class="fas fa-plus dash"></i>
+            <i class="fas fa-plus-bell dash"></i>
           </div>
           <% end %>
           <%= link_to new_contact_note_path(contact) do%>
           <div class="d-flex contact-dash-icon ml-2">
             <i class="fas fa-sticky-note dash"></i>
-            <i class="fas fa-plus dash" style="margin-left:3px;"></i>
+            <i class="fas fa-plus-note dash" style="margin-left:3px;"></i>
           </div>
           <% end %>
         </div>
@@ -58,26 +60,29 @@
     <% else %>
       <p>Aucun contact ne correspond à votre recherche.</p>
     <% end %>
-  <% end %>
-<!-- </div> -->
-
-<div class="timeline-dash d-flex justify-content-center flex-column">
-  <%  if @upcoming_contacts_alerts.any? %>
-    <% @upcoming_contacts_alerts.each do |alert| %>
-    <div class="rappel d-flex justify-content-between">
-      <p class="rappel-contact pl-2 pt-2"><%= alert.contact.first_name.capitalize %> <%= alert.contact.last_name.upcase %></p>
-      <p class="rappel-title pl-2 pt-2"><%= alert.title %></p>
-      <p class="rappel-date pt-2 px-2"><%= I18n.l(alert.datetime, format: :short) %></p>
     </div>
-    <% end %>
-  <% else %>
-    <p>Vous n'avez pas d'alerte à venir.</p>
   <% end %>
 </div>
 
-<div class="btn-dash-add-contact d-flex align-items-center">
+<div class="timeline-container d-flex justify-content-center">
+  <div class="timeline-dash d-flex justify-content-center flex-column">
+    <%  if @upcoming_contacts_alerts.any? %>
+      <% @upcoming_contacts_alerts.first(3).each do |alert| %>
+      <div class="rappel d-flex justify-content-between">
+        <p class="rappel-contact pl-2 pt-2"><%= alert.contact.first_name.capitalize %> <%= alert.contact.last_name.upcase %></p>
+        <p class="rappel-title pl-2 pt-2"><%= alert.title %></p>
+        <p class="rappel-date pt-2 px-2"><%= I18n.l(alert.datetime, format: :short) %></p>
+      </div>
+      <% end %>
+    <% else %>
+      <p>Vous n'avez pas d'alerte à venir.</p>
+    <% end %>
+  </div>
+</div>
+
+<div class="btn-dash-add-contact d-flex justify-content-center">
   <%= link_to new_contact_path do%>
-  <div class="lg-btn d-flex align-items-center justify-content-center" style="margin-right:120px;">
+  <div class="lg-btn d-flex align-items-center justify-content-center">
       <i class="fas fa-user-alt ml-1"></i>
       <i class="fas fa-plus mb-3"></i>
   </div>
