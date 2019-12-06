@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :notes, only: [:edit, :update, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/components', to: 'pages#components'
-end
+  get '/dashboard/results', to: 'dashboards#index'
+ end
