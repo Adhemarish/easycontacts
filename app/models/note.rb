@@ -7,4 +7,5 @@ class Note < ApplicationRecord
 
   accepts_nested_attributes_for :tags
   validates :content, presence: true
+
 end

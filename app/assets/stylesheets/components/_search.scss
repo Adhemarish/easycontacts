@@ -1,26 +1,27 @@
 // Search dashboard
+.dash-searchbar {
+  display: flex;
+  justify-content: center;
+}
 
 .search-bar {
-  width: 300px;
+  width: 340px;
   // border:1px solid #D7D7D9;
   height:40px;
-
   border-radius:10px;
-
   box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
   background-color: #FEFBFB;
 }
 
 
-.tag {
-  color: #FD7E14;
+.dashboard-tag {
+  color: #0582FF;
   font-size:16px;
-
-  font-weight:bold;
+  font-weight:700;
   height:40px;
-  padding-top:12px;
+  padding-top:10px;
   padding-right:10px;
-  border-right:1px solid #024A91;
+  // border-right: 2px solid #D73D2B;
 }
 
 .margin-search {
@@ -33,16 +34,16 @@
   font-size:16px;
   font-weight: 500;
   border: none;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 
 li {
   list-style: none;
 }
 
-ul.list-group {
-  width: 300px;
-}
+// ul.list-group {
+//   width: 320px;
+// }
 
 // .list-group-item {
 //   display:flex;
@@ -51,8 +52,11 @@ ul.list-group {
 // }
 
 .contact-name {
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  color: gray;
+  text-align: left;
+
 }
 
 // Search Signup
@@ -86,4 +90,37 @@ ul.list-group {
   color: white;
   margin-left: 90px;
   font-size:18px;
+}
+
+
+.fa-bell.dash, .fa-sticky-note.dash {
+  font-size: 18px;
+}
+
+.fa-plus.dash {
+  font-size: 12px;
+}
+
+.list-group-item {
+  font-size: 16px;
+  width: 340px;
+  margin-bottom: 3px;
+  height: 60px;
+}
+
+// .fa-phone.dash {
+//   color: #0582FF;
+// }
+
+
+.welcome h3 {
+  font-family: tajawal;
+  font-weight: 700;
+  font-size: 30px;
+  color: #d73d2b;
+  text-align: center;
+}
+
+.timeline-dash {
+  width: 380px;
 }
