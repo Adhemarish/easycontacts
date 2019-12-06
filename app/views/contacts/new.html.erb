@@ -1,5 +1,7 @@
 <div class="d-flex justify-content-between header-new-rappel mb-3">
+    <%= link_to dashboard_path do%>
     <p class="blue-text">Annuler</p>
+    <% end %>
     <p class="blue-light-text">Nouveau contact</p>
     <p class="blue-text"></p>
 </div>
@@ -43,7 +45,7 @@
   <% end %>
 </div>
 
-<%= link_to "Retour", contacts_path, class: 'btn btn-primary mt-5' %>
+<%= link_to "Retour", dashboard_path, class: 'btn btn-primary mt-5' %>
 
 
 
