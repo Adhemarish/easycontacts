@@ -17,8 +17,9 @@
 
 .results-container-dash {
   background-color: $lightgray;
-  border-radius: 50px 50px 0  0;
+  border-radius: 38px 38px 0  0;
   padding-top: 10px;
+  height: 220px;
 }
 
 .timeline-dash {
@@ -48,6 +49,7 @@
   font-size: 14px;
   line-height: 17px;
   color: $inkblue;
+  border-right: solid 2px $orange;
 }
 
 .rappel-title-dash {
@@ -68,4 +70,8 @@
 
 .cont-global-dash {
   background-color: $lightgray;
+}
+
+.contact-name a:hover {
+  text-decoration: none;
 }
