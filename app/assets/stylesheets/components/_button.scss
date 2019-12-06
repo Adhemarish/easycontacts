@@ -1,13 +1,31 @@
 // NEW DESIGN
 
 .button-plus-footer {
-  position:absolute;
-  top:80px;
-  left:200px;
+  position:fixed;
+  bottom:20px;
+  margin-left:180px
 }
 
-.button-plus-footer .md-btn {
+.button-plus-footer .lg-btn {
   background-color: #F4B8AC;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+}
+
+.md-btn-notes {
+  height:38px;
+  width:38px;
+  border-radius:50%;
+  background-color: #FF4D4D;
+}
+
+.md-btn-notes-edit {
+  height:38px;
+  width:38px;
+  border-radius:50%;
+  background-color: #628AAE;
+  margin-bottom:5px;
 }
 
 

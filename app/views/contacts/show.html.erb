@@ -1,6 +1,5 @@
 <!-- Header -->
 
-
 <div class="position-relative">
 
   <div class="header-contact d-flex justify-content-center align-items-center">
@@ -15,7 +14,6 @@
       </div>
     </div>
   </div>
-
 
 
 <!-- buttons notes & alerts -->
@@ -48,15 +46,8 @@
     </div>
   </div> -->
 
-  <%= link_to  edit_contact_path(@contact) do  %>
-    <div class="card-category category-infos inactive d-flex border justify-content-between">
-      <%= image_tag('infos.svg', class: 'card-image-writing') %>
-      <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
-        <span class="info-category-text">Infos</span>
-        <span class="info-stats-text">Contact</span>
-      </div>
-    </div>
-  <% end %>
+
+
 
 </div>
 
@@ -69,22 +60,23 @@
 
 <!-- Button new note -->
 
-<div class="position-relative">
 
-  <div class="button-plus-footer">
-    <%= link_to new_contact_note_path(@contact) do %>
-        <div class="md-btn d-flex align-items-center justify-content-center">
-          <i class="fas fa-plus"></i>
-        </div>
-    <% end %>
-  </div>
+
 
   <div class="footer-contact d-flex justify-content-around">
     <%= image_tag('pinkphone.svg', class: 'card-image-footer') %>
     <%= image_tag('pinkmail.svg', class: 'card-image-footer') %>
   </div>
 
-</div>
+  <div class="button-plus-footer">
+    <%= link_to new_contact_note_path(@contact) do %>
+        <div class="lg-btn d-flex align-items-center justify-content-center">
+          <i class="fas fa-plus"></i>
+        </div>
+    <% end %>
+  </div>
+
+
 
 
 
