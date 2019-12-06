@@ -1,5 +1,14 @@
 class DashboardsController < ApplicationController
- before_action :set_alerts_dashboard, only: [:show]
+  before_action :set_alerts_dashboard, only: [:show]
+
+  def index
+    if params[:query].present?
+      sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
+      @contacts = Contact.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @contacts = []
+    end
+  end
 
   def show
     if params[:query].present?
