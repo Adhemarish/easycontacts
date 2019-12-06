@@ -41,6 +41,8 @@
   height: 56.72px;
   background-color: white;
   margin-bottom: 2px;
+  padding-top: 15px;
+  padding-right: 5px;
 }
 
 
@@ -75,3 +77,20 @@
 .contact-name a:hover {
   text-decoration: none;
 }
+
+.list-group-item-dash {
+  font-size: 16px;
+  width: 340px;
+  margin-bottom: 3px;
+  height: 60px;
+  border-radius: 38px  0 38px 0;
+  background-color: white;
+}
+
+.dash-links {
+  display: flex;
+  justify-content: right;
+
+}
+
+
