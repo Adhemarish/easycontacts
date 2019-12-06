@@ -20,7 +20,7 @@
 
   <%= link_to contact_path(@contact) do %>
     <div class="card-category category-notes inactive d-flex justify-content-between">
-      <%= image_tag('writing.svg', class: 'card-image-writing') %>
+      <%= image_tag('writing-green.svg', class: 'card-image-writing') %>
 
       <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-4 pb-2">
         <span class="info-category-text">Notes</span>
@@ -29,17 +29,7 @@
     </div>
   <% end %>
 
-  <%= link_to  edit_contact_path(@contact) do  %>
-    <div class="card-category category-infos inactive d-flex border justify-content-between">
-      <%= image_tag('infos.svg', class: 'card-image-writing') %>
-      <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
-        <span class="info-category-text">Infos</span>
-        <span class="info-stats-text">Contact</span>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="card-category category-rappels active d-flex border justify-content-between">
+  <div class="card-category category-rappels active d-flex justify-content-between">
     <%= image_tag('rappel-blanc.svg', class: 'card-image-writing') %>
 
     <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
@@ -61,10 +51,23 @@
   <div class="mb-5">
     <%  if @upcoming_alerts.any? %>
       <% @upcoming_alerts.each do |alert| %>
-      <div class="rappel d-flex justify-content-between">
-        <p class="rappel-title pl-2 pt-2"><%= alert.title %></p>
-        <p class="rappel-date pt-2 px-2"><%= I18n.l(alert.datetime, format: :short) %></p>
+
+      <div class="rappels d-flex">
+
+        <div class="rappels-text d-flex">
+
+          <div>
+            <span class="rappels-text-date d-flex align-items-center  justify-content-center"><%= alert.datetime.strftime("%d %B").downcase %></span>
+          </div>
+
+          <div>
+            <span class="rappels-text-content  d-flex align-items-center"><%= alert.title %></span>
+          </div>
+
+        </div>
+
       </div>
+
       <% end %>
     <% else %>
       <p>"Vous n'avez pas d'alerte à venir."</p>
@@ -74,19 +77,20 @@
 
 <!-- footer -->
 
-<div class="position-relative">
-
-  <div class="button-plus-footer">
-    <%= link_to new_contact_alert_path(@contact) do %>
-        <div class="md-btn d-flex align-items-center justify-content-center">
-          <i class="fas fa-plus"></i>
-        </div>
-    <% end %>
-  </div>
 
   <div class="footer-contact d-flex justify-content-around">
     <%= image_tag('pinkphone.svg', class: 'card-image-footer') %>
     <%= image_tag('pinkmail.svg', class: 'card-image-footer') %>
   </div>
 
-</div>
+  <div class="button-plus-footer">
+    <%= link_to new_contact_alert_path(@contact) do %>
+        <div class="lg-btn d-flex align-items-center justify-content-center">
+          <i class="fas fa-plus"></i>
+        </div>
+    <% end %>
+  </div>
+
+
+
+
