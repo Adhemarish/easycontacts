@@ -14,8 +14,8 @@ class NotesController < ApplicationController
     @note.contact = @contact
     if @note.save
       redirect_to contact_path(@contact)
-    else
-      render :new
+    # else
+    #   redirect_to new_contact_note_path(@contact)
     end
   end
 

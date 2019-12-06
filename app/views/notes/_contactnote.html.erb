@@ -1,8 +1,19 @@
 <%= simple_form_for [ contact, note ],
-  wrapper: :inline_form, wrapper_mappings: { check_boxes:   :horizontal_collection } do |f| %>
+  wrapper: :inline_form,
+  wrapper_mappings: { check_boxes:   :horizontal_collection } do |f| %>
   <%= f.input_field :content, as: :text %>
 
-      <%= f.association :tags, collection: tags, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline %>
-      <%= f.button :submit, 'Sauvegarder', class: 'btn btn-primary' %>
+  <!-- ATTENTION AVANT DE TOUCHER AUX 3 LIGNES SUIVANTES -->
+  <div class="form-group row check_boxes optional note_tags">
+    <!-- <label class="col-sm-3 col-form-label pt-0 check_boxes optional"></label> SUPP OK-->
+    <!-- <div class="col-sm-9" id="tagsCheckboxes">
+      <-- FIN -->
+      <% #current_user.tags.each do |un_tag| %>
+        <%#= render 'tags/checkbox', tag: un_tag %>
+      <% #end %>
+    <!-- </div> -->
+  <!-- </div> --> -->
+  <%#= f.association :tags, collection: tags, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline, id: "tagCheckboxes", class: "TOTO" %>
+  <%#= f.button :submit, 'Sauvegarder', class: 'btn btn-primary' %>
 <% end %>
 

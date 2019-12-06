@@ -8,20 +8,26 @@ class TagsController < ApplicationController
     logger.debug "-----------------------CREATE TAG-------------"
     @tag = Tag.new(tag_params)
     @tag.user = current_user
+    @checked = "checked"
+
     if @tag.save
       respond_to do |format|
         format.js
       end
     end
-    #redirect_to 'New note',
+    #redirect_to ?
   end
 
-
-    # if @tag.save
-    #   redirect_to contact_path(@contact)
-    # else
-    #   render :edit
-    # end
+  def destroy
+    logger.debug "-----------------------DELETE TAG-------------"
+    @tag = Tag.find(params[:id])
+    if @tag.destroy
+      respond_to do |format|
+        format.js
+      end
+    # redirect_to ?
+    end
+  end
 
   private
 

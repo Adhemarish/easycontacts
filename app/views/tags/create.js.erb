@@ -1,6 +1,21 @@
-function insertToCheckbox = ()  {
-  const checkbox = document.getElementById('container-tag')
-  console.log(checkbox)
+const checkboxList = document.getElementById('tagsCheckboxes')
+
+function insertToCheckbox() {
+  const checkboxList = document.getElementById('tagsCheckboxes')
+  checkboxList.insertAdjacentHTML('beforeend', '<%= j render "tags/checkbox", tag: @tag, checked: "checked" %>');
 }
+
+function refreshForm(innerHTML) {
+  const newReviewForm = document.getElementById('tag_label')
+  newReviewForm.value = ""
+}
+
+if (checkboxList) {
+  insertToCheckbox()
+  refreshForm()
+}
+
+
+
 
 
