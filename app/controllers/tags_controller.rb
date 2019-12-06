@@ -9,6 +9,7 @@ class TagsController < ApplicationController
     @tag = Tag.new(tag_params)
     @tag.user = current_user
     @checked = "checked"
+    #@tag_color = Tag::COULEURS.sample
 
     if @tag.save
       respond_to do |format|
