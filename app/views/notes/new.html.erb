@@ -44,10 +44,10 @@
   <% end %>
   <h5>Vous pouvez créer de nouveaux tags ici</h5>
   <div id='container-tag'> <!-- ID IMPORTANT / JS -->
-  <%= simple_form_for(@tag, remote: true) do |ff| %>
+  <%= simple_form_for @tag, remote: true do |ff| %>
   <%= ff.error_notification message: "On ne peut pas supprimer un tag utilisé" %>
   <%= ff.text_field :label %>
-  <%= ff.button :submit, 'Valider Tag', class: 'btn btn-secondary'  %>
+  <%= ff.button :submit, 'Tag +', class: "btn btn-secondary"  %>
   <% end %>
   </div>
 </div>
