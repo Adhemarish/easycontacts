@@ -59,3 +59,23 @@
       <p>"Vous n'avez pas d'alerte à venir."</p>
     <% end %>
   </div>
+
+
+<!-- footer -->
+
+<div class="position-relative">
+
+  <div class="button-plus-footer">
+    <%= link_to new_contact_alert_path(@contact) do %>
+        <div class="md-btn d-flex align-items-center justify-content-center">
+          <i class="fas fa-plus"></i>
+        </div>
+    <% end %>
+  </div>
+
+  <div class="footer-contact d-flex justify-content-around">
+    <%= image_tag('pinkphone.svg', class: 'card-image-footer') %>
+    <%= image_tag('pinkmail.svg', class: 'card-image-footer') %>
+  </div>
+
+</div>
