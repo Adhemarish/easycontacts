@@ -5,22 +5,58 @@
     <% end %>
     <p class="blue-light-text">Nouvelle note</p>
 
-    <%= link_to contact_path(@contact) do %>
-    <p class="blue-text"></p>
+
+    <%= link_to edit_contact_path(@contact) do %>
+    <p class="blue-text"><%= link_to 'Retour', contact_path(@contact) %> </p>
     <% end %>
 </div>
 
-<!-- Prenom & NOM  -->
+<div class ="container">
+  <% @contact.notes.each do |note| %>
+    <div class="row">
+      <%#= render 'notes/contenttag', note: une_note, tags: une_note.tags %>
+      <p class="notes-text"><%= note.content %></p>
+      <div class="d-flex tag-add-full tag-list ">
+        <% note.tags.each do |t| %>
+          <div class="tag-bis small-tag red-tag">
+          <p class="margin-tag" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%#= render 'contactnote', contact: @contact, note: @note, tags: @tags %>
+<div>
+  <%= simple_form_for [ @contact, @note ],
+    wrapper: :inline_form,
+    wrapper_mappings: { check_boxes:   :horizontal_collection } do |f| %>
+  <%= f.error_notification %>
+  <%= f.input_field :content, as: :text %>
 
-<div class="text-center mt-2 mb-4">
-  <p class="name"><%= @contact.first_name %> <%= @contact.last_name.upcase %></p>
+  <div class="col-sm-12" id="tagsCheckboxes"> <!--ID IMPORTANT / JS -->
+    <% current_user.tags.each do |un_tag| %>
+      <!-- partial pour l'appel AJAX -->
+      <%= render 'tags/checkbox', tag: un_tag, checked: @checked %>
+    <% end %>
+  </div>
+  <%= f.button :submit, 'Sauver tout', class: 'btn btn-primary'%>
+  <% end %>
+  <h5>Vous pouvez créer de nouveaux tags ici</h5>
+  <div id='container-tag'> <!-- ID IMPORTANT / JS -->
+  <%= simple_form_for(@tag, remote: true) do |ff| %>
+  <%= ff.error_notification message: "On ne peut pas supprimer un tag utilisé" %>
+  <%= ff.text_field :label %>
+  <%= ff.button :submit, 'Valider Tag', class: 'btn btn-secondary'  %>
+  <% end %>
+  </div>
 </div>
 
 
 
-<!-- New Note -->
 
 
-<%= render 'contactnote', contact: @contact, note: @note, tags: @tags %>
-
+  <!-- POUR FATTEN -->
+    <%#= f.association :tags, collection: tags, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline%>
+    <%#= f.button :submit, 'Sauvegarder', class: 'btn btn-primary' %>
 
