@@ -16,7 +16,7 @@ class AlertsController < ApplicationController
     @alert.contact = @contact
 
     if @alert.save
-      redirect_to dashboard_path
+      redirect_to contact_alerts_path(@contact)
     else
       render :new
     end

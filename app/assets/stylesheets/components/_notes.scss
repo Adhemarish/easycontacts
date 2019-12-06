@@ -1,11 +1,38 @@
-// EMPTY NOTES
+// NEW DESIGN
 
 .notes {
-  margin: 5px 15px;
-  border-radius:8px;
-  background-color: #FEFBFB;
-  // box-shadow: 1px 2px 6px rgba(0,0,0,0.2)
+  margin: 5px 20px;
+  margin-bottom:10px;
+  background: #FFFFFF;
+  box-shadow: 0px 3px 22px rgba(0, 0, 0, 0.05);
+  border-radius: 15px 0px;
 }
+
+.notes-text {
+  margin: 0px 25px;
+  padding-top:8px;
+  width:275px;
+}
+
+.notes-text-date {
+  font-weight: 500;
+  font-size: 10px;
+  color: #BEBEBE;
+  padding-bottom:2px;
+}
+
+.notes-text-content {
+  font-weight: 300;
+  font-size: 14px;
+  color: rgba(0,0,0,0.7)
+}
+
+.notes-button-edit {
+  padding-right:20px;
+}
+
+// EMPTY NOTES
+
 
 .empty {
   height: 80px;
@@ -78,17 +105,4 @@ textarea#note_content {
 .tag-list {
   padding-bottom:8px;
   padding-top: 8px;
-}
-
-p.notes-text {
-  margin-bottom:0px;
-}
-
-.notes-text {
-  font-size:18px;
-  width:290px;
-  text-align:justify;
-  // border: 1px solid black;
-  padding-top: 7px;
-  padding-left:3px;
 }
