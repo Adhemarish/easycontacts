@@ -1,8 +1,12 @@
 <!-- Header -->
 
+
 <div class="position-relative">
 
   <div class="header-contact d-flex justify-content-center align-items-center">
+    <%= link_to dashboard_path do %>
+          <%= image_tag('house-empty.svg', class: 'btn-home') %>
+        <% end %>
     <div class="header-photo px-5">
       <%= cl_image_tag @contact.avatar, height: 200, width: 200, crop: :fill, class: "frame-picture" %>
       <div>
@@ -11,6 +15,7 @@
       </div>
     </div>
   </div>
+
 
 
 <!-- buttons notes & alerts -->
@@ -24,13 +29,15 @@
     </div>
   </div>
 
-  <div class="card-category category-rappels inactive d-flex border justify-content-between">
-    <%= image_tag('rappel.svg', class: 'card-image-writing') %>
-    <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
-      <span class="info-category-text">Rappels</span>
-      <span class="info-stats-text">14 rappels</span>
+  <%= link_to  contact_alerts_path(@contact) do  %>
+    <div class="card-category category-rappels inactive d-flex border justify-content-between">
+      <%= image_tag('rappel.svg', class: 'card-image-writing') %>
+      <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
+        <span class="info-category-text">Rappels</span>
+        <span class="info-stats-text">14 rappels</span>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <!-- JS A FAIRE POUR LE DISPOSER A COTE -->
  <!--  <div class="card-category category-infos inactive d-flex border justify-content-between">
@@ -40,6 +47,16 @@
       <span class="info-stats-text">Contact</span>
     </div>
   </div> -->
+
+  <%= link_to  edit_contact_path(@contact) do  %>
+    <div class="card-category category-infos inactive d-flex border justify-content-between">
+      <%= image_tag('infos.svg', class: 'card-image-writing') %>
+      <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
+        <span class="info-category-text">Infos</span>
+        <span class="info-stats-text">Contact</span>
+      </div>
+    </div>
+  <% end %>
 
 </div>
 
@@ -69,9 +86,6 @@
 
 </div>
 
-
-
-<!-- Footer -->
 
 
 
