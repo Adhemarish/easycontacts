@@ -1,7 +1,9 @@
 
+
   <% if notes.empty? %>
     <p>Pas de notes</p>
   <% else %>
+
 
     <div class="d-flex justify-content-between flex-column">
       <% notes.each do |une_note|%>
@@ -22,10 +24,10 @@
             <%= link_to 'Editer', edit_note_path(une_note)%>
           </div>
 
-          <div class="">
-            <%= link_to 'Supprimer', note_path(une_note), method: :delete %>
-          </div>
+        <div class="">
+          <%= link_to 'Supprimer', note_path(une_note), method: :delete %>
         </div>
+
       </div>
     <% end %>
   </div>
