@@ -43,70 +43,36 @@
 
 </div>
 
-
-<br>
-<br>
-<br>
-<br>
-
 <!-- Notes -->
 
-<div class="notes">
-
-  <div class="notes-text d-flex flex-column">
-    <span class="notes-text-date">27 décembre 2020</span>
-    <span class="notes-text-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut </span>
-  </div>
-
-  <div class="tags d-flex">
-    <div class="tag-bis">
-      <span class="tag-text">Javascript</span>
-    </div>
-
-    <div class="tag-bis ">
-      <span class="tag-text">Javascript</span>
-    </div>
-
-    <div class="tag-bis">
-      <span class="tag-text">Javascript</span>
-    </div>
-
-    <div class="tag-bis ">
-      <span class="tag-text">Javascript</span>
-    </div>
-
-  </div>
-
-</div>
-
-<br>
-<br>
-<br>
-
+<br><br><br><br>
 
 <%= render 'contacts/contactnotes', contact: @contact, notes: @notes %>
 
+
 <!-- Button new note -->
 
-<%= link_to new_contact_note_path(@contact) do %>
-  <div class="d-flex justify-content-center mt-5">
-    <div class="md-btn d-flex align-items-center justify-content-center">
-      <i class="fas fa-plus"></i>
-    </div>
+<div class="position-relative">
+
+  <div class="button-plus-footer">
+    <%= link_to new_contact_note_path(@contact) do %>
+        <div class="md-btn d-flex align-items-center justify-content-center">
+          <i class="fas fa-plus"></i>
+        </div>
+    <% end %>
   </div>
-<% end %>
 
-<div class="d-flex justify-content-between header-new-rappel">
+  <div class="footer-contact d-flex justify-content-around">
+    <%= image_tag('pinkphone.svg', class: 'card-image-footer') %>
+    <%= image_tag('pinkmail.svg', class: 'card-image-footer') %>
+  </div>
 
-    <%= link_to dashboard_path do %>
-      <p class="blue-text">Dashboard</p>
-    <% end %>
-    <p class="blue-light-text">Contact</p>
-
-    <%= link_to edit_contact_path(@contact) do %>
-    <p class="blue-text">Modifier</p>
-    <% end %>
 </div>
+
+
+
+<!-- Footer -->
+
 
 
 
