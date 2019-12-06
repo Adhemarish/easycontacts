@@ -5,15 +5,67 @@
 
 // #FFB671
 
-.btn-dash-add-contact {
+.lg-btn.dash {
   margin: 30px 0;
+  background-color: $pink;
 }
 
 
-.fa-sticky-note.dash, .fa-plus-note {
-  color: #58B79D;
+.searchbar.fa-search {
+  color: $inkblue;
 }
 
-.fa-plus-bell, .fa-bell.dash {
-  color: #FEB5A9;
+.results-container-dash {
+  background-color: $lightgray;
+  border-radius: 50px 50px 0  0;
+  padding-top: 10px;
+}
+
+.timeline-dash {
+  background-color: $lightgray;
+  width: 317px;
+}
+
+.dash-darkblue {
+  background-color: $darkblue;
+}
+
+.fa-plus, .fa-bell {
+  font-size: 12px;
+}
+
+.rappel-dash {
+  border-radius: 38px  0 38px 0;
+  width: 317px;
+  height: 56.72px;
+  background-color: white;
+  margin-bottom: 2px;
+}
+
+
+.rappel-date-dash {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: $inkblue;
+}
+
+.rappel-title-dash {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.rappel-contact-dash {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.timeline-container {
+  background-color: $lightgray;
+}
+
+.cont-global-dash {
+  background-color: $lightgray;
 }
