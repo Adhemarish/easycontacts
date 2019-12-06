@@ -16,7 +16,8 @@
 <!-- buttons notes & alerts -->
 
   <div class="card-category category-notes active d-flex justify-content-between">
-    <img class="pt-3" src="../../assets/images/writing.svg" alt="writing">
+    <%= image_tag('writing.svg', class: 'card-image-writing') %>
+
     <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-4 pb-2">
       <span class="info-category-text">Notes</span>
       <span class="info-stats-text">12 notes</span>
@@ -24,8 +25,8 @@
   </div>
 
   <div class="card-category category-rappels inactive d-flex border justify-content-between">
-    <img class="pt-3" src="../../assets/images/rappel.svg" alt="rappels">
-    <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-4 pb-2">
+    <%= image_tag('rappel.svg', class: 'card-image-writing') %>
+    <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
       <span class="info-category-text">Rappels</span>
       <span class="info-stats-text">14 rappels</span>
     </div>
@@ -43,19 +44,45 @@
 </div>
 
 
-
 <br>
 <br>
 <br>
 <br>
-
-<!-- Rappel -->
-
-<div class="">
-  <p class="name-rappel">Liste des notes</p>
-</div>
 
 <!-- Notes -->
+
+<div class="notes">
+
+  <div class="notes-text d-flex flex-column">
+    <span class="notes-text-date">27 décembre 2020</span>
+    <span class="notes-text-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut </span>
+  </div>
+
+  <div class="tags d-flex">
+    <div class="tag-bis">
+      <span class="tag-text">Javascript</span>
+    </div>
+
+    <div class="tag-bis ">
+      <span class="tag-text">Javascript</span>
+    </div>
+
+    <div class="tag-bis">
+      <span class="tag-text">Javascript</span>
+    </div>
+
+    <div class="tag-bis ">
+      <span class="tag-text">Javascript</span>
+    </div>
+
+  </div>
+
+</div>
+
+<br>
+<br>
+<br>
+
 
 <%= render 'contacts/contactnotes', contact: @contact, notes: @notes %>
 
