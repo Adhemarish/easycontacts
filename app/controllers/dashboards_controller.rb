@@ -1,5 +1,7 @@
 class DashboardsController < ApplicationController
+
   before_action :set_alerts_dashboard, only: [:show]
+  
 
   def index
     if params[:query].present?
@@ -25,4 +27,9 @@ class DashboardsController < ApplicationController
     @contacts_alerts = current_user.alerts
     @upcoming_contacts_alerts = @contacts_alerts.where('datetime >= ?', Date.today).order(:datetime)
   end
+
+  def set_tags_dashboard
+    @tags = current_user.tags
+  end
+
 end

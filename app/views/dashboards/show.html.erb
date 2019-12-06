@@ -5,9 +5,11 @@
 <div class="dash-searchbar">
   <div class="search-bar d-flex justify-content-center mb-3">
 
+
     <%#= link_to dashboard_tag_path) do%>
       <p class="ml-3  dashboard-tag">TAG</p>
       <%# end %>
+
 
     <%= form_tag dashboard_path, method: :get do %>
       <%= text_field_tag :query,
@@ -19,8 +21,6 @@
     <i class="fas fa-search mr-2 mt-2"></i>
   </div>
 </div>
-
-
 
   <%if params[:query].present?  %>
 
