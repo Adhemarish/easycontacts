@@ -11,9 +11,10 @@ Rails.application.routes.draw do
     resources :alerts, only: [:new, :create, :index]
   end
 
-  resources :tags, only: [:create] # TODO new
+  resources :tags, only: [:create, :destroy]
 
   resources :notes, only: [:edit, :update, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/components', to: 'pages#components'
-end
+  get '/dashboard/results', to: 'dashboards#index'
+ end

@@ -10,7 +10,6 @@ class Contact < ApplicationRecord
   validates :last_name, presence: true
   validates :email, format: { with: /\A.*@.*\.[a-z]{2,3}\z/ }
 
-
   include PgSearch::Model
   pg_search_scope :search_any_word,
 

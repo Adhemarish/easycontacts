@@ -1,16 +1,31 @@
 class TagsController < ApplicationController
-  def new
-    @tag = Tag.new
-  end
+
+  # def new
+  #   @tag = Tag.new
+  # end
 
   def create
+    logger.debug "-----------------------CREATE TAG-------------"
     @tag = Tag.new(tag_params)
-    @tag.user_id = current_user.id
+    @tag.user = current_user
+    @checked = "checked"
 
     if @tag.save
-      redirect_to contact_path(@contact)
-    else
-      render :edit
+      respond_to do |format|
+        format.js
+      end
+    end
+    #redirect_to ?
+  end
+
+  def destroy
+    logger.debug "-----------------------DELETE TAG-------------"
+    @tag = Tag.find(params[:id])
+    if @tag.destroy
+      respond_to do |format|
+        format.js
+      end
+    # redirect_to ?
     end
   end
 

@@ -1,0 +1,56 @@
+<div class="dash-searchbar">
+  <div class="search-bar d-flex justify-content-center mb-3">
+
+    <%#= link_to dashboard_tag_path) do%>
+      <p class="ml-3  dashboard-tag">TAG</p>
+      <%# end %>
+
+    <%= form_tag dashboard_results_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "placeholder-search",
+        placeholder: "Je cherche..."
+      %>
+    <% end %>
+    <i class="fas fa-search mr-2 mt-2"></i>
+  </div>
+</div>
+
+<div class="index-dash">
+  <%if params[:query].present?  %>
+    <% if @contacts.any?%>
+      <ul class="list-group ml-3">
+      <% @contacts.each do |contact| %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="mt-0">
+          <%= cl_image_tag contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
+        </div>
+        <div class="contact-name ml-2 text-left">
+          <%= contact.first_name%> <%=contact.last_name%>
+        </div>
+        <!-- <div class=" ">
+          <i class="fas fa-phone dash ml-3 mt-3"></i>
+        </div> -->
+        <div class="d-flex mr-3">
+          <%= link_to new_contact_note_path(contact) do%>
+          <div class="d-flex contact-dash-icon mr-3">
+            <i class="fas fa-bell dash ml-3"></i>
+            <i class="fas fa-plus dash"></i>
+          </div>
+          <% end %>
+          <%= link_to new_contact_alert_path(contact) do%>
+          <div class="d-flex contact-dash-icon ml-2">
+            <i class="fas fa-sticky-note dash"></i>
+            <i class="fas fa-plus dash" style="margin-left:3px;"></i>
+          </div>
+          <% end %>
+        </div>
+        </li>
+        </div>
+      <% end %>
+      </ul>
+    <% else %>
+      <p>Aucun contact ne correspond à votre recherche.</p>
+    <% end %>
+  <% end %>
+</div>

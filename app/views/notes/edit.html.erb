@@ -1,10 +1,19 @@
 <h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
 
 <div class="container">
-  <div class="row ">
-    <%= render 'notes/formcontent', contact: @contact, note: @note %>
-  </div>
+  <!-- <div class="row "> -->
+    <%#= render 'notes/formcontent', contact: @contact, note: @note %>
+    <!-- <div class="form-group"> -->
+    <%= simple_form_for @note,  wrapper: :inline_form,
+      html: { class: "form-inline" }  do |f| %>
+    <%= f.input :content, label: false%>
+    <%= f.button :submit, 'Sauvegarder', class: 'btn btn-primary'%>
+    <% end %>
+    <!-- </div> -->
+
+  <!-- </div> -->
 </div>
 
 <%= link_to 'Retour', contact_path(@contact) %>
 
+<!-- url: note_path(@note), -->

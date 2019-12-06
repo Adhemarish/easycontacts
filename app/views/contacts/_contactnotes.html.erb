@@ -5,21 +5,31 @@
   <% else %>
 
 
-    <% notes.each do |une_note|%>
-
-
-        <div class="notes-add" data-note-id="<%= une_note.id %>" >
-            <%= render 'notes/contenttag', note: une_note, tags: une_note.tags %>
+    <div class="d-flex justify-content-between flex-column">
+      <% notes.each do |une_note|%>
+        <div class="notes d-flex">
+        <p class="notes-text"><%= une_note.content %></p>
+          <div class="notes-add" data-note-id="<%= une_note.id %>" >
+            <%#= render 'notes/contenttag', note: une_note, tags: une_note.tags %>
+            <div class="d-flex tag-add-full tag-list ">
+              <% une_note.tags.each do |t| %>
+              <div class="tag-bis small-tag red-tag">
+                <p class="margin-tag" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
+              </div>
+            <% end %>
+          </div>
         </div>
-
-        <div class="">
-          <%= link_to 'Editer', edit_note_path(une_note)%>
-        </div>
+        <div class="mt-2">
+          <div class="">
+            <%= link_to 'Editer', edit_note_path(une_note)%>
+          </div>
 
         <div class="">
           <%= link_to 'Supprimer', note_path(une_note), method: :delete %>
         </div>
 
+      </div>
     <% end %>
-  <% end %>
+  </div>
+<% end  %>
 
