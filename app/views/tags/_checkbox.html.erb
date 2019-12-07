@@ -1,19 +1,11 @@
-<!--  FAIRE ATTENTION AVANT DE MODIFIER CETTE PARTIAL -->
-<div class=" tag-bis large-tag form-check-inline <%= tag.color %>" data-checkbox-id="<%= tag.id %>">
-  <input hidden class="tag-bis" type="checkbox" value="<%= tag.id %>" name="note[tag_ids][]" id="note_tag_ids_<%=tag.id%>" <%= checked %>>
-  <label  class="tag-text " for="note_tag_ids_<%=tag.id%>"><%= tag.label %></label>
-  <%= link_to 'X ',  tag_path(tag), method: :delete, remote: true%>
+
+<div class="form-check form-check-inline <%= tag.color %>" data-checkbox-id="<%= tag.id %>">
+  <input hidden type="checkbox" value="<%= tag.id %>" name="note[tag_ids][]" id="note_tag_ids_<%=tag.id%>" <%= checked %>>
+  <label  for="note_tag_ids_<%=tag.id%>"><%= tag.label %></label>
+  <div>
+    <%= link_to tag_path(tag), method: :delete, remote: true do %>
+    <p class="cross-tag">X</p>
+    <% end %>
+  </div>
 </div>
 
-<!-- form-check -->
-<!-- form-check-input check_boxes optional  -->
-
-<!-- class="form-check-label collection_check_boxes" -->
-
-<!-- <div class="tags d-flex" data-note-id="<%#= une_note.id %>" >
-    <%# une_note.tags.each do |t| %>
-    <div class="tag-bis <%#= t.color %>">
-      <p class="tag-text " data-tag-id = "<%#= t.id %>" ><%#= t.label %></p>
-    </div>
-  <%# end %>
-</div> -->
