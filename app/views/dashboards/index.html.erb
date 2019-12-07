@@ -8,7 +8,7 @@
     <%= form_tag dashboard_results_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "placeholder-search",
+        class: "placeholder-search search-name",
         placeholder: "Je cherche..."
       %>
     <% end %>

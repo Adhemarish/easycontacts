@@ -1,7 +1,12 @@
 class DashboardsController < ApplicationController
 
   before_action :set_alerts_dashboard, only: [:show]
-  
+  before_action :set_tags_dashboard, only: [:search]
+
+  def search # set_tags_dashboard
+    if params[:query].present?
+    end
+  end
 
   def index
     if params[:query].present?

@@ -3,10 +3,11 @@
 <div class="position-relative">
 
   <div class="header-contact d-flex justify-content-center align-items-center">
-    <%= link_to dashboard_path do %>
+    <span>
+      <%= link_to dashboard_path do %>
       <%= image_tag('house-empty.svg', class: 'btn-home') %>
     <% end %>
-
+    </span>
     <div class="header-photo px-5">
       <%= cl_image_tag @contact.avatar, height: 200, width: 200, crop: :fill, class: "frame-picture" %>
       <div>
@@ -24,7 +25,13 @@
 
       <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-4 pb-2">
         <span class="info-category-text">Notes</span>
-        <span class="info-stats-text">12 notes</span>
+        <span class="info-stats-text">
+          <% if %>
+          <% @contact.notes.count == 0 %>
+          <%= 0 %>
+          <% else %>
+          <%= @contact.notes.count %> notes</span>
+          <% end %></span>
       </div>
     </div>
   <% end %>
@@ -34,7 +41,13 @@
 
     <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
       <span class="info-category-text">Rappels</span>
-      <span class="info-stats-text">14 rappels</span>
+      <span class="info-stats-text">
+        <% if %>
+        <% @contact.alerts.count == 0 %>
+        <%= 0 %>
+        <% else %>
+        <%= @contact.alerts.count %>
+        <% end %> rappels</span>
     </div>
   </div>
 </div>

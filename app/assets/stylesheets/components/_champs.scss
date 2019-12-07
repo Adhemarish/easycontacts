@@ -78,57 +78,17 @@ input#contact_job {
   font-size:20px;
 }
 
+// NEW NOTE
 
-
-
-// ADD CONTACT
-
-.champs-texte-add {
-  // border:1px solid black;
+.new-note-champ {
   width:300px;
-}
-
-.liste-champs-add .frame-picture {
-  margin-left:10px;
-  margin-right:10px;
-}
-
-.champ-texte-add.fiche {
-  margin-bottom:20px;
-}
-
-p.placeholder-search {
-  margin-bottom:3px;
-}
-
-
-.champ-texte-add .placeholder-search {
-  width: 130px;
-  color: rgba(0,0,0,0.6);
-  border-bottom: 1px solid #C2CCD5;
-}
-
-.liste-champs-add .frame-picture .placeholder-search {
-  color:#0582FF;
-  margin-top:16px;
-}
-
-.liste-champs-add .frame-picture {
-  background-color: #DDEEFF;
+  margin: 0px 50px;
+  margin-top: 30px;
+  height:100px;
+  background-color:#FFFFFF;
+  padding-bottom:30px;
   border:none;
+  border-left: 2px solid $darkblue;
 }
-
-.grey-onglet {
-  font-weight:bold;
-  color: #7F868D;
-}
-
-.fiche .placeholder-search {
-  width: 180px;
-  padding-bottom:2px;
-  color: rgba(0,0,0,0.8);
-  border-bottom: 1px solid #024A91;
-}
-
 
 
