@@ -60,6 +60,12 @@ textarea#note_content {
 
 .cancel-add-notes {
   margin-top:20px;
+  color:white;
   padding-left:100px;
-  text-decoration: underline $darkblue;
+  text-decoration: underline white;
+}
+
+.cancel-add-notes-text {
+  color:white;
+  font-size:18px;
 }
