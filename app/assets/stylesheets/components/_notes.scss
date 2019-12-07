@@ -51,69 +51,15 @@ textarea#note_content {
   font-size:18px;
 }
 
-// EMPTY NOTES
-
-
-.empty {
-  height: 80px;
+.validate-note-add {
+  position:fixed;
+  bottom:45px;
+  right:100px;
+  z-index:1;
 }
 
-.tag-add {
-  height: 30px;
-  border-top :1px solid rgba(0,0,0,0.4);
-  margin: 2px 5px;
-  margin-bottom:5px;
-}
-
-div.form-group.row.note_tags {
-  padding-top:5px;
-  margin: 2px 0px;
-  margin-bottom:5px;
-  border-radius:8px;
-  // border-top :1px solid rgba(0,0,0,0.4);
-  background-color:#FEFBFB;
-  width:384px;
-  // box-shadow: 1px 2px 6px rgba(0,0,0,0.2)
-}
-
-label.col-form-label {
-  font-size:14px;
-  color: rgba(0,0,0,0.6);
-}
-
-label.form-check-label.collection_check_boxes {
-  height: 18px;
-  border-radius:5px;
-  margin-right:5px;
-  font-size: 12px;
-  color:white;
-  padding: 1px 10px;
-  background-color: #80CE96;
-}
-
-
-
-.tag-add-full {
-  height: 30px;
-  margin: 2px 5px;
-  margin-bottom:5px;
-}
-
-.notes-add {
-  // border:1px solid black;
-  margin: 0px 5px;
-}
-
-.empty .placeholder-search {
-  padding-top: 8px;
-}
-
-
-
-
-// NOTES FULL
-
-.tag-list {
-  padding-bottom:8px;
-  padding-top: 8px;
+.cancel-add-notes {
+  margin-top:20px;
+  padding-left:100px;
+  text-decoration: underline $darkblue;
 }

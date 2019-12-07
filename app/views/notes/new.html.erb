@@ -11,65 +11,79 @@
   </div>
 
 
-  <!-- Affichageavec les tags -->
-
-
-  <div class="col-sm-12" id="tagsCheckboxes"> <!--ID IMPORTANT / JS -->
-    <% current_user.tags.each do |un_tag| %>
-      <!-- partial pour l'appel AJAX -->
-      <%= render 'tags/checkbox', tag: un_tag, checked: @checked %>
-    <% end %>
-
-  <!-- Création de nouveaux Tags -->
-  <h5>Vous pouvez créer de nouveaux tags ici</h5>
-  <div id='container-tag'> <!-- ID IMPORTANT / JS -->
-  <%= simple_form_for @tag, remote: true do |ff| %>
-  <%= ff.error_notification message: "On ne peut pas supprimer un tag utilisé" %>
-  <%= ff.text_field :label %>
-  <%= ff.button :submit, 'Tag +', class: "btn btn-secondary"  %>
-  <% end %>
-  </div>
-
-  <!-- Sauvegarder la note entière -->
-  </div>
-  <%= f.button :submit, 'Sauver tout', class: 'btn btn-primary'%>
-  <% end %>
-
-
-</div>
+  <!-- Listing des tags existants -->
 
 
 
+  <div class="div-tags-display">
 
-<!-- Footer -->
 
+      <div class="tags d-flex flex-column" id="tagsCheckboxes"> <!--ID IMPORTANT / JS -->
+        <span class="tag-header">Pensez à ajouter des tags à vos notes</span>
+        <div>
+          <% current_user.tags.each do |un_tag| %>
+            <!-- partial pour l'appel AJAX -->
+            <%= render 'tags/checkbox', tag: un_tag, checked: @checked %>
+          <% end %>
+        </div>
+      </div>
 
-<div class="footer-new-notes d-flex flex-column">
+    <!-- Sauvegarder la note entière -->
 
-  <div class="text-center">
-    <p style="color:white;">Ajouter cette note à </p>
-    <div class="d-flex flex-column">
-      <span style="color:white;"><%= @contact.first_name %></span>
-      <span style="color:white;"><%= @contact.last_name %></span>
-    </div>
-  </div>
-
-  <div class="d-flex justify-content-around mt-4">
-
-    <div class="pt-3">
-      <%= link_to contact_path(@contact) do %>
-      <p class="blue-text"><%= link_to 'Annuler', contact_path(@contact) %> </p>
-      <% end %>
-    </div>
-
-    <button type="submit" name="commit" value="Créer" method="patch" class="d-flex  justify-content-center md-btn-contact-validate" data-disable-with="...">
+    <button type="submit" name="commit" value="Créer" method="patch" class="d-flex justify-content-center md-btn-contact-validate validate-note-add" data-disable-with="...">
       <?xml version="1.0"?>
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="22px" height="22px" viewBox="0 0 352.62 352.62" style="enable-background:new 0 0 352.62 352.62;" xml:space="preserve"><g><g>
         <path d="M337.222,22.952c-15.912-8.568-33.66,7.956-44.064,17.748c-23.867,23.256-44.063,50.184-66.708,74.664   c-25.092,26.928-48.348,53.856-74.052,80.173c-14.688,14.688-30.6,30.6-40.392,48.96c-22.032-21.421-41.004-44.677-65.484-63.648   c-17.748-13.464-47.124-23.256-46.512,9.18c1.224,42.229,38.556,87.517,66.096,116.28c11.628,12.24,26.928,25.092,44.676,25.704   c21.42,1.224,43.452-24.48,56.304-38.556c22.645-24.48,41.005-52.021,61.812-77.112c26.928-33.048,54.468-65.485,80.784-99.145   C326.206,96.392,378.226,44.983,337.222,22.952z M26.937,187.581c-0.612,0-1.224,0-2.448,0.611   c-2.448-0.611-4.284-1.224-6.732-2.448l0,0C19.593,184.52,22.653,185.132,26.937,187.581z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
       </g></g> </svg>
     </button>
 
+    <% end %>
+  </div>
+
+  <!-- Création de tags -->
+  <div class="div-tags-add">
+
+    <span class="tag-header-bis ">Vous pouvez créer de nouveaux tags ici</span>
+
+    <div class="" id='container-tag'> <!-- ID IMPORTANT / JS -->
+      <%= simple_form_for @tag, remote: true do |ff| %>
+      <%= ff.error_notification message: "On ne peut pas supprimer un tag utilisé" %>
+
+      <div class="d-flex">
+      <%= ff.text_field :label %>
+      <button type="submit" name="commit" value="+" class="btn-add-tag d-flex justify-content-center" data-disable-with="+">
+        <?xml version="1.0"?>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 45.402 45.402" style="enable-background:new 0 0 45.402 45.402;" xml:space="preserve" class=""><g><g>
+          <path d="M41.267,18.557H26.832V4.134C26.832,1.851,24.99,0,22.707,0c-2.283,0-4.124,1.851-4.124,4.135v14.432H4.141   c-2.283,0-4.139,1.851-4.138,4.135c-0.001,1.141,0.46,2.187,1.207,2.934c0.748,0.749,1.78,1.222,2.92,1.222h14.453V41.27   c0,1.142,0.453,2.176,1.201,2.922c0.748,0.748,1.777,1.211,2.919,1.211c2.282,0,4.129-1.851,4.129-4.133V26.857h14.435   c2.283,0,4.134-1.867,4.133-4.15C45.399,20.425,43.548,18.557,41.267,18.557z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+        </g></g> </svg>
+      </button>
+      </div>
+
+      <% end %>
+    </div>
+
   </div>
 
 
-</div>
+
+
+
+  <!-- footer -->
+
+  <div class="footer-new-notes d-flex flex-column">
+
+    <div class="text-center pt-3">
+      <span class="text-footer-add-notes">Ajouter cette note à </span>
+      <div class="d-flex justify-content-center">
+        <span class="text-footer-add-notes pr-1"><%= @contact.first_name %></span>
+        <span class="text-footer-add-notes"><%= @contact.last_name.capitalize %> ?</span>
+      </div>
+    </div>
+
+    <div class="pt-3 cancel-add-notes">
+      <%= link_to contact_path(@contact) do %>
+      <p class="blue-text"><%= link_to 'Annuler', contact_path(@contact) %> </p>
+      <% end %>
+    </div>
+
+  </div>
