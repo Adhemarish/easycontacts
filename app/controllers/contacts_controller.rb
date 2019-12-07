@@ -7,6 +7,9 @@ class ContactsController < ApplicationController
   def show
     @contact = Contact.find(params[:id])
     @notes = @contact.notes
+    #@upcoming_alerts = @contact.alerts.where('datetime >= ?', Date.today).order(:datetime)
+    @nb_upcoming_alerts  = @contact.alerts.where('datetime >= ?', Date.today).order(:datetime).count
+    @nb_notes = @contact.notes.count
   end
 
   def new

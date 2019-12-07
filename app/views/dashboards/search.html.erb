@@ -10,7 +10,6 @@
         <div class="dash-searchbar d-flex justify-content-center pr-5">
           <div class="search-bar d-flex justify-content-between mb-3">
             <p class="ml-3  dashboard-tag">TAG</p>
-
 <!-- simple_form has default method POST so GET is specified here  -->
 <!-- simple_form will render the results at url specified, here same page -->
 <!-- pass symbol ':query' since not instance variable but rather a key -->
@@ -26,11 +25,12 @@
         </div>
       </div>
   </div>
-  <div>
+  <div id = "tag-search">
     <%= @tags.each do |un_tag|%>
       <%= render 'tags', tag: un_tag %>
     <% end %>
   </div>
+
  <%#= f.association :tags, collection: @tags.to_a, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline, id: "tagCheckboxes" %>
   <%= f.button :submit, 'Valider', class: 'btn btn-primary' %>
 <% end %>
@@ -57,6 +57,7 @@
 <div class="dash-gray">
 
   <div class="results-container-dash d-flex justify-content-center align-items-center flex-column">
+
     <%if params[:query].present?  %>
       <div class="results-container">
         <% if @tags.any?%>
