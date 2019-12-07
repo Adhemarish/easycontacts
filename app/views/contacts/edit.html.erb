@@ -26,8 +26,8 @@
 <!-- Notes / Rappels -->
 
 <div class="d-flex justify-content-center mt-2 mb-5">
-    <p class="grey-onglet mr-5">Notes</p>
-    <p class="grey-onglet">Rappels</p>
+    <p class="grey-onglet mr-5"><%= link_to 'Notes', contact_path(@contact)  %></p>
+    <p class="grey-onglet"><%= link_to 'Rappels', contact_alerts_path(@contact) %></p>
 </div>
 
 

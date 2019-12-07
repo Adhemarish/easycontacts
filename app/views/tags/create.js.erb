@@ -1,5 +1,3 @@
-const checkboxList = document.getElementById('tagsCheckboxes')
-
 function insertToCheckbox() {
   const checkboxList = document.getElementById('tagsCheckboxes')
   checkboxList.insertAdjacentHTML('beforeend', '<%= j render "tags/checkbox", tag: @tag, checked: "checked" %>');
@@ -10,10 +8,9 @@ function refreshForm(innerHTML) {
   newReviewForm.value = ""
 }
 
-if (checkboxList) {
-  insertToCheckbox()
-  refreshForm()
-}
+insertToCheckbox()
+refreshForm()
+
 
 
 

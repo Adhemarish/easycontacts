@@ -28,8 +28,8 @@
 
         <div class="tags d-flex" data-note-id="<%= une_note.id %>" >
             <% une_note.tags.each do |t| %>
-            <div class="tag-bis">
-              <p class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
+            <div class="tag-bis <%= t.color %>">
+              <p class="tag-text " data-tag-id = "<%= t.id %>" ><%= t.label %></p>
             </div>
           <% end %>
         </div>

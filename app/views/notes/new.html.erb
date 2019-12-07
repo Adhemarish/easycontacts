@@ -32,22 +32,26 @@
     wrapper: :inline_form,
     wrapper_mappings: { check_boxes:   :horizontal_collection } do |f| %>
   <%= f.error_notification %>
-  <%= f.input_field :content, as: :text %>
-
-  <div class="col-sm-12" id="tagsCheckboxes"> <!--ID IMPORTANT / JS -->
-    <% current_user.tags.each do |un_tag| %>
-      <!-- partial pour l'appel AJAX -->
+  <!-- usage of .input_field to strip away all the divs wrappers around the input -->
+  <%= f.input_field :content, as: :text, class: ""%>
+  <div class="col-sm-12" id="tagsCheckboxes"> <!--ID IMPORTANT le placement en JS -->
+      <!-- display des tags par partial pour rendre en AJAX. Un nouveau tag est    -->
+      <!-- automatiquement 'checked' dans le controlleur, les autres non -->
+    <% @tags.each do |un_tag| %>
       <%= render 'tags/checkbox', tag: un_tag, checked: @checked %>
     <% end %>
   </div>
-  <%= f.button :submit, 'Sauver tout', class: 'btn btn-primary'%>
+  <%= f.button :submit, 'Valider', class: 'btn btn-primary'%>
   <% end %>
-  <h5>Vous pouvez créer de nouveaux tags ici</h5>
+
+  <br>
   <div id='container-tag'> <!-- ID IMPORTANT / JS -->
   <%= simple_form_for @tag, remote: true do |ff| %>
   <%= ff.error_notification message: "On ne peut pas supprimer un tag utilisé" %>
   <%= ff.text_field :label %>
-  <%= ff.button :submit, 'Tag +', class: "btn btn-secondary"  %>
+  <div class="validate-button">
+    <%= ff.button :submit, 'Tag +', class: "btn btn-secondary"  %>
+  </div>
   <% end %>
   </div>
 </div>
