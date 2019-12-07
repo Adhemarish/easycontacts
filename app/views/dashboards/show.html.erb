@@ -1,4 +1,6 @@
-<%#=render '../shared/navbar', user_signed_in?: user_signed_in? %>
+
+<%=render 'shared/navbar', user: current_user %>
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
  <%= link_to dashboard_path do%>
@@ -32,12 +34,11 @@
 
   <h3>Hey <%=current_user.first_name.capitalize%></h3>
   <p>Qui avez-vous vu aujourd'hui ?</p>
-
     <div class="dash-searchbar d-flex justify-content-center pr-5">
       <div class="search-bar d-flex justify-content-center mb-3">
 
       <%#= link_to dashboard_tag_path) do%>
-        <p class="ml-3  dashboard-tag">TAG</p>
+        <p class="ml-3  dashboard-tag"><%= link_to 'TAG', tag_search_path  %></p>
         <%# end %>
 
           <%= form_tag dashboard_path, method: :get do %>

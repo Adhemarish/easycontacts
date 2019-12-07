@@ -2,8 +2,8 @@ import "bootstrap";
 import "../plugins/flatpickr";
 
 
-// import { hideCheckboxes } from "../components/hide_checkboxes"
-// hideCheckboxes
+import { toggleCheckboxes } from "../components/toggle_checkboxes"
+toggleCheckboxes
 
 
 import "../components/dashboard_tag";

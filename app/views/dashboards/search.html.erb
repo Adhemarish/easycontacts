@@ -1,0 +1,82 @@
+<%=render 'shared/navbar', user: current_user %>
+
+<div class="cont-global-dash">
+
+  <div class="dash-darkblue">
+
+    <div class="welcome pl-5 pt-3 pb-3">
+      <h3>Hey <%=current_user.first_name.capitalize%></h3>
+      <p>Qui avez-vous vu aujourd'hui ?</p>
+        <div class="dash-searchbar d-flex justify-content-center pr-5">
+          <div class="search-bar d-flex justify-content-between mb-3">
+            <p class="ml-3  dashboard-tag">TAG</p>
+
+<!-- simple_form has default method POST so GET is specified here  -->
+<!-- simple_form will render the results at url specified, here same page -->
+<!-- pass symbol ':query' since not instance variable but rather a key -->
+            <%= simple_form_for :query, url: tag_search_path,
+              method: :get, html: { class: 'form-inline' } do |f| %>
+
+              <%= f.input :query, class: "", placeholder: "Sélection d'un tag",
+               input_html: {value: ""}, label: false, collection: @tags %>
+            <%= link_to dashboard_path do%>
+              <i class="fas fa-search mr-2 mt-2"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div>
+    <%= @tags.each do |un_tag|%>
+      <%= render 'tags', tag: un_tag %>
+    <% end %>
+  </div>
+ <%#= f.association :tags, collection: @tags.to_a, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline, id: "tagCheckboxes" %>
+  <%= f.button :submit, 'Valider', class: 'btn btn-primary' %>
+<% end %>
+
+
+<div class="col-sm-12" id="tagsCheckboxes"> <!--ID IMPORTANT / JS -->
+  <%#= simple_form_for :search, url: tag_search_path, method: :get, wrapper: :inline_form,
+    wrapper_mappings: { check_boxes: :horizontal_collection} do |f| %>
+  <%#= f.error_notification %>
+  <%#= render 'tags', tag: un_tag %>
+  <%#= f.input :label as: :check_boxes, collection: @tags, wrapper: :horizontal_collection_inline %>
+   <%#= f.button :submit, 'Valider', class: 'btn btn-primary'%>
+  <%# end %>
+</div>
+
+<div class="d-flex tag-add-full tag-list ">
+  <% @tags.each do |tag| %>
+    <div class="tag-bis small-tag <%= tag.color %>">
+    <p class="margin-tag" data-tag-id = "<%= tag.id %>" ><%= tag.label %></p>
+    </div>
+  <% end %>
+</div>
+
+<div class="dash-gray">
+
+  <div class="results-container-dash d-flex justify-content-center align-items-center flex-column">
+    <%if params[:query].present?  %>
+      <div class="results-container">
+        <% if @tags.any?%>
+          <div class="list-group">
+            <% @tags.each do |tag| %>
+              <p><%= tag.label %></p>
+            <% end %>
+          </div>
+        <% else %>
+          <p>Aucun contact ne correspond à votre recherche.</p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
+
+<!-- à conserver sur cette page -->
+<script type="text/javascript">
+    $(function(){
+        $(document).on('click','input[type=text]',function(){ this.select(); });
+    });
+</script>
