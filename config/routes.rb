@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :notes, only: [:edit, :update, :destroy]
 
+  resources :alerts, only: [:destroy]
+
   get '/components', to: 'pages#components'
   get '/dashboard/results', to: 'dashboards#index'
  end

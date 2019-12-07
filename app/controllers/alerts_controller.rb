@@ -22,6 +22,12 @@ class AlertsController < ApplicationController
     end
   end
 
+  def destroy
+    @alert = Alert.find(params[:id])
+    @alert.destroy
+    redirect_to contact_alerts_path(@alert.contact)
+  end
+
   private
 
   def set_alerts

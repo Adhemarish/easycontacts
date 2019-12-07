@@ -1,3 +1,64 @@
+
+// NEW DESIGN
+
+.rappels {
+  margin: 5px 20px;
+  margin-bottom:10px;
+  background: #FFFFFF;
+  box-shadow: 0px 3px 22px rgba(0, 0, 0, 0.05);
+  border-radius: 15px 0px;
+}
+
+.rappels-text {
+}
+
+.rappels-text-date {
+  padding:10px 50px;
+  width:85px;
+  height:65px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align:center;
+  color: rgba(0,0,0,0.7);
+  padding-bottom:2px;
+}
+
+.rappels-text-content {
+  width:210px;
+  height:45px;
+  margin-top:10px;
+  padding-left:15px;
+  border-left: 3px solid $orange;
+  font-weight: 300;
+  font-size: 16px;
+  color: rgba(0,0,0,0.7)
+}
+
+
+// NEW RAPPEL
+
+.name {
+  color:$darkblue;
+  font-size:18px;
+}
+
+input#alert_title {
+  background-color:white;
+  margin-top:5px;
+  margin-left:10px;
+  border:none;
+  width:300px;
+  height:30px;
+  color:black;
+}
+
+.new-rappel input::placeholder {
+  color:rgba(0,0,0,0.5);
+  font-weight:300px;
+  font-size:18px;
+}
+
+
 // RAPPEL dans ADD RAPPEL
 
 .rappel {
@@ -22,10 +83,6 @@
   font-size:12px;
 }
 
-.new-rappel {
-  background-color:#E7E7E7;
-  height:70vh;
-}
 
 .text-center .name {
   font-size:25px;
