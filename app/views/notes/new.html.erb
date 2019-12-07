@@ -23,7 +23,7 @@
       <div class="tags d-flex flex-column" id="tagsCheckboxes"> <!--ID IMPORTANT / JS -->
         <span class="tag-header">Pensez à ajouter des tags à vos notes</span>
         <div>
-          <% current_user.tags.each do |un_tag| %>
+          <% @tags.each do |un_tag| %>
             <!-- partial pour l'appel AJAX -->
             <%= render 'tags/checkbox', tag: un_tag, checked: @checked %>
           <% end %>

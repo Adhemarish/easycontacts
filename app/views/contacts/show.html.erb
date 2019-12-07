@@ -25,10 +25,10 @@
       <span class="info-category-text">Notes</span>
       <span class="info-stats-text">
         <% if %>
-        <% @contact.notes.count == 0 %>
+        <% @nb_notes == 0 %>
         <%= 0 %>
         <% else %>
-        <%= @contact.notes.count %> notes</span>
+        <%= @nb_notes %> notes</span>
         <% end %>
     </div>
   </div>
@@ -40,10 +40,10 @@
         <span class="info-category-text">Rappels</span>
         <span class="info-stats-text">
         <% if %>
-        <% @contact.alerts.count == 0 %>
+        <% @nb_upcoming_alerts == 0 %>
         <%= 0 %>
         <% else %>
-        <%= @contact.alerts.count %>
+        <%= @nb_upcoming_alerts %>
         <% end %> rappels</span>
       </div>
     </div>
