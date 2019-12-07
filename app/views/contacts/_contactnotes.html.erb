@@ -15,7 +15,7 @@
             <span class="notes-text-content"><%= une_note.content %></span>
           </div>
 
-          <div class="tags d-flex" data-note-id="<%= une_note.id %>" >
+          <div class="tags-fiche-contact d-flex" data-note-id="<%= une_note.id %>" >
               <% une_note.tags.each do |t| %>
               <div class="tag-bis">
                 <p class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></p>

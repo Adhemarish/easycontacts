@@ -23,7 +23,13 @@
 
     <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-4 pb-2">
       <span class="info-category-text">Notes</span>
-      <span class="info-stats-text">12 notes</span>
+      <span class="info-stats-text">
+        <% if %>
+        <% @contact.notes.count == 0 %>
+        <%= 0 %>
+        <% else %>
+        <%= @contact.notes.count %> notes</span>
+        <% end %>
     </div>
   </div>
 
@@ -32,7 +38,13 @@
       <%= image_tag('rappel.svg', class: 'card-image-writing') %>
       <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
         <span class="info-category-text">Rappels</span>
-        <span class="info-stats-text">14 rappels</span>
+        <span class="info-stats-text">
+        <% if %>
+        <% @contact.alerts.count == 0 %>
+        <%= 0 %>
+        <% else %>
+        <%= @contact.alerts.count %>
+        <% end %> rappels</span>
       </div>
     </div>
   <% end %>
