@@ -33,6 +33,24 @@
   padding-right:20px;
 }
 
+// NEW NOTE
+
+textarea#note_content {
+  background-color:white;
+  margin-top:5px;
+  margin-left:10px;
+  border:none;
+  width:300px;
+  height:30px;
+  color:black;
+}
+
+.new-note textarea::placeholder {
+  color:rgba(0,0,0,0.5);
+  font-weight:300px;
+  font-size:18px;
+}
+
 // EMPTY NOTES
 
 
@@ -73,15 +91,6 @@ label.form-check-label.collection_check_boxes {
   background-color: #80CE96;
 }
 
-textarea#note_content {
-  width:370px;
-  padding-top:10px;
-  height:30px;
-  background-color:#FEFBFB;
-  border:none;
-  border-bottom:1px solid rgba(0,0,0,0.6);
-  padding-bottom:30px;
-}
 
 
 .tag-add-full {
