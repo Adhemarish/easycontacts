@@ -1,6 +1,6 @@
-<!--  FAIRE ATTENTION AVANT DE MODIFIER CETTE PARTIAL -->
-<div class="form-check form-check-inline <%= Tag::COULEURS.sample %>" data-checkbox-id="<%= tag.id %>">
-  <input class="hidden" type="checkbox" value="<%= tag.id %>" name="note[tag_ids][]" id="note_tag_ids_<%=tag.id%>" <%= checked %>>
+
+<div class="form-check form-check-inline <%= tag.color %>" data-checkbox-id="<%= tag.id %>">
+  <input hidden type="checkbox" value="<%= tag.id %>" name="note[tag_ids][]" id="note_tag_ids_<%=tag.id%>" <%= checked %>>
   <label  for="note_tag_ids_<%=tag.id%>"><%= tag.label %></label>
   <div>
     <%= link_to tag_path(tag), method: :delete, remote: true do %>

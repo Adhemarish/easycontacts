@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resource :dashboard, only: [:show] # DashboardsController
+  resource :dashboard, only: [:show] # dashboardsController # show
+  get '/search', to: 'dashboards#search', as: 'tag_search' # dashboardsController#search
 
   resources :contacts do
     resources :notes, only: [:new, :create]
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
   resources :tags, only: [:create, :destroy]
 
   resources :notes, only: [:edit, :update, :destroy]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   get '/components', to: 'pages#components'
   get '/dashboard/results', to: 'dashboards#index'
  end
