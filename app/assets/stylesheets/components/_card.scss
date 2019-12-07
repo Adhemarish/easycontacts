@@ -25,10 +25,22 @@
   left:180px;
 }
 
+.category-rappels.edit {
+  position:absolute;
+  bottom:-70px;
+  left:75px;
+}
+
 .category-infos {
   position:absolute;
   bottom:-70px;
   left:350px;
+}
+
+.category-infos.edit {
+  position:absolute;
+  bottom:-70px;
+  left:235px;
 }
 
 .category-notes.active {
@@ -48,13 +60,13 @@
 }
 
 .active .info-stats-text {
-  color: #DDEEFF;
+  color: white;
   font-weight:400px;
   font-size:12px;
 }
 
 .active .info-category-text {
-  color: #DDEEFF;
+  color: white;
   font-weight:bold;
   font-size:18px;
 }
@@ -76,6 +88,25 @@
   height:30px;
   margin-top:20px;
   margin-left:20px;
+}
+
+.card-image-info {
+  width:35px;
+  height:35px;
+  margin-top:20px;
+  margin-left:20px;
+}
+
+.card-image-edit {
+  width:20px;
+  height:20px;
+  margin-top:9px;
+  margin-left:9px;
+}
+
+.card-image-delete {
+  margin-top:9px;
+  margin-left:9px;
 }
 
 .card-image-footer {

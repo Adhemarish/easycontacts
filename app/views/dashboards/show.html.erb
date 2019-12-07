@@ -1,4 +1,28 @@
 <%#=render '../shared/navbar', user_signed_in?: user_signed_in? %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
+ <%= link_to dashboard_path do%>
+  <button class="btn-lg">
+  </button>
+  <% end %>
+
+  <div class="navbar-logo"><%= link_to "#" do %>EasyContact<%end%>
+  </%></div>
+
+  <div class="mon-compte-navbar">
+    <% if user_signed_in? %>
+      <%= link_to "Mon compte", "#", class: "dropdown-item" %>
+      <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    <% else %>
+      <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
+    <% end %>
+  </div>
+
+  </div>
+
+</div>
+
+
 
 <div class="cont-global-dash">
 

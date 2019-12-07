@@ -1,5 +1,85 @@
 // NEW DESIGN
 
+.champs {
+}
+
+.champ {
+  height:40px;
+  width:170px;
+  margin-bottom:20px;
+  background: #FFFFFF;
+  box-shadow: 0px 3px 22px rgba(0, 0, 0, 0.05);
+  border-radius: 0px 15px;
+}
+
+.champ-title {
+  font-weight: bold;
+  font-size: 12px;
+  color: #7DD0FF;
+}
+
+.info-description {
+  font-size:14px;
+  font-weight:300px;
+  padding-top:6px;
+  padding-left:5px;
+  width:150px;
+  color:rgba(0,0,0,0.7)
+}
+
+input#contact_first_name {
+  background-color:$darkblue;
+  border:none;
+  color:white
+}
+
+input#contact_last_name {
+  background-color:$darkblue;
+  border:none;
+  color:white;
+  font-weight:bold;
+}
+
+input#contact_phone_number {
+  border:none;
+}
+
+input#contact_company {
+  border:none;
+}
+
+input#contact_email {
+  border:none;
+}
+
+input#contact_location {
+  border:none;
+}
+
+input#contact_job {
+  border:none;
+}
+
+.header-first-name input::placeholder {
+  color:rgba(255,255,255, 0.9);
+  font-size:20px;
+}
+
+.header-last-name input::placeholder {
+  color:rgba(255,255,255, 0.9);
+  font-size:20px;
+}
+
+.add.header-first-name {
+  font-size:20px;
+}
+
+.add.header-last-name {
+  font-size:20px;
+}
+
+
+
 
 // ADD CONTACT
 
@@ -21,40 +101,6 @@ p.placeholder-search {
   margin-bottom:3px;
 }
 
-input#contact_first_name {
-  background-color:#F4F4F4;
-  border:none;
-}
-
-input#contact_last_name {
-  background-color:#F4F4F4;
-  border:none;
-}
-
-input#contact_phone_number {
-  background-color:#F4F4F4;
-  border:none;
-}
-
-input#contact_company {
-  background-color:#F4F4F5;
-  border:none;
-}
-
-input#contact_email {
-  background-color:#F4F4F4;
-  border:none;
-}
-
-input#contact_location {
-  background-color:#F4F4F4;
-  border:none;
-}
-
-input#contact_job {
-  background-color:#F4F4F4;
-  border:none;
-}
 
 .champ-texte-add .placeholder-search {
   width: 130px;
@@ -82,39 +128,6 @@ input#contact_job {
   padding-bottom:2px;
   color: rgba(0,0,0,0.8);
   border-bottom: 1px solid #024A91;
-}
-
-// FICHE CONTACT
-
-
-.liste-info {
-
-}
-
-.infos-fiche {
-  margin: 0 20px;
-}
-
-.info-fiche {
-
-}
-
-.info-title {
-  color: #024A91;
-  font-size:14px;
-  font-weight:bold;
-}
-
-.info-description {
-  font-size:14px;
-  padding-bottom:2px;
-  border-bottom:1px solid #024A91;
-  width:150px;
-  color:rgba(0,0,0,0.8)
-}
-
-p.info-title {
-  margin-bottom:8px;
 }
 
 

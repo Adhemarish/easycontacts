@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #0582FF;
+  background: $darkblue;
   // display: flex;
 }
 
@@ -16,16 +16,18 @@
 
 .navbar-logo a {
   color: white;
-  font-size: 25px;
-  font-weight: 700;
   text-align: center;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
 }
 
 .navbar-logo a:hover {
-  color: #D73D2B;
-  font-size: 25px;
-  font-weight: 700;
+  color: white;
   text-align: center;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
   text-decoration: none;
 
   .fa-users {

@@ -1,13 +1,64 @@
 // NEW DESIGN
 
 .button-plus-footer {
-  position:absolute;
-  top:80px;
-  left:200px;
+  position:fixed;
+  bottom:20px;
+  margin-left:180px
 }
 
-.button-plus-footer .md-btn {
+.button-plus-footer .lg-btn {
   background-color: #F4B8AC;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+}
+
+.md-btn-notes {
+  height:38px;
+  width:38px;
+  border-radius:50%;
+  background-color: #FF4D4D;
+}
+
+.md-btn-notes-delete {
+  height:38px;
+  width:38px;
+  border-radius:50%;
+}
+
+.md-btn-notes-edit {
+  height:38px;
+  width:38px;
+  border-radius:50%;
+  background-color: #628AAE;
+  margin-bottom:5px;
+}
+
+.md-btn-contact-validate {
+  height:45px;
+  width:45px;
+  border-radius:50%;
+  background-color: $pink;
+  border:none;
+  box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.12);
+}
+
+.absolute-edit-contact {
+  position:absolute;
+  bottom:30px;
+  right:100px;
+}
+
+.absolute-create-contact {
+  position:absolute;
+  bottom:30px;
+  left:-20px;
+}
+
+.absolute-delete-contact {
+  position:absolute;
+  bottom:33px;
+  left:100px;
 }
 
 
@@ -40,36 +91,6 @@
 .trash .md-btn {
   background-color : #E72B2B;
 }
-
-// CREATE CONTACT
-
-.absolute-create-contact {
-  position:relative;
-  top:-407px;
-  left:366px;
-  color:#024A91;
-  font-weight:bold;
-  font-size:15px;
-}
-
-// EDIT CONTACT
-
-.validate-button {
-  height:1px;
-  position:relative;
-}
-
-.absolute {
-  position:absolute;
-  top:-390px;
-  right:20px;
-}
-
-button.md-btn.absolute {
-  background-color: #65CD5F;
-  border:none;
-}
-
 
 
 .btn-ghost {
@@ -132,51 +153,3 @@ button.md-btn.absolute {
   text-decoration: none;
   font-size: 18px;
 }
-
-
-// Bouton classique fond bleu
-
-// .btn-flat {
-//   color: white;
-//   padding: 8px 24px;
-//   margin-top: 60px;
-//   border-radius: 4px;
-//   background: #0582FF;
-//   transition: background 0.3s ease;
-//   font-weight: 500;
-// }
-
-// .btn-flat:hover {
-//   background: #0582FF;
-//   color: white;
-// }
-
-
-
-
-// Fiche CONTACT
-
-.fiche-contact-button {
-  width:90px;
-  height:25px;
-  background-color: #024A91;
-  border-radius:5px;
-}
-
-.contact-button-notes {
-  color:white;
-  font-weight: bold;
-  font-size:14px;
-  margin-left:25px;
-  padding-top:4px;
-}
-
-
-.contact-button-rappels {
-  color:white;
-  font-weight: bold;
-  font-size:14px;
-  margin-left:20px;
-  padding-top:4px;
-}
-
