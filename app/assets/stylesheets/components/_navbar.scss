@@ -1,3 +1,25 @@
+// NEW DESIGN
+
+.navbar-dashboard {
+  width:100%;
+  background-color: $darkblue;
+  position:fixed;
+  top:0px;
+  height:120px;
+  z-index: 1;
+}
+
+.dashboard-title {
+  font-weight:bold;
+  font-size:26px;
+  color:white;
+  padding-top:15px;
+}
+
+
+
+// NAVBAR PRECEDENTE
+
 .navbar-lewagon {
   justify-content: space-between;
   background: $darkblue;
