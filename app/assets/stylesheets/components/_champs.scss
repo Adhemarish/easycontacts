@@ -60,6 +60,27 @@ input#contact_job {
   border:none;
 }
 
+.header-first-name input::placeholder {
+  color:rgba(255,255,255, 0.9);
+  font-size:20px;
+}
+
+.header-last-name input::placeholder {
+  color:rgba(255,255,255, 0.9);
+  font-size:20px;
+}
+
+.add.header-first-name {
+  font-size:20px;
+}
+
+.add.header-last-name {
+  font-size:20px;
+}
+
+
+
+
 // ADD CONTACT
 
 .champs-texte-add {
