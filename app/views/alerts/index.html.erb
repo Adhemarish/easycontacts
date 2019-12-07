@@ -43,10 +43,10 @@
       <span class="info-category-text">Rappels</span>
       <span class="info-stats-text">
         <% if %>
-        <% @contact.alerts.count == 0 %>
+        <% @upcoming_alerts.count == 0 %>
         <%= 0 %>
         <% else %>
-        <%= @contact.alerts.count %>
+        <%= @upcoming_alerts.count %>
         <% end %> rappels</span>
     </div>
   </div>
