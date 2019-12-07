@@ -1,51 +1,173 @@
-<div class="d-flex justify-content-between header-new-rappel mb-3">
-    <%= link_to dashboard_path do%>
-    <p class="blue-text">Annuler</p>
+
+
+<%= simple_form_for(@contact) do |f| %>
+
+<!-- Header -->
+
+  <div class="header-contact d-flex justify-content-center align-items-center mb-5">
+    <%= link_to dashboard_path do %>
+      <%= image_tag('house-empty.svg', class: 'btn-home') %>
     <% end %>
-    <p class="blue-light-text">Nouveau contact</p>
-    <p class="blue-text"></p>
-</div>
+
+    <div class="header-photo px-5">
+
+      <div class="d-flex justify-content-center mt-3 mb-1">
+        <div class="d-flex justify-content-center">
+          <div class="frame-picture border">
+            <input class="form-control-file file optional" type="file" name="contact[avatar]" id="contact_avatar">
+            <%= f.input :avatar_cache, as: :hidden %>
+            <div class="text-center">
+              <p class="placeholder-search">Photo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-center add header-first-name"><input placeholder="Prénom" class="text-center string required" type="text" name="contact[first_name]" id="contact_first_name"></p>
+        <p class="text-center add header-last-name"><input placeholder ="Nom" class="text-center string required" type="text" name="contact[last_name]" id="contact_last_name"></p>
+      </div>
+
+    </div>
+
+  </div>
+
 
 <!-- Formulaire infos de base -->
 
-<div class="liste-champs-add d-flex flex-column justify-content-center">
-  <%= simple_form_for(@contact) do |f| %>
+      <div class="d-flex justify-content-around mx-4">
 
-  <div class="d-flex justify-content-center">
-    <div class="frame-picture">
-      <input class="form-control-file file optional" type="file" name="contact[avatar]" id="contact_avatar">
-      <%= f.input :avatar_cache, as: :hidden %>
-      <div class="text-center">
-        <p class="placeholder-search">Photo</p>
+        <div class="champs d-flex flex-column">
+
+          <div class="champ-title">
+            <span>Email</span>
+          </div>
+
+          <div class="champ">
+            <p class="info-description"><input class="info-description email optional" placeholder="Email" type="email" name="contact[email]" id="contact_email"></p>
+          </div>
+
+        </div>
+
+        <div class="champs d-flex flex-column">
+
+          <div class="champ-title">
+            <span>Entreprise</span>
+          </div>
+
+          <div class="champ">
+            <p class="info-description"><input class="info-description company optional" placeholder="Nom d'entreprise" type="text" name="contact[company]" id="contact_company"></p>
+          </div>
+
+        </div>
+
       </div>
-    </div>
+
+
+      <div class="d-flex justify-content-around mx-4">
+
+        <div class="champs d-flex flex-column">
+
+          <div class="champ-title">
+            <span>Ville</span>
+          </div>
+
+          <div class="champ">
+            <p class="info-description"><input class="info-description optional" placeholder="Ville" type="text" name="contact[location]" id="contact_location"></p>
+          </div>
+
+        </div>
+
+        <div class="champs d-flex flex-column">
+
+          <div class="champ-title">
+            <span>Téléphone</span>
+          </div>
+
+          <div class="champ">
+            <p class="info-description"><input class="info-description tel optional" placeholder="Numéro de téléphone" type="tel" name="contact[phone_number]" id="contact_phone_number"></p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="d-flex justify-content-around mx-4">
+
+        <div class="champs d-flex flex-column">
+
+          <div class="champ-title">
+            <span>Type de relation</span>
+          </div>
+
+          <div class="champ">
+            <p class="info-description"></p>
+          </div>
+
+        </div>
+
+        <div class="champs d-flex flex-column">
+
+          <div class="champ-title">
+            <span>Date de rencontre</span>
+          </div>
+
+          <div class="champ">
+            <p class="info-description"></p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="d-flex justify-content-around mx-4">
+
+        <div class="champs d-flex flex-column">
+
+          <div class="champ-title">
+            <span>Années d'expérience</span>
+          </div>
+
+          <div class="champ">
+            <p class="info-description"></p>
+          </div>
+
+        </div>
+
+        <div class="champs d-flex flex-column">
+
+          <div class="champ-title">
+            <span>Lieu de rencontre</span>
+          </div>
+
+          <div class="champ">
+            <p class="info-description"></p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+<!-- footer -->
+
+<div class="footer-contact d-flex justify-content-center">
+
+  <div class="position-relative">
+
+    <button type="submit" name="commit" value="Créer" method="patch" class="d-flex  justify-content-center md-btn-contact-validate absolute-create-contact" data-disable-with="...">
+      <?xml version="1.0"?>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="22px" height="22px" viewBox="0 0 352.62 352.62" style="enable-background:new 0 0 352.62 352.62;" xml:space="preserve"><g><g>
+        <path d="M337.222,22.952c-15.912-8.568-33.66,7.956-44.064,17.748c-23.867,23.256-44.063,50.184-66.708,74.664   c-25.092,26.928-48.348,53.856-74.052,80.173c-14.688,14.688-30.6,30.6-40.392,48.96c-22.032-21.421-41.004-44.677-65.484-63.648   c-17.748-13.464-47.124-23.256-46.512,9.18c1.224,42.229,38.556,87.517,66.096,116.28c11.628,12.24,26.928,25.092,44.676,25.704   c21.42,1.224,43.452-24.48,56.304-38.556c22.645-24.48,41.005-52.021,61.812-77.112c26.928-33.048,54.468-65.485,80.784-99.145   C326.206,96.392,378.226,44.983,337.222,22.952z M26.937,187.581c-0.612,0-1.224,0-2.448,0.611   c-2.448-0.611-4.284-1.224-6.732-2.448l0,0C19.593,184.52,22.653,185.132,26.937,187.581z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+      </g></g> </svg>
+    </button>
+
   </div>
 
-    <div class="champs-texte-add d-flex m-4">
 
-      <div class="champ-texte-add m-3">
-        <p class="placeholder-search"><input class="required" placeholder="Prénom" type="text" name="contact[first_name]" id="contact_first_name"></p>
-        <p class="placeholder-search"><input class="required" placeholder="Nom" type="text" name="contact[last_name]" id="contact_last_name"></p>
-        <p class="placeholder-search"><input class="email optional" placeholder="Email" type="email" name="contact[email]" id="contact_email"></p>
-        <p class="placeholder-search"><input class="tel optional" placeholder="Telephone" type="tel" name="contact[phone_number]" id="contact_phone_number"></p>
-      </div>
-
-      <div class="champ-texte-add m-3">
-        <p class="placeholder-search"><input class="optional" placeholder="Entreprise" type="text" name="contact[company]" id="contact_company"></p>
-        <p class="placeholder-search"><input class="optional" placeholder="Poste actuel" type="text" name="contact[job]" id="contact_job"></p>
-        <p class="placeholder-search"><input class="optional" placeholder="Ville" type="text" name="contact[location]" id="contact_location"></p>
-        <p class="placeholder-search"><input class="optional" placeholder="Lieu de rencontre" type="text" name="contact[location]" id="contact_location"></p>
-      </div>
-
-    </div>
-    <div class="validate-button">
-        <%= f.button :submit, 'OK', class: 'mt-5 absolute-create-contact' %>
-    </div>
-
-  <% end %>
 </div>
 
-<%= link_to "Retour", dashboard_path, class: 'btn btn-primary mt-5' %>
+<!-- Simple form end -->
 
-
+<% end %>
 
