@@ -4,14 +4,21 @@ class DashboardsController < ApplicationController
   before_action :set_tags_dashboard, only: [:search]
 
   def search # set_tags_dashboard
-    if params[:query].present?
-      query = params[:query]['query']
-      if !Tag.where(label: query).empty?
-        @notes = Tag.find(Tag.where(label: query)[0].id).notes.order(created_at: :desc)
-        # @query_tag.notes.each do |note|
-        #   @surname = note.contact.first_name
-        #   @name = note.contact.last_name
-        end
+
+    #@user_tags = current_user.tags.map { |tag| tag }
+
+    return unless params[:query].present?
+
+    if params[:query][:label] != ""
+      @search = params[:query][:label].strip
+      @notes = Tag.joins(:notes).where(label: @search).uniq[0].notes.each {|n| pp n.contact }
+
+      # A REVOIR AVEC PIERRE GABRIEL SI POSSIBLE
+      # sql = " \
+      #   tags.label @@ :query \
+      #   OR tags.label @@ :query \
+      # "
+      # @notes = Tag.joins(:notes).where(sql, query: "%#{params[:query]}%")
     end
   end
 
@@ -44,4 +51,8 @@ class DashboardsController < ApplicationController
     @tags = current_user.tags
   end
 
+  def tags_params
+    params.require(:tags).permit(:label, :content, note_ids: [])  # :label ????
+    #params.require(:note).permit(:content, tags_attributes: [:id, :label, :color])
+  end
 end
