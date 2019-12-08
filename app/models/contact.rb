@@ -3,6 +3,7 @@ class Contact < ApplicationRecord
 
   has_many :notes, dependent: :destroy
   has_many :alerts, dependent: :destroy
+  has_many :tags, through: :notes
 
   belongs_to :user
 

@@ -5,12 +5,12 @@ class DashboardsController < ApplicationController
 
   def search # set_tags_dashboard
     @user_tags = current_user.tags.map { |tag| tag.label }
-
     if params[:query].present?
       if @user_tags.include?(params[:query][:label].strip)
         @search = params[:query][:label].strip
-        if !Tag.joins(:notes).where(label: @search).empty?
-          @notes = Tag.joins(:notes).where(label: @search).uniq[0].notes.each {|n| pp n.contact }
+        if !Tag.where(label: @search).empty?
+          @notes = Note.joins(:tags).where(tags: { label: @search })#.each { |n| n.contact}
+          @contacts = Contact.joins(:tags, :notes).where(tags: { label: @search })
         end
       end
     end
