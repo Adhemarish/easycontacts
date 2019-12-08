@@ -7,7 +7,7 @@ class DashboardsController < ApplicationController
     if params[:query].present?
       query = params[:query]['query']
       if !Tag.where(label: query).empty?
-        @notes = Tag.find(Tag.where(label: query)[0].id).notes
+        @notes = Tag.find(Tag.where(label: query)[0].id).notes.order(created_at: :desc)
         # @query_tag.notes.each do |note|
         #   @surname = note.contact.first_name
         #   @name = note.contact.last_name
