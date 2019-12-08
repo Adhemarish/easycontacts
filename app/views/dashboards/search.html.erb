@@ -5,62 +5,30 @@
 <!-- PARTIE ROSE -->
 
 <div class="searchs-dashboard-tag">
-
   <div class="d-flex flex-column salutations">
     <span class="dashboard-hey">Recherche par tags</span>
   </div>
-
   <div class="search-bar">
-
     <%= simple_form_for :query, url: tag_search_path,
       method: :get, html: { class: 'form-inline' } do |f| %>
-
-      <%= form_tag dashboard_path, method: :get do %>
-        <%= f.input :query, class: "placeholder-search", placeholder: "Tags",
-         input_html: {value: ""}, label: false  %>
-        <%= link_to tag_search_path do  %>
-        <div class="tag-dashboard d-flex justify-content-center align-items-center">
-          <%= f.button :submit, 'GO', class: 'tag-click' %>
-        </div>
-        <% end %>
+      <%= f.input :label, class: "", placeholder: "Sélection d'un tag",
+       input_html: {value: ""}, label: false  %>
+      <!--  champ d'input avec remise à zero par HTML  -->
+      <%= link_to dashboard_path do%>
+        <i class="fas fa-search mr-2 mt-2"></i>
       <% end %>
-      <% end %>
-
   </div>
 </div>
 
-
-
-<!-- simple_form default method POST donc GET spécifié  -->
-<!-- simple_form render results at url: same page -->
-<!-- pass symbol ':query' since not instance variable but rather a key -->
-<!--  form without objet => no association -->
-<%#= f.association :notes, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline, id: "tagCheckboxes" %>
-
-            <!--  champ d'input avec remise à zero par HTML  -->
-            <%= simple_form_for :query, url: tag_search_path,
-              method: :get, html: { class: 'form-inline' } do |f| %>
-              <!-- change :query pour :label -->
-              <%= f.input :label, class: "", placeholder: "Sélection d'un tag",
-               input_html: {value: ""}, label: false  %>
-
-               <!-- Accepter un array de tags ?? -->
-
-              <!-- choosed a form not with object but string so no association possible  -->
-
-              <%#= f.association :tags, collection: @collection_tags, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline, id: "tagCheckboxes" %>
-
-               <!-- Accepter un array de tags dans une collection -->
-
-
-
+<br>
 
   <!-- PARTIE GRISE -->
+
   <!--  zone des tags qui nourrissent l'input si sélectionnés -->
   <!--  garder l'id pour le Javascript -->
-
 <div class="tags-display-dashboard">
-    <div class="tags-search mt-2 d-flex flex-column" id="tag-search"> <!--ID IMPORTANT / JS -->
+    <div class="tags-search mt-2 d-flex flex-column" id="tag-search">
+      <!--ID IMPORTANT / JS -->
       <span class="tag-header">Cliquer sur un tag pour l'ajouter</span>
       <div>
         <% @tags.each do |un_tag| %>
@@ -69,52 +37,42 @@
         <% end %>
       </div>
     </div>
+      <%= f.button :submit, 'Valider', class: 'btn btn-primary' %>
+    <% end %>
 
     <!-- Resultat de la recherche par tag -->
 
-
-      <%if params[:query].present?  %>
-
+    <%if params[:query].present?  %>
       <div class="rappel-title">
         <span class="">Notes associées à ces tags</span>
       </div>
-
-
-        <% if !@notes.nil?%>
-            <% @notes.each do |note| %>
-
-              <%= link_to contact_path(note.contact) do  %>
-                <div class="notes-search d-flex">
-
-                  <div class="d-flex flex-column">
-
-                    <div class="notes-text-search d-flex flex-column">
-                      <div class="d-flex justify-content-between ">
-                        <span class="name-search"><%= note.contact.first_name %> <%= note.contact.last_name.upcase %></span>
-                        <span class="notes-text-date-search"><%= note.updated_at.strftime("%d %B %y") %></span>
-                      </div>
-                      <span class="notes-text-content-search"><%= note.content %></span>
+      <% if !@notes.nil?%>
+          <% @notes.each do |note| %>
+            <%= link_to contact_path(note.contact) do  %>
+              <div class="notes-search d-flex">
+                <div class="d-flex flex-column">
+                  <div class="notes-text-search d-flex flex-column">
+                    <div class="d-flex justify-content-between ">
+                      <span class="name-search"><%= note.contact.first_name %> <%= note.contact.last_name.upcase %></span>
+                      <span class="notes-text-date-search"><%= note.updated_at.strftime("%d %B %y") %></span>
                     </div>
-
-                    <div class="tags-fiche-contact-search d-flex" data-note-id="<%= note.id %>" >
-                      <% note.tags.each do |t| %>
-                      <div class="tag-bis <%= t.color %>">
-                        <p class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
-                      </div>
-                      <% end %>
-                    </div>
-
+                    <span class="notes-text-content-search"><%= note.content %></span>
                   </div>
-
+                  <div class="tags-fiche-contact-search d-flex" data-note-id="<%= note.id %>" >
+                    <% note.tags.each do |t| %>
+                    <div class="tag-bis <%= t.color %>">
+                      <p class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
+                    </div>
+                    <% end %>
+                  </div>
                 </div>
-               <% end %>
-
-            <% end %>
-        <% else %>
-          <p>Aucune note pour ce tag</p>
-        <% end %>
+              </div>
+             <% end %>
+          <% end %>
+      <% else %>
+        <p>Aucune note pour ce tag</p>
       <% end %>
-
+    <% end %>
 </div>
 
 

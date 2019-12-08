@@ -10,7 +10,8 @@ class DashboardsController < ApplicationController
       if @user_tags.include?(params[:query][:label].strip)
         @search = params[:query][:label].strip
         if !Tag.joins(:notes).where(label: @search).empty?
-          @notes = Tag.joins(:notes).where(label: @search).uniq[0].notes.each {|n| pp n.contact }
+          @notes = Note.joins(:tags).where(tags: {label: @search}).each { |n| n.contact}
+          #@notes = Tag.joins(:notes).where(label: @search).first.notes.each {|n| pp n.contact }
         end
       end
     end
