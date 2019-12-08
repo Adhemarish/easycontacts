@@ -5,13 +5,12 @@ class DashboardsController < ApplicationController
 
   def search # set_tags_dashboard
     if params[:query].present?
-      #query = params[:query].split(' ').first
-      #if !current_user.tags.where(tag: query).empty?
-        @tags.each do |note|
-          @surname = note.contact.first_name
-          @name = note.contact.last_name
-        end
-      #end
+      query = params[:query]['query']
+      @notes = Tag.find(Tag.where(label: query)[0].id).notes
+        # @query_tag.notes.each do |note|
+        #   @surname = note.contact.first_name
+        #   @name = note.contact.last_name
+        # end
     end
   end
 

@@ -18,7 +18,8 @@
               method: :get, html: { class: 'form-inline' } do |f| %>
 
               <%= f.input :query, class: "", placeholder: "Sélection d'un tag",
-               input_html: {value: ""}, label: false, collection: @tags %>
+               input_html: {value: ""}, label: false  %>
+               <!-- , collection: [@tags.label] A MODIFIER -->
             <%= link_to dashboard_path do%>
               <i class="fas fa-search mr-2 mt-2"></i>
             <% end %>
@@ -27,7 +28,7 @@
       </div>
   </div>
   <div id = "tag-search">
-    <%= @tags.each do |un_tag|%>
+    <% @tags.each do |un_tag|%>
       <%= render 'tags', tag: un_tag %>
     <% end %>
   </div>
@@ -37,7 +38,7 @@
 <% end %>
 
 
-<div class="col-sm-12" id="tagsCheckboxes"> <!--ID IMPORTANT / JS -->
+
   <%#= simple_form_for :search, url: tag_search_path, method: :get, wrapper: :inline_form,
     wrapper_mappings: { check_boxes: :horizontal_collection} do |f| %>
   <%#= f.error_notification %>
@@ -45,35 +46,28 @@
   <%#= f.input :label as: :check_boxes, collection: @tags, wrapper: :horizontal_collection_inline %>
    <%#= f.button :submit, 'Valider', class: 'btn btn-primary'%>
   <%# end %>
-</div>
 
-<div class="d-flex tag-add-full tag-list ">
-  <% @tags.each do |tag| %>
-    <div class="tag-bis small-tag <%= tag.color %>">
-    <p class="margin-tag" data-tag-id = "<%= tag.id %>" ><%= tag.label %></p>
+  <p id='target'></p>
+
+  <div class="dash-gray">
+    <div class="results-container-dash d-flex justify-content-center align-items-center flex-column">
+
+      <%if params[:query].present?  %>
+        <div class="results-container">
+          <% if @notes.any?%>
+            <div class="list-group">
+              <% @notes.each do |note| %>
+                <p><%= note.contact.first_name%> <%= note.contact.last_name%></p>
+                <p><%= note.content %> </p>
+              <% end %>
+            </div>
+          <% else %>
+            <p>Aucune note pour ce tag</p>
+          <% end %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-</div>
-
-<div class="dash-gray">
-
-  <div class="results-container-dash d-flex justify-content-center align-items-center flex-column">
-
-    <%if params[:query].present?  %>
-      <div class="results-container">
-        <% if @tags.any?%>
-          <div class="list-group">
-            <% @tags.each do |tag| %>
-              <p><%= tag.label %></p>
-            <% end %>
-          </div>
-        <% else %>
-          <p>Aucun contact ne correspond à votre recherche.</p>
-        <% end %>
-      </div>
-    <% end %>
   </div>
-</div>
 </div>
 
 <!-- à conserver sur cette page -->
