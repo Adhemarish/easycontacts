@@ -11,15 +11,25 @@
         <div class="dash-searchbar d-flex justify-content-center pr-5">
           <div class="search-bar d-flex justify-content-between mb-3">
             <p class="ml-3  dashboard-tag">TAG</p>
+
+
 <!-- simple_form has default method POST so GET is specified here  -->
 <!-- simple_form will render the results at url specified, here same page -->
 <!-- pass symbol ':query' since not instance variable but rather a key -->
+
+            <!--  champ d'input  -->
             <%= simple_form_for :query, url: tag_search_path,
               method: :get, html: { class: 'form-inline' } do |f| %>
 
               <%= f.input :query, class: "", placeholder: "Sélection d'un tag",
                input_html: {value: ""}, label: false  %>
-               <!-- , collection: [@tags.label] A MODIFIER -->
+
+              <!-- choosed a form not with object but string so no association possible  -->
+
+              <%#= f.association :tags, collection: @collection_tags, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline, id: "tagCheckboxes" %>
+
+               <!-- Accepter un array de tags dans une collection -->
+
             <%= link_to dashboard_path do%>
               <i class="fas fa-search mr-2 mt-2"></i>
             <% end %>
@@ -27,25 +37,21 @@
         </div>
       </div>
   </div>
+  <br>
+
+  <!--  zone des tags qui nourrissent dans l'input si sélectionnés -->
+  <!--  garder l'id pour le Javascript -->
   <div id = "tag-search">
     <% @tags.each do |un_tag|%>
+      <!-- le render qui sert à Javascript -->
       <%= render 'tags', tag: un_tag %>
     <% end %>
   </div>
 
- <%#= f.association :tags, collection: @tags.to_a, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline, id: "tagCheckboxes" %>
+
   <%= f.button :submit, 'Valider', class: 'btn btn-primary' %>
 <% end %>
 
-
-
-  <%#= simple_form_for :search, url: tag_search_path, method: :get, wrapper: :inline_form,
-    wrapper_mappings: { check_boxes: :horizontal_collection} do |f| %>
-  <%#= f.error_notification %>
-  <%#= render 'tags', tag: un_tag %>
-  <%#= f.input :label as: :check_boxes, collection: @tags, wrapper: :horizontal_collection_inline %>
-   <%#= f.button :submit, 'Valider', class: 'btn btn-primary'%>
-  <%# end %>
 
   <p id='target'></p>
 
