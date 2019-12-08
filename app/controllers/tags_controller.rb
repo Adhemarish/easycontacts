@@ -5,6 +5,7 @@ class TagsController < ApplicationController
     @tag.user = current_user
     @checked = "checked" # autocompletion lors de la création
     @tag.color = Tag::COULEURS.sample
+    @collection_tags = tags_array
     if @tag.save
       respond_to do |format|
         format.js
@@ -27,4 +28,7 @@ class TagsController < ApplicationController
     params.require(:tag).permit(:label, :color)
   end
 
+  def tags_array
+    current_user.tags.map { |tag| tag.label}
+  end
 end
