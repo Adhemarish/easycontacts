@@ -1,23 +1,39 @@
+<!-- PARTIE BLEUE -- NAVBAR -->
+
 <%=render 'shared/navbar', user: current_user %>
 
+<!-- PARTIE ROSE -->
 
-<div class="cont-global-dash">
+<div class="searchs-dashboard-tag">
 
-  <div class="dash-darkblue">
+  <div class="d-flex flex-column salutations">
+    <span class="dashboard-hey">Recherche par tags</span>
+  </div>
 
-    <div class="welcome pl-5 pt-3 pb-3">
-      <h3>Hey <%=current_user.first_name.capitalize%></h3>
-      <p>Qui avez-vous vu aujourd'hui ?</p>
-        <div class="dash-searchbar d-flex justify-content-center pr-5">
-          <div class="search-bar d-flex justify-content-between mb-3">
-            <p class="ml-3  dashboard-tag">TAG</p>
+  <div class="search-bar">
+
+    <%= simple_form_for :query, url: tag_search_path,
+      method: :get, html: { class: 'form-inline' } do |f| %>
+
+      <%= form_tag dashboard_path, method: :get do %>
+        <%= f.input :query, class: "placeholder-search", placeholder: "Tags",
+         input_html: {value: ""}, label: false  %>
+        <%= link_to tag_search_path do  %>
+        <div class="tag-dashboard d-flex justify-content-center align-items-center">
+          <%= f.button :submit, 'GO', class: 'tag-click' %>
+        </div>
+        <% end %>
+      <% end %>
+      <% end %>
+
+  </div>
+</div>
 
 
 
 <!-- simple_form default method POST donc GET spécifié  -->
 <!-- simple_form render results at url: same page -->
 <!-- pass symbol ':query' since not instance variable but rather a key -->
-
 <!--  form without objet => no association -->
 <%#= f.association :notes, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline, id: "tagCheckboxes" %>
 
@@ -30,78 +46,76 @@
 
                <!-- Accepter un array de tags ?? -->
 
-            <%= link_to dashboard_path do%>
-              <i class="fas fa-search mr-2 mt-2"></i>
-            <% end %>
-          </div>
-        </div>
-      </div>
-  </div>
-  <br>
+              <!-- choosed a form not with object but string so no association possible  -->
 
+              <%#= f.association :tags, collection: @collection_tags, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline, id: "tagCheckboxes" %>
+
+               <!-- Accepter un array de tags dans une collection -->
+
+
+
+
+  <!-- PARTIE GRISE -->
   <!--  zone des tags qui nourrissent l'input si sélectionnés -->
   <!--  garder l'id pour le Javascript -->
-  <div id = "tag-search">
-    <% @tags.each do |un_tag|%>
-      <!-- le render qui sert à Javascript -->
-      <%= render 'tags', tag: un_tag %>
-    <% end %>
-  </div>
 
-
-  <%= f.button :submit, 'Valider', class: 'btn btn-primary' %>
-<% end %>
-
-
-  <!-- <p id='target'></p> -->
-
-<div class="index-dash">
-  <%if params[:query].present?  %>
-    <% if !@notes.nil?%>
-      <ul class="list-group ml-3">
-        <% @notes.each do |note| %>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          <!-- <div class="mt-0">
-            <%#= cl_image_tag note.contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
-          </div> -->
-          <div class="contact-name ml-2 text-left">
-            <%= link_to "#{note.contact.first_name},#{note.contact.last_name}", contact_path(note.contact)  %>
-          </div>
-          <div class="d-flex flex-column">
-            <div class="notes-text d-flex flex-column">
-              <span class="notes-text-date"><%= note.updated_at.strftime("%d %B %y") %></span>
-              <span class="notes-text-content"><%= note.content %></span>
-            </div>
-            <div class="tags-fiche-contact border d-flex" data-note-id="<%= note.id %>" >
-              <% note.tags.each do |t| %>
-              <div class="tag-bis <%= t.color %>">
-                <p class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
-              </div>
-            <% end %>
-          </div>
-        </div>
-          <div class="d-flex mr-3">
-            <%= link_to new_contact_note_path(note.contact) do%>
-            <div class="d-flex contact-dash-icon mr-3">
-              <i class="fas fa-bell dash ml-3"></i>
-              <i class="fas fa-plus dash"></i>
-            </div>
-            <% end %>
-            <%= link_to new_contact_alert_path(note.contact) do%>
-            <div class="d-flex contact-dash-icon ml-2">
-              <i class="fas fa-sticky-note dash"></i>
-              <i class="fas fa-plus dash" style="margin-left:3px;"></i>
-            </div>
-            <% end %>
-          </div>
-        </li>
+<div class="tags-display-dashboard">
+    <div class="tags-search mt-2 d-flex flex-column" id="tag-search"> <!--ID IMPORTANT / JS -->
+      <span class="tag-header">Cliquer sur un tag pour l'ajouter</span>
+      <div>
+        <% @tags.each do |un_tag| %>
+          <!-- partial pour l'appel AJAX -->
+          <%= render 'tags', tag: un_tag %>
         <% end %>
-      </ul>
-    <% else %>
-      <p>Aucune note pour ce tag</p>
-    <% end %>
-  <% end %>
+      </div>
+    </div>
+
+    <!-- Resultat de la recherche par tag -->
+
+    <div class="index-dash">
+      <%if params[:query].present?  %>
+        <% if !@notes.nil?%>
+          <ul class="list-group ml-3">
+            <% @notes.each do |note| %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="mt-0">
+                <%= cl_image_tag note.contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
+              </div>
+              <div class="contact-name ml-2 text-left">
+                <%= link_to "#{note.contact.first_name},#{note.contact.last_name}", contact_path(note.contact)  %>
+              </div>
+              <div class="d-flex flex-column">
+                <div class="notes-text d-flex flex-column">
+                  <span class="notes-text-date"><%= note.updated_at.strftime("%d %B %y") %></span>
+                  <span class="notes-text-content"><%= note.content %></span>
+                </div>
+            </div>
+              <div class="d-flex mr-3">
+                <%= link_to new_contact_note_path(note.contact) do%>
+                <div class="d-flex contact-dash-icon mr-3">
+                  <i class="fas fa-bell dash ml-3"></i>
+                  <i class="fas fa-plus dash"></i>
+                </div>
+                <% end %>
+                <%= link_to new_contact_alert_path(note.contact) do%>
+                <div class="d-flex contact-dash-icon ml-2">
+                  <i class="fas fa-sticky-note dash"></i>
+                  <i class="fas fa-plus dash" style="margin-left:3px;"></i>
+                </div>
+                <% end %>
+              </div>
+            </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>Aucune note pour ce tag</p>
+        <% end %>
+      <% end %>
+    </div>
+
 </div>
+
+
 
 <!-- à conserver sur cette page -->
 <script type="text/javascript">
