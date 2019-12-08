@@ -62,7 +62,7 @@
         <% @notes.each do |note| %>
         <li class="list-group-item d-flex justify-content-between align-items-center">
           <!-- <div class="mt-0">
-            <%= cl_image_tag note.contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
+            <%#= cl_image_tag note.contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
           </div> -->
           <div class="contact-name ml-2 text-left">
             <%= link_to "#{note.contact.first_name},#{note.contact.last_name}", contact_path(note.contact)  %>
