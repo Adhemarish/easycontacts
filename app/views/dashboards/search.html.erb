@@ -16,13 +16,13 @@
       method: :get, html: { class: 'form-inline' } do |f| %>
 
       <%= form_tag dashboard_path, method: :get do %>
-        <%= f.input :query, class: "placeholder-search", placeholder: "Tags",
+        <%= f.input :label, class: "placeholder-search", placeholder: "Tags",
          input_html: {value: ""}, label: false  %>
-        <%= link_to tag_search_path do  %>
+
         <div class="tag-dashboard d-flex justify-content-center align-items-center">
           <%= f.button :submit, 'GO', class: 'tag-click' %>
         </div>
-        <% end %>
+
       <% end %>
       <% end %>
 
@@ -36,13 +36,6 @@
 <!-- pass symbol ':query' since not instance variable but rather a key -->
 <!--  form without objet => no association -->
 <%#= f.association :notes, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline, id: "tagCheckboxes" %>
-
-            <!--  champ d'input avec remise à zero par HTML  -->
-            <%= simple_form_for :query, url: tag_search_path,
-              method: :get, html: { class: 'form-inline' } do |f| %>
-              <!-- change :query pour :label -->
-              <%= f.input :label, class: "", placeholder: "Sélection d'un tag",
-               input_html: {value: ""}, label: false  %>
 
                <!-- Accepter un array de tags ?? -->
 
