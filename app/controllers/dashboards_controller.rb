@@ -13,13 +13,11 @@ class DashboardsController < ApplicationController
       end
     end
   end
+      # partial result for 1 word ok with: Tag.search_label("something")
 
       # SEARCH SUR 2 TAGS A REVOIR AVEC PIERRE GABRIEL SI POSSIBLE
-      # sql = " \
-      #   tags.label @@ :query \
-      #   OR tags.label @@ :query \
-      # "
-      # @notes = Tag.joins(:notes).where(sql, query: "%#{params[:query]}%")
+      #sql = "label @@ :query OR label @@ :query"
+      #@notes = Tag.joins(:notes).where(sql, query: "%#{params[:query][:label].strip}%")
 
 
   def index
