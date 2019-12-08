@@ -44,22 +44,24 @@
     <%  if @upcoming_contacts_alerts.any? %>
       <% @upcoming_contacts_alerts.first(4).each do |alert| %>
 
-      <div class="rappels dash d-flex">
+      <%= link_to contact_path(Contact.find(alert.contact_id)) do  %>
+        <div class="rappels dash d-flex">
 
-        <div class="rappels-text d-flex">
+          <div class="rappels-text d-flex">
 
-          <div>
-            <span class="rappels-text-date d-flex align-items-center  justify-content-center"><%= alert.datetime.strftime("%d %B").downcase %></span>
-          </div>
+            <div>
+              <span class="rappels-text-date d-flex align-items-center  justify-content-center"><%= alert.datetime.strftime("%d %B").downcase %></span>
+            </div>
 
-          <div class="rappels-text-content-dashboard d-flex flex-column">
-            <span class="dash-rappel-name">ROBERT DE NIRO</span>
-            <span class="dash-rappel-title"><%= alert.title %></span>
+            <div class="rappels-text-content-dashboard d-flex flex-column">
+              <span class="dash-rappel-name"><%= Contact.find(alert.contact_id).first_name %> <%= Contact.find(alert.contact_id).last_name.upcase %></span>
+              <span class="dash-rappel-title"><%= alert.title %></span>
+            </div>
+
           </div>
 
         </div>
-
-      </div>
+      <% end %>
 
       <% end %>
     <% else %>
