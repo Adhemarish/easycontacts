@@ -4,7 +4,6 @@
     <p>Pas de notes</p>
   <% else %>
 
-
       <% notes.each do |une_note|%>
 
       <div class="notes d-flex">
@@ -15,7 +14,7 @@
             <span class="notes-text-content"><%= une_note.content %></span>
           </div>
 
-          <div class="tags-fiche-contact d-flex" data-note-id="<%= une_note.id %>" >
+          <div class="tags-fiche-contact border d-flex" data-note-id="<%= une_note.id %>" >
               <% une_note.tags.each do |t| %>
               <div class="tag-bis">
                 <p class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
