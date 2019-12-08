@@ -28,12 +28,12 @@
         <% @nb_notes == 0 %>
         <%= 0 %>
         <% else %>
-        <%= @nb_notes %> notes</span>
-        <% end %>
+        <%= @nb_notes %>
+        <% end %> notes</span>
     </div>
   </div>
 
-  <%= link_to  contact_alerts_path(@contact) do  %>
+  <%= link_to contact_alerts_path(@contact) do  %>
     <div class="card-category category-rappels inactive d-flex border justify-content-between">
       <%= image_tag('rappel.svg', class: 'card-image-writing') %>
       <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">

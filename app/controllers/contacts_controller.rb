@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
     @notes = @contact.notes
     #@upcoming_alerts = @contact.alerts.where('datetime >= ?', Date.today).order(:datetime)
-    @nb_upcoming_alerts  = @contact.alerts.where('datetime >= ?', Date.today).order(:datetime).count
+    @nb_upcoming_alerts = @contact.alerts.where('datetime >= ?', Date.today).order(:datetime).count
     @nb_notes = @contact.notes.count
   end
 
@@ -29,6 +29,8 @@ class ContactsController < ApplicationController
 
   def edit
     @contact = Contact.find(params[:id])
+    @nb_upcoming_alerts = @contact.alerts.where('datetime >= ?', Date.today).order(:datetime).count
+    @nb_notes = @contact.notes.count
   end
 
   def update
@@ -43,7 +45,7 @@ class ContactsController < ApplicationController
   def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy
-    redirect_to contacts_path
+    redirect_to dashboard_path
   end
 
   private

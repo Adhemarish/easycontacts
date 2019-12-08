@@ -1,28 +1,38 @@
+<!-- PARTIE BLEUE -- NAVBAR -->
+
 <%=render 'shared/navbar', user: current_user %>
 
+<!-- PARTIE ROSE -->
 
-<div class="cont-global-dash">
+<div class="searchs-dashboard-tag">
 
-  <div class="dash-darkblue">
+  <div class="d-flex flex-column salutations">
+    <span class="dashboard-hey">Recherche par tags</span>
+  </div>
 
-    <div class="welcome pl-5 pt-3 pb-3">
-      <h3>Hey <%=current_user.first_name.capitalize%></h3>
-      <p>Qui avez-vous vu aujourd'hui ?</p>
-        <div class="dash-searchbar d-flex justify-content-center pr-5">
-          <div class="search-bar d-flex justify-content-between mb-3">
-            <p class="ml-3  dashboard-tag">TAG</p>
+  <div class="search-bar">
+
+    <%= simple_form_for :query, url: tag_search_path,
+      method: :get, html: { class: 'form-inline' } do |f| %>
+
+      <%= form_tag dashboard_path, method: :get do %>
+        <%= f.input :query, class: "placeholder-search", placeholder: "Tags",
+         input_html: {value: ""}, label: false  %>
+        <%= link_to tag_search_path do  %>
+        <div class="tag-dashboard d-flex justify-content-center align-items-center">
+          <%= f.button :submit, 'GO', class: 'tag-click' %>
+        </div>
+        <% end %>
+      <% end %>
+      <% end %>
+
+  </div>
+</div>
 
 
 <!-- simple_form has default method POST so GET is specified here  -->
 <!-- simple_form will render the results at url specified, here same page -->
 <!-- pass symbol ':query' since not instance variable but rather a key -->
-
-            <!--  champ d'input  -->
-            <%= simple_form_for :query, url: tag_search_path,
-              method: :get, html: { class: 'form-inline' } do |f| %>
-
-              <%= f.input :query, class: "", placeholder: "Sélection d'un tag",
-               input_html: {value: ""}, label: false  %>
 
               <!-- choosed a form not with object but string so no association possible  -->
 
@@ -30,28 +40,26 @@
 
                <!-- Accepter un array de tags dans une collection -->
 
-            <%= link_to dashboard_path do%>
-              <i class="fas fa-search mr-2 mt-2"></i>
-            <% end %>
-          </div>
-        </div>
-      </div>
-  </div>
-  <br>
 
   <!--  zone des tags qui nourrissent dans l'input si sélectionnés -->
+
   <!--  garder l'id pour le Javascript -->
-  <div id = "tag-search">
-    <% @tags.each do |un_tag|%>
-      <!-- le render qui sert à Javascript -->
-      <%= render 'tags', tag: un_tag %>
-    <% end %>
-  </div>
 
+<div class="tags-display-dashboard">
 
-  <%= f.button :submit, 'Valider', class: 'btn btn-primary' %>
-<% end %>
+    <div class="tags-search mt-2 d-flex flex-column" id="tag-search"> <!--ID IMPORTANT / JS -->
+      <span class="tag-header">Cliquer sur un tag pour l'ajouter</span>
+      <div>
+        <% @tags.each do |un_tag| %>
+          <!-- partial pour l'appel AJAX -->
+          <%= render 'tags', tag: un_tag %>
+        <% end %>
+      </div>
+    </div>
 
+</div>
+
+<!-- Resultat de la recherche par tag -->
 
   <p id='target'></p>
 

@@ -30,8 +30,14 @@
         <%= image_tag('rappel.svg', class: 'card-image-writing') %>
         <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
           <span class="info-category-text">Rappels</span>
-          <span class="info-stats-text">14 rappels</span>
-        </div>
+          <span class="info-stats-text">
+            <% if %>
+            <% @nb_upcoming_alerts == 0 %>
+            <%= 0 %>
+            <% else %>
+            <%= @nb_upcoming_alerts %>
+            <% end %> rappels</span>
+            </div>
       </div>
     <% end %>
 
@@ -170,7 +176,7 @@
 
   <div class="position-relative">
 
-    <%= link_to dashboard_path, method: :delete, data: { confirm: "Êtes-vous sûr(e)?" } do %>
+    <%= link_to contact_path(@contact), method: :delete, data: { confirm: "Êtes-vous sûr(e)?" } do %>
     <div class="md-btn-notes-delete absolute-delete-contact">
       <?xml version="1.0"?>
       <svg class="card-image-delete" xmlns="http://www.w3.org/2000/svg" height="27px" viewBox="-48 0 407 407" width="27px"><g><path d="m89.199219 37c0-12.132812 9.46875-21 21.601562-21h88.800781c12.128907 0 21.597657 8.867188 21.597657 21v23h16v-23c0-20.953125-16.644531-37-37.597657-37h-88.800781c-20.953125 0-37.601562 16.046875-37.601562 37v23h16zm0 0" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FF4D4D"/><path d="m60.601562 407h189.199219c18.242188 0 32.398438-16.046875 32.398438-36v-247h-254v247c0 19.953125 14.15625 36 32.402343 36zm145.597657-244.800781c0-4.417969 3.582031-8 8-8s8 3.582031 8 8v189c0 4.417969-3.582031 8-8 8s-8-3.582031-8-8zm-59 0c0-4.417969 3.582031-8 8-8s8 3.582031 8 8v189c0 4.417969-3.582031 8-8 8s-8-3.582031-8-8zm-59 0c0-4.417969 3.582031-8 8-8s8 3.582031 8 8v189c0 4.417969-3.582031 8-8 8s-8-3.582031-8-8zm0 0" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FF4D4D"/><path d="m20 108h270.398438c11.046874 0 20-8.953125 20-20s-8.953126-20-20-20h-270.398438c-11.046875 0-20 8.953125-20 20s8.953125 20 20 20zm0 0" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FF4D4D"/></g> </svg>
