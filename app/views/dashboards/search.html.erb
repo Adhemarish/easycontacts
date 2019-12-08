@@ -30,9 +30,21 @@
 </div>
 
 
-<!-- simple_form has default method POST so GET is specified here  -->
-<!-- simple_form will render the results at url specified, here same page -->
+
+<!-- simple_form default method POST donc GET spécifié  -->
+<!-- simple_form render results at url: same page -->
 <!-- pass symbol ':query' since not instance variable but rather a key -->
+<!--  form without objet => no association -->
+<%#= f.association :notes, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline, id: "tagCheckboxes" %>
+
+            <!--  champ d'input avec remise à zero par HTML  -->
+            <%= simple_form_for :query, url: tag_search_path,
+              method: :get, html: { class: 'form-inline' } do |f| %>
+              <!-- change :query pour :label -->
+              <%= f.input :label, class: "", placeholder: "Sélection d'un tag",
+               input_html: {value: ""}, label: false  %>
+
+               <!-- Accepter un array de tags ?? -->
 
               <!-- choosed a form not with object but string so no association possible  -->
 
@@ -42,14 +54,12 @@
 
 
 
+
   <!-- PARTIE GRISE -->
-
-  <!--  zone des tags qui nourrissent dans l'input si sélectionnés -->
-
+  <!--  zone des tags qui nourrissent l'input si sélectionnés -->
   <!--  garder l'id pour le Javascript -->
 
 <div class="tags-display-dashboard">
-
     <div class="tags-search mt-2 d-flex flex-column" id="tag-search"> <!--ID IMPORTANT / JS -->
       <span class="tag-header">Cliquer sur un tag pour l'ajouter</span>
       <div>
@@ -62,7 +72,6 @@
 
     <!-- Resultat de la recherche par tag -->
 
-      <p id='target'></p>
 
       <%if params[:query].present?  %>
 

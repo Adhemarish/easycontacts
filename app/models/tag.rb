@@ -9,4 +9,12 @@ class Tag < ApplicationRecord
 
   COULEURS = ['red-tag', 'orange-tag', 'yellow-tag', 'green-tag']
 
+  include PgSearch
+    pg_search_scope :search_label, against: [:label],
+    # for partial words
+    using: {
+      tsearch: {
+        prefix: true
+      }
+    }
 end

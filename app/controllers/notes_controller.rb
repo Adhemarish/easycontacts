@@ -2,7 +2,6 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:edit, :update, :destroy]
 
   def new
-    logger.debug "................NEW.............."
     @contact = Contact.find(params[:contact_id])
     @note = Note.new
     @tags = current_user.tags
@@ -16,7 +15,6 @@ class NotesController < ApplicationController
     @tags = current_user.tags
 
     if @note.save
-      logger.debug "................#{@note}............."
       redirect_to contact_path(@contact)
     # else
     #   redirect_to new_contact_note_path(@contact)
@@ -50,6 +48,6 @@ class NotesController < ApplicationController
 
   def note_params
     params.require(:note).permit(:content, tag_ids: [])#, :tag)
-    #params.require(:note).permit(:content, tags_attributes: [:id, :label])
+    #params.require(:note).permit(:content, tags_attributes: [:id, :label, :color])
   end
 end
