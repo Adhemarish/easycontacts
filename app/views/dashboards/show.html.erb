@@ -44,7 +44,7 @@
     <%  if @upcoming_contacts_alerts.any? %>
       <% @upcoming_contacts_alerts.first(4).each do |alert| %>
 
-      <%= link_to contact_path(Contact.find(alert.contact_id)) do  %>
+      <%= link_to contact_path(alert.contact) do  %>
         <div class="rappels dash d-flex">
 
           <div class="rappels-text d-flex">
@@ -54,7 +54,7 @@
             </div>
 
             <div class="rappels-text-content-dashboard d-flex flex-column">
-              <span class="dash-rappel-name"><%= Contact.find(alert.contact_id).first_name %> <%= Contact.find(alert.contact_id).last_name.upcase %></span>
+              <span class="dash-rappel-name"><%= alert.contact.first_name %> <%= alert.contact.last_name.upcase %></span>
               <span class="dash-rappel-title"><%= alert.title %></span>
             </div>
 

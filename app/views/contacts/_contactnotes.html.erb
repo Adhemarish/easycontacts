@@ -4,18 +4,18 @@
     <p>Pas de notes</p>
   <% else %>
 
-      <% notes.each do |une_note|%>
+      <% notes.each do |note|%>
 
       <div class="notes d-flex">
 
         <div class="d-flex flex-column">
           <div class="notes-text d-flex flex-column">
-            <span class="notes-text-date"><%= une_note.updated_at.strftime("%d %B %y") %></span>
-            <span class="notes-text-content"><%= une_note.content %></span>
+            <span class="notes-text-date"><%= note.updated_at.strftime("%d %B %y") %></span>
+            <span class="notes-text-content"><%= note.content %></span>
           </div>
 
-          <div class="tags-fiche-contact border d-flex" data-note-id="<%= une_note.id %>" >
-              <% une_note.tags.each do |t| %>
+          <div class="tags-fiche-contact border d-flex" data-note-id="<%= note.id %>" >
+              <% note.tags.each do |t| %>
               <div class="tag-bis <%= t.color %>">
                 <p class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
               </div>
@@ -26,7 +26,7 @@
 
           <div class="notes-button-edit">
 
-            <%= link_to edit_note_path(une_note) do %>
+            <%= link_to edit_note_path(note) do %>
               <div class="md-btn-notes-edit">
                 <?xml version="1.0"?>
                 <svg class="card-image-edit" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px"><g><g>
@@ -44,7 +44,7 @@
 
             <% end %>
 
-            <%= link_to note_path(une_note), method: :delete, data: { confirm: "Êtes-vous sûr(e)?" } do %>
+            <%= link_to note_path(note), method: :delete, data: { confirm: "Êtes-vous sûr(e)?" } do %>
             <div class="md-btn-notes">
               <?xml version="1.0"?>
               <svg class="card-image-delete" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 438.529 438.529" style="enable-background:new 0 0 438.529 438.529;" xml:space="preserve" class=""><g><g>
