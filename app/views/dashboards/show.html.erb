@@ -1,17 +1,5 @@
 <!-- PARTIE BLEUE -->
-<div class="d-flex justify-content-center navbar-dashboard"">
-   <div>
-     <%= link_to dashboard_path do %>
-            <%= image_tag('house-empty.svg', class: 'btn-home') %>
-          <% end %>
-   </div>
-
-    <p class="dashboard-title">Easycontact</p>
-
-    <%= link_to dashboard_path do %>
-           <%= image_tag('user.svg', class: 'btn-user') %>
-         <% end %>
-</div>
+<%=render 'shared/navbar', user: current_user %>
 
 
 
@@ -86,54 +74,67 @@
 <!-- Resultats query -->
 
   <%if params[:query].present?  %>
-  <div class="results-container">
-    <% if @contacts.any?%>
-      <!-- <ul class="list-group"> -->
-      <div class="list-group">
-      <% @contacts.each do |contact| %>
-        <!-- <li class="list-group-item d-flex justify-content-center align-items-center"> -->
-        <div class="list-group-item d-flex justify-content-center align-items-center">
 
-        <div class="mt-0">
-          <%= cl_image_tag contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
-        </div>
 
-        <%= link_to contact_path(contact) do%>
 
-        <div class="contact-name ml-2 text-left">
-          <%= contact.first_name%> <%=contact.last_name%>
-        </div>
-        <% end %>
-        <!-- <div class=" ">
-          <i class="fas fa-phone dash ml-3 mt-3"></i>
-        </div> -->
-        <div class="d-flex mr-3">
-          <%= link_to new_contact_alert_path(contact) do%>
-          <div class="d-flex contact-dash-icon mr-3">
-            <i class="fas fa-bell ml-3"></i>
-            <i class="fas fa-plus"></i>
-          </div>
-          <% end %>
-          <%= link_to new_contact_note_path(contact) do%>
-          <div class="d-flex contact-dash-icon ml-2">
-            <i class="fas fa-sticky-note"></i>
-            <i class="fas fa-plus" style="margin-left:3px;"></i>
-          </div>
-          <% end %>
-        </div>
-        <!-- </li> -->
-        </div>
-        </div>
-        <% end %>
+  <div class="rappels-dashboard">
+
+    <div class="rappel-title">
+      <span class="">Résultats</span>
     </div>
-      <!-- </ul> -->
+
+      <% if @contacts.any?%>
+
+    <div class="results">
+      <% @contacts.each do |contact| %>
+      <div class="result d-flex">
+
+        <!-- Avatar -->
+          <div class="mt-0">
+            <%= cl_image_tag contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
+          </div>
+
+        <!-- Prénom / Nom -->
+          <%= link_to contact_path(contact) do%>
+
+          <div class="d-flex flex-column results-info">
+            <span class="results-name"><%= contact.first_name%> <%=contact.last_name%></span>
+            <span class="result-company"><%=contact.company%></span>
+          </div>
+          <% end %>
+
+        <!-- Icons -->
+
+          <div class="d-flex results-icons">
+
+            <%= link_to new_contact_alert_path(contact) do%>
+            <div class="d-flex contact-dash-icon">
+              <i class="fas fa-bell ml-3"></i>
+              <i class="fas fa-plus"></i>
+            </div>
+            <% end %>
+
+            <%= link_to new_contact_note_path(contact) do%>
+            <div class="d-flex contact-dash-icon ml-3">
+              <i class="fas fa-sticky-note"></i>
+              <i class="fas fa-plus" style="margin-left:3px;"></i>
+            </div>
+            <% end %>
+          </div>
+
+
+
+      </div>
+      <% end %>
+
+    </div>
+
     <% else %>
       <p>Aucun contact ne correspond à votre recherche.</p>
     <% end %>
+
     </div>
   <% end %>
-</div>
-
 
 
 <!-- Bouton new contact -->

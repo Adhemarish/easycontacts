@@ -1,17 +1,14 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<!-- PARTIE BLEUE -->
+<div class="d-flex justify-content-center navbar-dashboard"">
+   <div>
+     <%= link_to dashboard_path do %>
+            <%= image_tag('house-empty.svg', class: 'btn-home') %>
+          <% end %>
+   </div>
 
-  <button class="btn btn-menu dropdown-toggle pr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <% if user_signed_in? %>
-      <%= link_to "Mon compte", "#", class: "dropdown-item" %>
-      <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-    <% else %>
-      <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
-    <% end %>
-  </div>
-  <div class="navbar-logo"><%= link_to "#" do %> <i class="fas fa-users"></i><em>EasyContact</em><%end%>
-  </%></div>
-  </div>
+    <p class="dashboard-title">Easycontact</p>
 
+    <%= link_to dashboard_path do %>
+           <%= image_tag('user.svg', class: 'btn-user') %>
+         <% end %>
 </div>
