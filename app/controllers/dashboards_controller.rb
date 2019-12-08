@@ -4,23 +4,23 @@ class DashboardsController < ApplicationController
   before_action :set_tags_dashboard, only: [:search]
 
   def search # set_tags_dashboard
+    @user_tags = current_user.tags.map { |tag| tag.label }
 
-    #@user_tags = current_user.tags.map { |tag| tag }
+    if params[:query].present?
+      if @user_tags.include?(params[:query][:label].strip)
+        @search = params[:query][:label].strip
+        @notes = Tag.joins(:notes).where(label: @search).uniq[0].notes.each {|n| pp n.contact }
+      end
+    end
+  end
 
-    return unless params[:query].present?
-
-    if params[:query][:label] != ""
-      @search = params[:query][:label].strip
-      @notes = Tag.joins(:notes).where(label: @search).uniq[0].notes.each {|n| pp n.contact }
-
-      # A REVOIR AVEC PIERRE GABRIEL SI POSSIBLE
+      # SEARCH SUR 2 TAGS A REVOIR AVEC PIERRE GABRIEL SI POSSIBLE
       # sql = " \
       #   tags.label @@ :query \
       #   OR tags.label @@ :query \
       # "
       # @notes = Tag.joins(:notes).where(sql, query: "%#{params[:query]}%")
-    end
-  end
+
 
   def index
     if params[:query].present?
