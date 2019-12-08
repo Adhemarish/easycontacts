@@ -47,6 +47,7 @@
         <span class="">Notes associées à ces tags</span>
       </div>
       <% if !@notes.nil?%>
+        <% if !@notes.empty? %>
           <% @notes.each do |note| %>
             <%= link_to contact_path(note.contact) do  %>
               <div class="notes-search d-flex">
@@ -69,9 +70,9 @@
               </div>
              <% end %>
           <% end %>
-      <% else %>
-        <p>Aucune note pour ce tag</p>
+        <% end %>
       <% end %>
+      <p>Aucune note pour <%= @search %></p>
     <% end %>
 </div>
 
