@@ -41,6 +41,9 @@
                <!-- Accepter un array de tags dans une collection -->
 
 
+
+  <!-- PARTIE GRISE -->
+
   <!--  zone des tags qui nourrissent dans l'input si sélectionnés -->
 
   <!--  garder l'id pour le Javascript -->
@@ -57,52 +60,54 @@
       </div>
     </div>
 
-</div>
+    <!-- Resultat de la recherche par tag -->
 
-<!-- Resultat de la recherche par tag -->
+      <p id='target'></p>
 
-  <p id='target'></p>
-
-<div class="index-dash">
-  <%if params[:query].present?  %>
-    <% if !@notes.nil?%>
-      <ul class="list-group ml-3">
-        <% @notes.each do |note| %>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          <div class="mt-0">
-            <%= cl_image_tag note.contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
-          </div>
-          <div class="contact-name ml-2 text-left">
-            <%= link_to "#{note.contact.first_name},#{note.contact.last_name}", contact_path(note.contact)  %>
-          </div>
-          <div class="d-flex flex-column">
-            <div class="notes-text d-flex flex-column">
-              <span class="notes-text-date"><%= note.updated_at.strftime("%d %B %y") %></span>
-              <span class="notes-text-content"><%= note.content %></span>
+    <div class="index-dash">
+      <%if params[:query].present?  %>
+        <% if !@notes.nil?%>
+          <ul class="list-group ml-3">
+            <% @notes.each do |note| %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="mt-0">
+                <%= cl_image_tag note.contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
+              </div>
+              <div class="contact-name ml-2 text-left">
+                <%= link_to "#{note.contact.first_name},#{note.contact.last_name}", contact_path(note.contact)  %>
+              </div>
+              <div class="d-flex flex-column">
+                <div class="notes-text d-flex flex-column">
+                  <span class="notes-text-date"><%= note.updated_at.strftime("%d %B %y") %></span>
+                  <span class="notes-text-content"><%= note.content %></span>
+                </div>
             </div>
-        </div>
-          <div class="d-flex mr-3">
-            <%= link_to new_contact_note_path(note.contact) do%>
-            <div class="d-flex contact-dash-icon mr-3">
-              <i class="fas fa-bell dash ml-3"></i>
-              <i class="fas fa-plus dash"></i>
-            </div>
+              <div class="d-flex mr-3">
+                <%= link_to new_contact_note_path(note.contact) do%>
+                <div class="d-flex contact-dash-icon mr-3">
+                  <i class="fas fa-bell dash ml-3"></i>
+                  <i class="fas fa-plus dash"></i>
+                </div>
+                <% end %>
+                <%= link_to new_contact_alert_path(note.contact) do%>
+                <div class="d-flex contact-dash-icon ml-2">
+                  <i class="fas fa-sticky-note dash"></i>
+                  <i class="fas fa-plus dash" style="margin-left:3px;"></i>
+                </div>
+                <% end %>
+              </div>
+            </li>
             <% end %>
-            <%= link_to new_contact_alert_path(note.contact) do%>
-            <div class="d-flex contact-dash-icon ml-2">
-              <i class="fas fa-sticky-note dash"></i>
-              <i class="fas fa-plus dash" style="margin-left:3px;"></i>
-            </div>
-            <% end %>
-          </div>
-        </li>
+          </ul>
+        <% else %>
+          <p>Aucune note pour ce tag</p>
         <% end %>
-      </ul>
-    <% else %>
-      <p>Aucune note pour ce tag</p>
-    <% end %>
-  <% end %>
+      <% end %>
+    </div>
+
 </div>
+
+
 
 <!-- à conserver sur cette page -->
 <script type="text/javascript">
