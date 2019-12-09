@@ -4,12 +4,12 @@
 
 <div class="position-relative">
 
-  <div class="header-contact d-flex justify-content-center align-items-center">
+  <div class="header-contact-info d-flex justify-content-center align-items-center">
     <%= link_to dashboard_path do %>
       <%= image_tag('house-empty.svg', class: 'btn-home') %>
     <% end %>
 
-    <div class="header-photo px-5">
+    <div class="header-photo-info px-5">
       <div class="d-flex justify-content-center">
         <%= cl_image_tag @contact.avatar, height: 200, width: 200, crop: :fill, class: "frame-picture" %>
       </div>

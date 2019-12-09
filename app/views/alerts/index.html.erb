@@ -1,15 +1,11 @@
 <!-- Header -->
 
-<div class="position-relative">
+<%= link_to dashboard_path do %>
+          <%= image_tag('house-empty.svg', class: 'btn-home') %>
+        <% end %>
 
-  <div class="header-contact d-flex justify-content-center align-items-center">
-    <span>
-      <%= link_to dashboard_path do %>
-      <%= image_tag('house-empty.svg', class: 'btn-home') %>
-    <% end %>
-    </span>
+  <div class="header-contact bg-red d-flex justify-content-center align-items-center">
     <div class="header-photo px-5">
-      <%= cl_image_tag @contact.avatar, height: 200, width: 200, crop: :fill, class: "frame-picture" %>
       <div>
         <p class="text-center header-first-name"><%= @contact.first_name %></p>
         <p class="text-center header-last-name"><%= @contact.last_name.upcase %></p>
@@ -76,7 +72,6 @@
 
 <!-- alerts -->
 
-<br>
 
   <div class="upcoming-alerts mb-5">
     <div class="scrollable">
@@ -86,11 +81,11 @@
 
             <div class="rappels-text d-flex align-items-center justify-content-center">
               <div>
-                <span class="rappels-text-date d-flex align-items-center justify-content-center"><%= I18n.l(alert.datetime, format: "%e %B") %></span>
+                <span class="rappels-text-date d-flex align-items-center justify-content-center"><%= I18n.l(alert.datetime, format: "%e") %><br><%= I18n.l(alert.datetime, format: "%B") %></span>
               </div>
 
               <div>
-                <span class="rappels-text-content d-flex align-items-center"><%= alert.title %></span>
+                <span class="rappels-text-content d-flex align-items-center"><%= alert.title.capitalize %></span>
               </div>
             </div>
 

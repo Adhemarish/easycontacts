@@ -1,5 +1,5 @@
 
-<div class="form-check form-check-inline <%= tag.color %>" data-checkbox-id="<%= tag.id %>">
+<div class="form-check form-check-inline tag-form <%= tag.color %>" data-checkbox-id="<%= tag.id %>">
   <input hidden class="tag-bis" type="checkbox" value="<%= tag.id %>" name="note[tag_ids][]" id="note_tag_ids_<%=tag.id%>">
-  <label  class="tag-text" for="note_tag_ids_<%=tag.id%>"><%= tag.label.capitalize %></label>
+  <label  class="tag-text <%= tag.color %>" for="note_tag_ids_<%=tag.id%>"><%= tag.label.capitalize %></label>
 </div>
