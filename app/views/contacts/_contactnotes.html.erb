@@ -17,7 +17,7 @@
           <div class="tags-fiche-contact border d-flex" data-note-id="<%= note.id %>" >
               <% note.tags.each do |t| %>
               <div class="tag-bis <%= t.color %>">
-                <p class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
+                <span class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></span>
               </div>
             <% end %>
           </div>
