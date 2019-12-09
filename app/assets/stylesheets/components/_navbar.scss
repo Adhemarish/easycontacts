@@ -3,10 +3,8 @@
 .navbar-dashboard {
   width:100%;
   background-color: $darkblue;
-  // position:fixed;
-  // top:0px;
-  // height:20%;
-  // z-index: 1;
+  height:15vh;
+  margin-bottom: -5vh;
 }
 
 .dashboard-title {
@@ -18,64 +16,5 @@
 
 
 
-// NAVBAR PRECEDENTE
-
-.navbar-lewagon {
-  justify-content: space-between;
-  background: $darkblue;
-  // display: flex;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-// .fas.fa-bars {
-//   color: white;
-//   font-size: 25px;
-//   flex-grow: 0;
-// }
-
-.navbar-logo a {
-  color: white;
-  text-align: center;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 29px;
-}
-
-.navbar-logo a:hover {
-  color: white;
-  text-align: center;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 29px;
-  text-decoration: none;
-
-  .fa-users {
-    color: #D73D2B;
-  }
-}
-
-
-.fa-users:hover {
-  color: #D73D2B;
-}
-
-.btn-menu {
-  color: #D73D2B;
-  // border: solid white;
-  border-radius: 10px;
-  text-align: left;
-  font-size: 20px;
-  background-color: #F3F4F4;
-}
-
-.btn-menu:hover {
-  color: white;
-  background-color: #D73D2B;
-  border-radius: 10px;
-  font-size: 20px;
-}
 
 

@@ -1,6 +1,18 @@
-<!-- PARTIE BLEUE -- NAVBAR -->
+<!-- PARTIE BLEUE -->
+<div class="d-flex justify-content-center navbar-dashboard">
+   <div>
+     <%= link_to dashboard_path do %>
+            <%= image_tag('house-empty.svg', class: 'btn-home') %>
+          <% end %>
+   </div>
 
-<%=render 'shared/navbar', user: current_user %>
+    <p class="dashboard-title">Easycontact</p>
+
+    <%= link_to dashboard_path do %>
+           <%= image_tag('user.svg', class: 'btn-user') %>
+         <% end %>
+</div>
+
 
 <!-- PARTIE ROSE -->
 
@@ -38,10 +50,6 @@
       <%# end %>
   </div>
 </div>
-
-
-<br>
-
 
   <!-- PARTIE GRISE -->
 
