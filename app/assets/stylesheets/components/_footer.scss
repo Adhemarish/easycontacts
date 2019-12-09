@@ -70,6 +70,16 @@
   width:75%;
 }
 
+// dashboard
+
+.position-relative .fa-plus {
+  position:relative;
+  bottom:21px;
+  font-size:10px;
+  padding-left:18px;
+  z-index:3;
+}
+
 // FOOTER SIGN UP
 
 input#user_email {
