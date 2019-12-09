@@ -20,6 +20,8 @@
 }
 
 .scrolling-wrapper-flexbox {
+
+  -webkit-overflow-scrolling: touch;
   padding-bottom:15px;
   display: flex;
   flex-wrap: nowrap;
@@ -30,17 +32,7 @@
   }
 }
 
-.category-rappels.edit {
-  position:absolute;
-  bottom:-70px;
-  left:75px;
-}
 
-.category-infos.edit {
-  position:absolute;
-  bottom:-70px;
-  left:235px;
-}
 
 .category-notes.active {
   background-color:#70B59E;
