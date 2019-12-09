@@ -1,6 +1,18 @@
-<!-- PARTIE BLEUE -- NAVBAR -->
+<!-- PARTIE BLEUE -->
+<div class="d-flex justify-content-center navbar-dashboard">
+   <div>
+     <%= link_to dashboard_path do %>
+            <%= image_tag('house-empty.svg', class: 'btn-home') %>
+          <% end %>
+   </div>
 
-<%=render 'shared/navbar', user: current_user %>
+    <p class="dashboard-title">Easycontact</p>
+
+    <%= link_to dashboard_path do %>
+           <%= image_tag('user.svg', class: 'btn-user') %>
+         <% end %>
+</div>
+
 
 <!-- PARTIE ROSE -->
 
@@ -10,11 +22,13 @@
   </div>
   <div class="search-bar">
 
+
     <%= simple_form_for :query, url: tag_search_path,
       method: :get, html: { class: 'form-inline' } do |f| %>
 
       <!-- Retour à la search par nom à gauche -->
       <%= link_to dashboard_path do%>
+
         <i class="fas fa-search mr-2 mt-2"></i>
       <% end %>
 
@@ -24,15 +38,11 @@
 
 
 
-
-
       <%# end %> <!-- l'ancien fin du 'do' sur le link_to_dashboard supprimé ?-->
 
       <%# end %>
   </div>
 </div>
-
-<br>
 
 
   <!-- PARTIE GRISE -->
