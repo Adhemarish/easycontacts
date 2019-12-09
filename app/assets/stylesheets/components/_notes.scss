@@ -86,18 +86,12 @@ textarea#note_content {
   font-size:18px;
 }
 
-.validate-note-add {
-  position:fixed;
-  bottom:45px;
-  right:100px;
-  z-index:1;
-}
-
 .cancel-add-notes {
-  margin-top:20px;
   color:white;
-  padding-left:100px;
   text-decoration: underline white;
+  p {
+  margin-bottom: 0px;
+  }
 }
 
 .cancel-add-notes-text {

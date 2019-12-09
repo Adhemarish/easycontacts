@@ -44,6 +44,12 @@
   box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.12);
 }
 
+.buttons-add-cancel {
+  display:flex;
+  justify-content: space-evenly;
+  align-items:center;
+  margin-top: 3px;
+}
 .absolute-edit-contact {
   position:absolute;
   bottom:30px;
