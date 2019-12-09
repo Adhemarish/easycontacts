@@ -4,6 +4,7 @@
     <p>Pas de notes</p>
   <% else %>
 
+
       <% notes.each do |note|%>
 
       <%= link_to edit_note_path(note) do %>
@@ -13,13 +14,13 @@
 
               <div class="note-text d-flex flex-column">
                 <span class="note-text-date"><%= note.updated_at.strftime("%d %B %y") %></span>
-                <div class="note-text-content border"><%= note.content %></div>
+                <div class="note-text-content"><%= note.content %></div>
               </div>
 
-              <div class="tags-fiche-contact border d-flex" data-note-id="<%= note.id %>" >
+              <div class="tags-fiche-contact d-flex" data-note-id="<%= note.id %>" >
                   <% note.tags.each do |t| %>
                   <div class="tag-bis <%= t.color %>">
-                    <span class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></span>
+                    <span class="<%= tag.color %>" data-tag-id = "<%= t.id %>" ><%= t.label.capitalize %></span>
                   </div>
                 <% end %>
               </div>
@@ -48,11 +49,8 @@
 
           </div>
 
-        </div>
+          <% end %>
 
+        <% end  %>
 
-
-        <% end %>
-
-      <% end  %>
-    <% end %>
+  <% end %>
