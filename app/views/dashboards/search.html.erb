@@ -1,6 +1,18 @@
-<!-- PARTIE BLEUE -- NAVBAR -->
+<!-- PARTIE BLEUE -->
+<div class="d-flex justify-content-center navbar-dashboard">
+   <div>
+     <%= link_to dashboard_path do %>
+            <%= image_tag('house-empty.svg', class: 'btn-home') %>
+          <% end %>
+   </div>
 
-<%=render 'shared/navbar', user: current_user %>
+    <p class="dashboard-title">Easycontact</p>
+
+    <%= link_to dashboard_path do %>
+           <%= image_tag('user.svg', class: 'btn-user') %>
+         <% end %>
+</div>
+
 
 <!-- PARTIE ROSE -->
 
@@ -28,25 +40,6 @@
 
   </div>
 </div>
-
-
-
-<!-- simple_form default method POST donc GET spécifié  -->
-<!-- simple_form render results at url: same page -->
-<!-- pass symbol ':query' since not instance variable but rather a key -->
-<!--  form without objet => no association -->
-<%#= f.association :notes, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline, id: "tagCheckboxes" %>
-
-               <!-- Accepter un array de tags ?? -->
-
-              <!-- choosed a form not with object but string so no association possible  -->
-
-              <%#= f.association :tags, collection: @collection_tags, label_method: :label, value_method: :id, as: :check_boxes, wrapper: :horizontal_collection_inline, id: "tagCheckboxes" %>
-
-               <!-- Accepter un array de tags dans une collection -->
-
-
-
 
   <!-- PARTIE GRISE -->
   <!--  zone des tags qui nourrissent l'input si sélectionnés -->
