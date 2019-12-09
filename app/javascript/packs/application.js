@@ -11,3 +11,4 @@ toggleSearchTags
 
 import "../components/dashboard_tag";
 
+import "../components/delete_swipe";
