@@ -20,9 +20,10 @@
   <div class="div-tags-display">
 
 
-      <div class="tags d-flex flex-column" id="tagsCheckboxes"> <!--ID IMPORTANT / JS -->
+      <div class="tags d-flex flex-column div-tag"> x
         <span class="tag-header">Pensez à ajouter des tags à vos notes</span>
-        <div>
+        tagsCheckboxes
+        <div id='tagsCheckboxes' >
           <% @tags.each do |un_tag| %>
             <!-- partial pour l'appel AJAX -->
             <%= render 'tags/checkbox', tag: un_tag, checked: @checked %>
