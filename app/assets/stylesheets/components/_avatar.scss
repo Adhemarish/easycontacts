@@ -28,3 +28,40 @@
   margin-bottom:10px;
   border: 1px solid #E7E0E0;
 }
+
+// input.form-control-file#contact_avatar {
+//   border-style: none;
+//   background-color: $lightgray;
+//  }
+
+// input[type=file]{
+//   background-color:white;
+//   color:white;
+//   border:none;
+// }
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: none;
+  color: $lightgray;
+  background-color: $darkblue;
+  padding: 8px 5px;
+  margin-top: 15px;
+  margin-left: 5px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}

@@ -4,29 +4,31 @@
 
 <!-- Header -->
 
-  <div class="header-contact d-flex justify-content-center align-items-center mb-5">
+  <div class="header-contact d-flex justify-content-center align-items-center mb-2">
     <%= link_to dashboard_path do %>
       <%= image_tag('house-empty.svg', class: 'btn-home') %>
     <% end %>
 
-    <div class="header-photo px-5">
+    <div class="header-photo px-5 d-flex justify-content-center align-items-center flex-column">
 
-      <div class="d-flex justify-content-center mt-3 mb-1">
-        <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center align-items-center mt-3 mb-1 flex-column">
+        <div class="d-flex justify-content-center align-items-center flex-column">
           <div class="frame-picture border">
-            <input class="form-control-file file optional" type="file" name="contact[avatar]" id="contact_avatar">
-            <%= f.input :avatar_cache, as: :hidden %>
-            <div class="text-center">
-              <p class="placeholder-search">Photo</p>
+            <div class="upload-btn-wrapper">
+               <button class="btn">Photo..</button>
+              <input class="form-control-file file optional" type="file" name="contact[avatar]" id="contact_avatar">
+              <%= f.input :avatar_cache, as: :hidden %>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div>
+            <div>
         <p class="text-center add header-first-name"><input placeholder="Prénom" class="text-center string required" type="text" name="contact[first_name]" id="contact_first_name"></p>
         <p class="text-center add header-last-name"><input placeholder ="Nom" class="text-center string required" type="text" name="contact[last_name]" id="contact_last_name"></p>
       </div>
+        </div>
+
+      </div>
+
+
 
     </div>
 
@@ -35,118 +37,98 @@
 
 <!-- Formulaire infos de base -->
 
-      <div class="d-flex justify-content-around mx-4">
+     <div class="p-3 mb-5">
 
-        <div class="champs d-flex flex-column">
-
-          <div class="champ-title">
-            <span>Email</span>
-          </div>
-
-          <div class="champ">
-            <p class="info-description"><input class="info-description email optional" placeholder="Email" type="email" name="contact[email]" id="contact_email"></p>
-          </div>
-
-        </div>
-
-        <div class="champs d-flex flex-column">
-
-          <div class="champ-title">
-            <span>Entreprise</span>
-          </div>
-
-          <div class="champ">
-            <p class="info-description"><input class="info-description company optional" placeholder="Nom d'entreprise" type="text" name="contact[company]" id="contact_company"></p>
-          </div>
-
-        </div>
-
+  <div class="champs row">
+    <div class="col-sm-12">
+      <div class="champ-title">
+        <span>Email</span>
       </div>
-
-
-      <div class="d-flex justify-content-around mx-4">
-
-        <div class="champs d-flex flex-column">
-
-          <div class="champ-title">
-            <span>Ville</span>
-          </div>
-
-          <div class="champ">
-            <p class="info-description"><input class="info-description optional" placeholder="Ville" type="text" name="contact[location]" id="contact_location"></p>
-          </div>
-
-        </div>
-
-        <div class="champs d-flex flex-column">
-
-          <div class="champ-title">
-            <span>Téléphone</span>
-          </div>
-
-          <div class="champ">
-            <p class="info-description"><input class="info-description tel optional" placeholder="Numéro de téléphone" type="tel" name="contact[phone_number]" id="contact_phone_number"></p>
-          </div>
-
-        </div>
-
+      <div class="champ">
+        <p class="info-description"><input class="info-description email" placeholder="Email" type="email" value="<%= @contact.email %>" name="contact[email]" id="contact_email"></p>
       </div>
-
-      <div class="d-flex justify-content-around mx-4">
-
-        <div class="champs d-flex flex-column">
-
-          <div class="champ-title">
-            <span>Type de relation</span>
-          </div>
-
-          <div class="champ">
-            <p class="info-description"></p>
-          </div>
-
-        </div>
-
-        <div class="champs d-flex flex-column">
-
-          <div class="champ-title">
-            <span>Date de rencontre</span>
-          </div>
-
-          <div class="champ">
-            <p class="info-description"></p>
-          </div>
-
-        </div>
-
+    </div>
+  </div>
+  <div class="champs row">
+    <div class="col-sm-6">
+      <div class="champ-title">
+        <span>Entreprise</span>
       </div>
-
-      <div class="d-flex justify-content-around mx-4">
-
-        <div class="champs d-flex flex-column">
-
-          <div class="champ-title">
-            <span>Années d'expérience</span>
-          </div>
-
-          <div class="champ">
-            <p class="info-description"></p>
-          </div>
-
-        </div>
-
-        <div class="champs d-flex flex-column">
-
-          <div class="champ-title">
-            <span>Lieu de rencontre</span>
-          </div>
-
-          <div class="champ">
-            <p class="info-description"></p>
-          </div>
-
-        </div>
-
+      <div class="champ">
+        <p class="info-description"><input class="info-description company" placeholder="Nom d'entreprise" value="<%= @contact.company %>" type="text" name="contact[company]" id="contact_company"></p>
       </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="champ-title">
+        <span>Poste</span>
+      </div>
+      <div class="champ">
+        <p class="info-description"><input class="info-description company" placeholder="Intitulé de poste" value="" type="text" name="" id="contact_company"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="champs row">
+    <div class="col-sm-6">
+      <div class="champ-title">
+        <span>Ville</span>
+      </div>
+      <div class="champ">
+        <p class="info-description"><input class="info-description" placeholder="Ville" value="<%= @contact.location %>" type="text" name="contact[location]" id="contact_location"></p>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="champ-title">
+        <span>Téléphone</span>
+      </div>
+      <div class="champ">
+        <p class="info-description"><input class="info-description tel" value="<%= @contact.phone_number %>" placeholder="N° de téléphone" type="tel" name="contact[phone_number]" id="contact_phone_number"></p>
+      </div>
+    </div>
+</div>
+
+  <div class="champs row">
+      <div class="col-sm-6">
+        <div class="champ-title">
+          <span>Type de relation</span>
+        </div>
+        <div class="champ">
+          <p class="info-description"><input class="info-description" placeholder="Client, partenaire, prospect..." value="" type="text" name="" id="contact_location"></p>
+        </div>
+      </div>
+    <div class="col-sm-6">
+      <div class="champ-title">
+        <span>Date de rencontre</span>
+      </div>
+      <div class="champ">
+        <p class="info-description"><input class="info-description" placeholder="Date de rencontre" value="<%@contact.meeting_date%>" type="text" name="contact[meeting_date]" id="contact_location"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="champs row">
+      <div class="col-sm-12">
+        <div class="champ-title">
+          <span>Lieu de rencontre</span>
+        </div>
+        <div class="champ">
+          <p class="info-description"><input class="info-description" placeholder="Lieu de la rencontre" value="<%@contact.meeting_place%>" type="text" name="contact[meeting_place]" id="contact_location"></p>
+        </div>
+      </div>
+    </div>
+
+   <div class="champs row">
+      <div class="col-sm-12">
+        <div class="champ-title">
+          <span>Centres d'intérêt</span>
+        </div>
+        <div class="champ">
+          <p class="info-description"><input class="info-description" placeholder="Principaux centres d'intérêt" value="" type="text" name="" id="contact_location"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
 
 <!-- footer -->
