@@ -47,7 +47,7 @@
 
     <div class="rappels-dash mb-5">
       <%  if @upcoming_contacts_alerts.any? %>
-     <div class="rappel-title ml-3">
+     <div class="rappel-title">
       <span class="rappel-title">Rappels à venir</span>
     </div>
         <% @upcoming_contacts_alerts.first(4).each do |alert| %>
@@ -101,7 +101,7 @@
     </div>
 
       <% @contacts.each do |contact| %>
-      <div class="result d-flex">
+      <div class="result d-flex justify-content-around">
 
         <!-- Avatar -->
           <div class="mt-0">
@@ -118,6 +118,8 @@
           <% end %>
 
         <!-- Icons -->
+
+        <div class="icon-dash">
 
           <div class="d-flex results-icons">
 
@@ -136,6 +138,8 @@
             <% end %>
           </div>
 
+        </div>
+
       </div>
       <% end %>
 
@@ -152,7 +156,7 @@
 
 <!-- Bouton new contact -->
 
- <div class="button-plus-footer">
+ <div class="button-plus-footer d-flex justify-content-center p-3">
     <%= link_to new_contact_path do %>
         <div class="lg-btn d-flex align-items-center justify-content-center">
           <i class="fas fa-plus"></i>

@@ -29,7 +29,7 @@
 }
 
 .search-bar {
-  width:350px;
+  width:320px;
   border-radius:20px;
   height:40px;
   background-color:white;
@@ -106,7 +106,7 @@ input#query_label {
 }
 
 .tags-search {
-  width:350px;
+  width:320px;
   margin: 0px 30px;
   padding-top:10px;
   padding-left:20px;
@@ -115,7 +115,7 @@ input#query_label {
 // SEARCH RESULT QUERY
 
 .results {
-  width: 370px;
+  width: 320px;
 }
 
 .result {
@@ -124,8 +124,7 @@ input#query_label {
     background: #FFFFFF;
     box-shadow: 0px 3px 22px rgba(0, 0, 0, 0.05);
     border-radius: 0px 15px;
-    width: 370px;
-    padding: 10px;
+    padding: 0px;
 }
 
 .dash-avatar {
@@ -134,9 +133,9 @@ input#query_label {
 }
 
 .results-info {
-  margin-left:20px;
-  padding-top:15px;
-  width: 175px;
+  // margin-left:20px;
+  padding-top:25px;
+  // width: 175px;
 }
 
 .results-name {
