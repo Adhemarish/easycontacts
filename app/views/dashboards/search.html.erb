@@ -67,7 +67,9 @@
     <% end %>
 
     <!-- Resultat de la recherche par tag -->
+
   <div style="overflow-y:scroll; overflow-x: auto; ">
+
       <%if params[:query].present?  %>
         <% if (!params[:query][:label].empty? || !@notes.nil?) %>
           <div class="rappel-title">
@@ -104,7 +106,6 @@
       <% end %>
   </div>
 </div>
-
 
 
 <!-- à conserver sur cette page -->

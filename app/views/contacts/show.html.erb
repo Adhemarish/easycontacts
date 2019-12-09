@@ -54,14 +54,17 @@
         </div>
       <% end %>
     </div>
+
     <div class="card pl-2 pr-3">
+      <%= link_to edit_contact_path(@contact) do  %>
       <div class="card-category category-infos inactive d-flex justify-content-between">
-        <%= image_tag('info-blanc.svg', class: 'card-image-writing') %>
+        <%= image_tag('info-blue.svg', class: 'card-image-writing') %>
         <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
           <span class="info-category-text">Infos</span>
           <span class="info-stats-text">Contact</span>
         </div>
       </div>
+      <% end %>
     </div>
   </div>
 
