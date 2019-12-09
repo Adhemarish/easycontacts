@@ -32,6 +32,8 @@
 .tag-text {
   padding-right:3px;
   color: rgba(236, 146, 146, 1);
+  font-size: 16px;
+  font-weight: bold;
 }
 
 // search tag results
@@ -112,21 +114,44 @@ input#tag_label {
 }
 
 .red-tag {
-  background-color: #EC9292;
+  background-color: rgba(236,146,146,0.5); //#EC9292;
+  color: rgba(236,146,146,1);
+  font-size: 14px;
 }
 
 .orange-tag {
-  background-color: #EF9A45;
+  background-color: rgba(239, 154, 69, 0.5); // #EF9A45;
+  color: rgba(239, 154, 69, 1);
+  font-size: 14px;
 }
 
 .green-tag {
-  background-color: #80CE96;
+  background-color: rgba(128,206,150,0.5); //#80CE96;
+  color: rgba(128,206,150,1);
+  font-size: 14px;
 }
 
 .yellow-tag {
-  background-color: #D6C10C;
+  background-color: rgba(214,193,12,0.5); //#D6C10C;
+  color: rgba(214,193,12,1);
+  font-size: 14px;
 }
 
 .blue-tag {
+  background-color: rgba(75,201,255,0.5);
+  color: rgba(75,201,255,1);
+  font-size: 14px;
+}
+
+.check-tag {
   background-color: blue;
+  opacity: 0.5;
+  color: blue;
+  font-size: 14px;
+}
+
+.purple-tag {
+  background-color: rgba(223,113,233,0.5);
+  color: rgba(223,113,233,1);
+  font-size: 14px;
 }

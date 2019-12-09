@@ -6,5 +6,5 @@ class Tag < ApplicationRecord
 
   validates :label, presence: true
 
-  COULEURS = ['red-tag', 'orange-tag', 'yellow-tag', 'green-tag']
+  COULEURS = ['red-tag', 'orange-tag', 'yellow-tag', 'green-tag', 'purple-tag', 'blue-tag']
 end
