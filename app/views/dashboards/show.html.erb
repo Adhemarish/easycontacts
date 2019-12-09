@@ -41,6 +41,8 @@
 
 <div class="dash-back-pink">
 
+    <%if params[:query].nil?  %>
+
   <div class="rappels-dashboard d-flex justify-content-center">
 
 
@@ -85,7 +87,7 @@
 
 <div class="dash-back-pink-query">
 
-  <%if params[:query].present?  %>
+  <%else %>
 
 
 
