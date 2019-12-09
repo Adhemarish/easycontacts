@@ -2,7 +2,7 @@
 
 .button-plus-footer {
   position: absolute;
-  top:-27px;
+  top:-20px;
 
   // position:sticky;
   // z-index:4;
@@ -14,8 +14,8 @@
 
 .button-plus-footer .lg-btn {
   background-color: #F4B8AC;
-  width:60px;
-  height:60px;
+  width:40px;
+  height:40px;
   border-radius:50%;
 }
 
@@ -57,7 +57,7 @@
 }
 .absolute-edit-contact {
   position:absolute;
-  bottom:30px;
+  bottom:10px;
   right:100px;
 }
 
@@ -69,7 +69,7 @@
 
 .absolute-delete-contact {
   position:absolute;
-  bottom:33px;
+  bottom:10px;
   left:100px;
 }
 

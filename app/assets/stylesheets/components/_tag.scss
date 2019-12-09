@@ -24,7 +24,7 @@
   height: 20px;
   border-radius:5px;
   margin-right:5px;
-  padding-top:3px;
+  padding:3px 5px;
   margin-bottom:8px;
   font-size: 12px;
   background-color: rgba(236, 146, 146, 0.3);
@@ -32,11 +32,11 @@
 
 .tag-text {
   padding-right:3px;
-  color: rgba(236, 146, 146, 1);
-  font-size: 16px;
-  font-weight: bold;
 }
 
+span.tag-text-note {
+  padding:0px 5px;
+}
 // search tag results
 
 .tags-fiche-contact-search {
@@ -169,5 +169,5 @@ input#tag_label {
 }
 
 .div-tag {
-  width: 98%;
+  width: 90%;
 }

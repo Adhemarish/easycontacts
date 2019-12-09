@@ -1,13 +1,12 @@
 <!-- Header -->
 
 
-
-  <div class="header-contact d-flex justify-content-center align-items-center">
     <%= link_to dashboard_path do %>
           <%= image_tag('house-empty.svg', class: 'btn-home') %>
         <% end %>
+
+  <div class="header-contact bg-red d-flex justify-content-center align-items-center">
     <div class="header-photo px-5">
-      <%= cl_image_tag @contact.avatar, height: 200, width: 200, crop: :fill, class: "frame-picture" %>
       <div>
         <p class="text-center header-first-name"><%= @contact.first_name %></p>
         <p class="text-center header-last-name"><%= @contact.last_name.upcase %></p>
@@ -79,6 +78,7 @@
 <!-- footer -->
 
 <div class="footer-contact d-flex justify-content-around">
+
   <div class="phone">
     <%= image_tag('pinkphone.svg', class: 'card-image-footer') %>
   </div>

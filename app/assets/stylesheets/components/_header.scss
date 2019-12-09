@@ -1,11 +1,26 @@
 // NEW DESIGN
 
 .header-photo {
-  height:35vh;
+  height:12vh;
+  min-height:80px;
 }
 
 .header-contact {
-  height:35vh;
+  height:15vh;
+  min-height:100px;
+  background-color: $darkblue;
+  border-radius: 0px 0px 38px 38px;
+  margin-bottom:-20px;
+}
+
+.header-photo-info {
+  height:20vh;
+  min-height:150px;
+}
+
+.header-contact-info {
+  height:25vh;
+  min-height:185px;
   background-color: $darkblue;
   border-radius: 0px 0px 38px 38px;
   margin-bottom:-20px;
