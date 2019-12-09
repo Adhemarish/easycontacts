@@ -72,40 +72,44 @@
 
     <!-- Resultat de la recherche par tag -->
 
-    <%if params[:query].present?  %>
-      <div class="rappel-title">
-        <span class="">Notes associées à ces tags</span>
-      </div>
-      <% if !@notes.nil?%>
-        <% if !@notes.empty? %>
-          <% @notes.each do |note| %>
-            <%= link_to contact_path(note.contact) do  %>
-              <div class="notes-search d-flex">
-                <div class="d-flex flex-column">
-                  <div class="notes-text-search d-flex flex-column">
-                    <div class="d-flex justify-content-between ">
-                      <span class="name-search"><%= note.contact.first_name %> <%= note.contact.last_name.upcase %></span>
-                      <span class="notes-text-date-search"><%= note.updated_at.strftime("%d %B %y") %></span>
-                    </div>
-                    <span class="notes-text-content-search"><%= note.content %></span>
-                  </div>
-                  <div class="tags-fiche-contact-search d-flex" data-note-id="<%= note.id %>" >
-                    <% note.tags.each do |t| %>
-                    <div class="tag-bis <%= t.color %>">
-                      <p class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
-                    </div>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-             <% end %>
-          <% end %>
-        <% end %>
-      <% end %>
-      <p>Aucune note pour <%= @search %></p>
-    <% end %>
-</div>
 
+
+<div style="overflow-y:scroll; overflow-x: auto; ">
+      <%if params[:query].present?  %>
+        <% if (!params[:query][:label].empty? || !@notes.nil?) %>
+          <div class="rappel-title">
+            <% if !@notes.empty? %>
+              <span class=""> Notes associées à <%= @search %></span>
+          </div>
+              <% @notes.each do |note| %>
+                <%= link_to contact_path(note.contact) do  %>
+                  <div class="notes-search d-flex">
+                    <div class="d-flex flex-column">
+                      <div class="notes-text-search d-flex flex-column">
+                        <div class="d-flex justify-content-between ">
+                          <span class="name-search"><%= note.contact.first_name %> <%= note.contact.last_name.upcase %></span>
+                          <span class="notes-text-date-search"><%= note.updated_at.strftime("%d %B %y") %></span>
+                        </div>
+                        <span class="notes-text-content-search"><%= note.content %></span>
+                      </div>
+                      <div class="tags-fiche-contact-search d-flex" data-note-id="<%= note.id %>" >
+                        <% note.tags.each do |t| %>
+                          <div class="tag-bis <%= t.color %>">
+                            <p class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            <% else %>
+              <p>Aucune note pour <%= @search %></p>
+            <% end %>
+          <% end %>
+        <%# end %>
+      <% end %>
+  </div>
 
 
 <!-- à conserver sur cette page -->
