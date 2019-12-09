@@ -24,14 +24,15 @@
     <%= simple_form_for :query, url: tag_search_path,
       method: :get, html: { class: 'form-inline' } do |f| %>
 
-      <%#= link_to dashboard_path do%>
+      <%= link_to dashboard_path do%>
         <i class="fas fa-search mr-2 mt-2"></i>
+      <% end %>
 
        <!-- mettre hidden_field -->
-        <%= f.input :label, class: "placeholder-search", placeholder: "Tags",
-         input_html: {value: ""}, label: false  %>
-
-      <%# end %>
+       <div id="target">
+      <%= f.hidden_field :label, class: "placeholder-search", placeholder: "Tags",
+       input_html: {value: ""}, label: false  %>
+       </div>
   </div>
 </div>
 
@@ -64,7 +65,9 @@
       <%if params[:query].present?  %>
         <% if (!params[:query][:label].empty? || !@notes.nil?) %>
           <div class="rappel-title">
-            <% if !@notes.empty? %>
+            <% if @notes.empty? %>
+              <p>Aucune note pour <%= @search %></p>
+            <% else %>
               <span class=""> Notes associées à <%= @search %></span>
           </div>
               <% @notes.each do |note| %>
@@ -89,8 +92,6 @@
                   </div>
                 <% end %>
               <% end %>
-            <% else %>
-              <p>Aucune note pour <%= @search %></p>
             <% end %>
           <% end %>
         <%# end %>
