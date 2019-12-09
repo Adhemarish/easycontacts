@@ -76,14 +76,11 @@
 <%= render 'contacts/contactnotes', contact: @contact, notes: @notes %>
 
 
-<!-- Button new note & footer -->
+<!-- footer -->
 
-
-
-
-  <div class="footer-contact d-flex justify-content-around">
+<div class="footer-contact d-flex justify-content-around">
+  <div class="phone">
     <%= image_tag('pinkphone.svg', class: 'card-image-footer') %>
-    <%= image_tag('pinkmail.svg', class: 'card-image-footer') %>
   </div>
 
   <div class="button-plus-footer">
@@ -94,7 +91,11 @@
     <% end %>
   </div>
 
+  <div class="mail">
+    <%= image_tag('pinkmail.svg', class: 'card-image-footer') %>
+  </div>
 
+</div>
 
 
 

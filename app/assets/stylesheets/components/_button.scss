@@ -1,9 +1,8 @@
 // NEW DESIGN
 
 .button-plus-footer {
-  background-color: $lightgray;
-  bottom: 0;
-  position: sticky;
+  position: absolute;
+  top:-27px;
 
   // position:sticky;
   // z-index:4;
@@ -169,7 +168,6 @@ input.btn-home-login-text {
 .trash .md-btn {
   background-color : #E72B2B;
 }
-
 
 .btn-ghost {
   color: white;
