@@ -8,8 +8,8 @@
 }
 
 .salutations {
-  margin-left:20px;
   padding-top:20px;
+  margin-left: -70px;
 }
 
 .dashboard-hey {
@@ -25,11 +25,11 @@
 }
 
 .search-bar {
-  width:320px;
+  width:350px;
   border-radius:20px;
   height:40px;
   background-color:white;
-  border:1px solid #DADADA;
+  // border:1px solid #DADADA;
   margin:30px auto;
   position:relative
 }
@@ -108,15 +108,17 @@ input#query_label {
 // SEARCH RESULT QUERY
 
 .results {
-
+  width: 370px;
 }
 
 .result {
-    margin: 5px 20px;
+    // margin: 5px 20px;
     margin-bottom:10px;
     background: #FFFFFF;
     box-shadow: 0px 3px 22px rgba(0, 0, 0, 0.05);
     border-radius: 0px 15px;
+    width: 370px;
+    padding: 10px;
 }
 
 .dash-avatar {
@@ -145,4 +147,16 @@ input#query_label {
   padding-top:20px;
 }
 
+
+.dash-back-blue {
+  background-color: $darkblue;
+}
+
+.dash-back-pink {
+  background-color: $pink;
+}
+
+.dash-back-pink-query {
+  background-color: $pink;
+}
 
