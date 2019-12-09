@@ -1,10 +1,16 @@
 // NEW DESIGN
 
 .button-plus-footer {
-  position:fixed;
-  bottom:20px;
-  margin-left: 42vw;
-  z-index:4
+  background-color: $lightgray;
+  bottom: 0;
+  position: sticky;
+
+  // position:sticky;
+  // z-index:4;
+  // bottom:20px;
+  // margin-left: 42vw;
+  // z-index:4
+
 }
 
 .button-plus-footer .lg-btn {

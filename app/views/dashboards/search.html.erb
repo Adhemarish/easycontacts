@@ -21,20 +21,25 @@
     <span class="dashboard-hey">Recherche par tags</span>
   </div>
   <div class="search-bar">
+
+
     <%= simple_form_for :query, url: tag_search_path,
       method: :get, html: { class: 'form-inline' } do |f| %>
 
+      <!-- Retour à la search par nom à gauche -->
       <%= link_to dashboard_path do%>
+
         <i class="fas fa-search mr-2 mt-2"></i>
       <% end %>
 
-       <!-- mettre hidden_field -->
-       <div id="target"class="d-flex">
-      <%= f.hidden_field :label, class: "placeholder-search", placeholder: "Tags",
-       input_html: {value: ""}, label: false  %>
-       </div>
+      <!-- formulaire d'input hidden -->
+      <div id="target"class="d-flex">
+        <%= f.hidden_field :label, class: "placeholder-search", placeholder: "Tags",
+         input_html: {value: ""}, label: false  %>
+      </div>
   </div>
 </div>
+
 
   <!-- PARTIE GRISE -->
 
@@ -53,12 +58,14 @@
     </div>
       <!-- submit est ICI -->
       <div class="tag-dashboard d-flex justify-content-center align-items-center">
-      <%= f.button :submit, 'Valider', class: 'btn btn-primary' %>
-    </div>
+
+      <%= f.button :submit, 'Go', class: 'tag-click' %>
+      </div>
     <% end %>
 
     <!-- Resultat de la recherche par tag -->
 
+  <div style="overflow-y:scroll; overflow-x: auto; ">
 
 <!-- classe scroll-results dans _search.scss, non fonctionnelle -->
 <div class = "scroll-results">
@@ -97,6 +104,7 @@
         <%# end %>
       <% end %>
   </div>
+</div>
 
 
 <!-- à conserver sur cette page -->

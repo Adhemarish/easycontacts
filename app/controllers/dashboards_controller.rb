@@ -1,5 +1,4 @@
 class DashboardsController < ApplicationController
-
   before_action :set_alerts_dashboard, only: [:show]
   before_action :set_tags_dashboard, only: [:search]
 
@@ -13,6 +12,7 @@ class DashboardsController < ApplicationController
       end
     end
   end
+    # rails c : Contact.find_by(first_name: 'Marc').notes.first.tags
 
   def index
     if params[:query].present?
@@ -44,7 +44,6 @@ class DashboardsController < ApplicationController
   end
 
   def tags_params
-    params.require(:tags).permit(:label, :content, note_ids: [])  # :label ????
-    #params.require(:note).permit(:content, tags_attributes: [:id, :label, :color])
+    params.require(:tags).permit(:label, :content, note_ids: [])
   end
 end
