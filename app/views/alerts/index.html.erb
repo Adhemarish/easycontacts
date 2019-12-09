@@ -86,7 +86,7 @@
         <div class="rappels-text d-flex">
 
           <div>
-            <span class="rappels-text-date d-flex align-items-center  justify-content-center"><%= alert.datetime.strftime("%d %B").downcase %></span>
+            <span class="rappels-text-date d-flex align-items-center justify-content-center"><%= I18n.l(alert.datetime, format: "%e %B") %></span>
           </div>
 
           <div>
