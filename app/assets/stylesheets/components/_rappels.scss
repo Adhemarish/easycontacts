@@ -2,11 +2,12 @@
 // NEW DESIGN
 
 .rappels {
-  margin: 5px 20px;
+  // margin: 5px 20px;
   margin-bottom:10px;
   background: #FFFFFF;
   box-shadow: 0px 3px 22px rgba(0, 0, 0, 0.05);
   border-radius: 15px 0px;
+  width: 90%;
 }
 
 .rappels-text-date {
@@ -59,12 +60,10 @@ input#alert_title {
 
 .rappels-dashboard {
   width:100%;
-  height:67%;
+  height:70vh;
   background-color: #F9F9F9;
   border-radius: 30px 30px 0px 0px;
-  // position:fixed;
-  // bottom:0px;
-  // z-index: 3;
+  padding: 10px 10px;
 }
 
 .rappel-title {
@@ -73,10 +72,11 @@ input#alert_title {
   font-size:14px;
   // margin-left:20px;
   margin-top:20px;
+  width: 100%;
 }
 
 .rappels-text-content-dashboard {
-  width:270px;
+  width:90%;
   margin-bottom:10px;
   margin-top:10px;
   padding-left:15px;
@@ -98,6 +98,12 @@ input#alert_title {
 
 .rappels.dash {
   border-radius: 0px 15px;
+  width: 100%;
+  padding: 0 auto;
+  margin-right: 5px;
+}
+
+.rappels-dash {
   width: 90%;
 }
 
