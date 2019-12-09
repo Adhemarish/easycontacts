@@ -21,12 +21,12 @@
     <span class="dashboard-hey">Recherche par tags</span>
   </div>
   <div class="search-bar">
-    
+
     <!-- 1/ je garde le simple_form à cause de la route -->
     <%= simple_form_for :query, url: tag_search_path,
       method: :get, html: { class: 'form-inline' } do |f| %>
 
-            
+
        <!--2/  mon input que je mets de coté -> dièse  ???? -->
       <%#= f.input :label, class: "", placeholder: "Sélection d'un tag",
        input_html: {value: ""}, label: false  %>
@@ -44,7 +44,7 @@
           <!-- je dièse car le submit est plus bas -->
           <%#= f.button :submit, 'GO', class: 'tag-click' %>
         </div>
-  
+
       <%# end %> <!-- l'ancien fin du 'do' sur le link_to_dashboard supprimé ?-->
 
       <%# end %>
