@@ -18,54 +18,60 @@
 
 <!-- buttons notes & alerts -->
 
-  <div class="card-category category-notes active d-flex justify-content-between">
-    <%= image_tag('writing.svg', class: 'card-image-writing') %>
+<div class="scrolling-wrapper-flexbox pl-3">
+    <div class="card">
+      <div class="card-category category-notes active d-flex justify-content-between">
+        <%= image_tag('writing.svg', class: 'card-image-writing') %>
 
-    <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-4 pb-2">
-      <span class="info-category-text">Notes</span>
-      <span class="info-stats-text">
-        <% if %>
-        <% @nb_notes == 0 %>
-        <%= 0 %>
-        <% else %>
-        <%= @nb_notes %>
-        <% end %> notes</span>
+        <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-4 pb-2">
+          <span class="info-category-text">Notes</span>
+          <span class="info-stats-text">
+            <% if %>
+            <% @nb_notes == 0 %>
+            <%= 0 %>
+            <% else %>
+            <%= @nb_notes %>
+            <% end %> notes</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card pl-2">
+      <%= link_to contact_alerts_path(@contact) do  %>
+        <div class="card-category category-rappels inactive d-flex justify-content-between">
+          <%= image_tag('rappel.svg', class: 'card-image-writing') %>
+          <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
+            <span class="info-category-text">Rappels</span>
+            <span class="info-stats-text">
+            <% if %>
+            <% @nb_upcoming_alerts == 0 %>
+            <%= 0 %>
+            <% else %>
+            <%= @nb_upcoming_alerts %>
+            <% end %> rappels</span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="card pl-2 pr-3">
+      <%= link_to edit_contact_path(@contact) do  %>
+      <div class="card-category category-infos inactive d-flex justify-content-between">
+        <%= image_tag('info-blue.svg', class: 'card-image-writing') %>
+        <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
+          <span class="info-category-text">Infos</span>
+          <span class="info-stats-text">Contact</span>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
 
-  <%= link_to contact_alerts_path(@contact) do  %>
-    <div class="card-category category-rappels inactive d-flex border justify-content-between">
-      <%= image_tag('rappel.svg', class: 'card-image-writing') %>
-      <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
-        <span class="info-category-text">Rappels</span>
-        <span class="info-stats-text">
-        <% if %>
-        <% @nb_upcoming_alerts == 0 %>
-        <%= 0 %>
-        <% else %>
-        <%= @nb_upcoming_alerts %>
-        <% end %> rappels</span>
-      </div>
-    </div>
-  <% end %>
-
-  <!-- JS A FAIRE POUR LE DISPOSER A COTE -->
- <!--  <div class="card-category category-infos inactive d-flex border justify-content-between">
-    <img class="pt-3" src="../../assets/images/infos.svg" alt="infos">
-    <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
-      <span class="info-category-text">Infos</span>
-      <span class="info-stats-text">Contact</span>
-    </div>
-  </div> -->
-
-
-
-
 </div>
 
-<!-- Notes -->
 
-<br><br><br><br>
+<!-- Notes -->
 
 <%= render 'contacts/contactnotes', contact: @contact, notes: @notes %>
 

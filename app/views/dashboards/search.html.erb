@@ -21,35 +21,25 @@
     <span class="dashboard-hey">Recherche par tags</span>
   </div>
   <div class="search-bar">
-    
-    <!-- 1/ je garde le simple_form à cause de la route -->
+
+
     <%= simple_form_for :query, url: tag_search_path,
       method: :get, html: { class: 'form-inline' } do |f| %>
 
-            
-       <!--2/  mon input que je mets de coté -> dièse  ???? -->
-      <%#= f.input :label, class: "", placeholder: "Sélection d'un tag",
-       input_html: {value: ""}, label: false  %>
-      <!--  champ d'input avec remise à zero par HTML  -->
-      <%#= link_to dashboard_path do%>
+      <!-- Retour à la search par nom à gauche -->
+      <%= link_to dashboard_path do%>
+
         <i class="fas fa-search mr-2 mt-2"></i>
+      <% end %>
 
-       <!-- je dièse le forme_tag et je garde le simple_form car je ne comprends pas la route ??? -->
-      <%#= form_tag dashboard_path, method: :get do %>
-      <!-- 2/ input que je garde ??? -->
-        <%= f.input :label, class: "placeholder-search", placeholder: "Tags",
+      <!-- formulaire d'input hidden -->
+      <div id="target"class="d-flex">
+        <%= f.hidden_field :label, class: "placeholder-search", placeholder: "Tags",
          input_html: {value: ""}, label: false  %>
-
-        <div class="tag-dashboard d-flex justify-content-center align-items-center">
-          <!-- je dièse car le submit est plus bas -->
-          <%#= f.button :submit, 'GO', class: 'tag-click' %>
-        </div>
-  
-      <%# end %> <!-- l'ancien fin du 'do' sur le link_to_dashboard supprimé ?-->
-
-      <%# end %>
+      </div>
   </div>
 </div>
+
 
   <!-- PARTIE GRISE -->
 
@@ -67,45 +57,54 @@
       </div>
     </div>
       <!-- submit est ICI -->
-      <%= f.button :submit, 'Valider', class: 'btn btn-primary' %>
+      <div class="tag-dashboard d-flex justify-content-center align-items-center">
+
+      <%= f.button :submit, 'Go', class: 'tag-click' %>
+      </div>
     <% end %>
 
     <!-- Resultat de la recherche par tag -->
 
-    <%if params[:query].present?  %>
-      <div class="rappel-title">
-        <span class="">Notes associées à ces tags</span>
-      </div>
-      <% if !@notes.nil?%>
-        <% if !@notes.empty? %>
-          <% @notes.each do |note| %>
-            <%= link_to contact_path(note.contact) do  %>
-              <div class="notes-search d-flex">
-                <div class="d-flex flex-column">
-                  <div class="notes-text-search d-flex flex-column">
-                    <div class="d-flex justify-content-between ">
-                      <span class="name-search"><%= note.contact.first_name %> <%= note.contact.last_name.upcase %></span>
-                      <span class="notes-text-date-search"><%= note.updated_at.strftime("%d %B %y") %></span>
-                    </div>
-                    <span class="notes-text-content-search"><%= note.content %></span>
-                  </div>
-                  <div class="tags-fiche-contact-search d-flex" data-note-id="<%= note.id %>" >
-                    <% note.tags.each do |t| %>
-                    <div class="tag-bis <%= t.color %>">
-                      <p class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
-                    </div>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-             <% end %>
-          <% end %>
-        <% end %>
-      <% end %>
-      <p>Aucune note pour <%= @search %></p>
-    <% end %>
-</div>
+  <div style="overflow-y:scroll; overflow-x: auto; ">
 
+<!-- classe scroll-results dans _search.scss, non fonctionnelle -->
+<div class = "scroll-results">
+      <%if params[:query].present?  %>
+        <% if (!params[:query][:label].empty? || !@notes.nil?) %>
+          <div class="rappel-title">
+            <% if @notes.empty? %>
+              <p>Aucune note pour <%= @search %></p>
+            <% else %>
+              <span class=""> Notes associées à <%= @search %></span>
+          </div>
+              <% @notes.each do |note| %>
+                <%= link_to contact_path(note.contact) do  %>
+                  <div class="notes-search d-flex">
+                    <div class="d-flex flex-column">
+                      <div class="notes-text-search d-flex flex-column">
+                        <div class="d-flex justify-content-between ">
+                          <span class="name-search"><%= note.contact.first_name %> <%= note.contact.last_name.upcase %></span>
+                          <span class="notes-text-date-search"><%= note.updated_at.strftime("%d %B %y") %></span>
+                        </div>
+                        <span class="notes-text-content-search"><%= note.content %></span>
+                      </div>
+                      <div class="tags-fiche-contact-search d-flex" data-note-id="<%= note.id %>" >
+                        <% note.tags.each do |t| %>
+                          <div class="tag-bis <%= t.color %>">
+                            <p class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <%# end %>
+      <% end %>
+  </div>
+</div>
 
 
 <!-- à conserver sur cette page -->

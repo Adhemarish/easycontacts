@@ -6,7 +6,7 @@
 <!-- PARTIE ROSE -->
 <div class="dash-back-blue">
 
-  <div class="searchs-dashboard d-flex justify-content-center align-items-center flex-column">
+  <div class="searchs-dashboard d-flex justify-content-center align-items-center flex-column pb-5">
 
     <div class="d-flex flex-column salutations">
       <span class="dashboard-hey">Hey <%=current_user.first_name.capitalize%></span>
@@ -41,16 +41,18 @@
 
 <div class="dash-back-pink">
 
+    <%if params[:query].nil?  %>
+
   <div class="rappels-dashboard d-flex justify-content-center">
 
 
 
     <div class="rappels-dash mb-5">
       <%  if @upcoming_contacts_alerts.any? %>
-     <div class="rappel-title ml-3">
-      <span class="rappel-title">Rappels à venir</span>
-    </div>
-        <% @upcoming_contacts_alerts.first(4).each do |alert| %>
+      <div class="rappel-title">
+        <span class="rappel-title">Rappels à venir</span>
+      </div>
+        <% @upcoming_contacts_alerts.first(3).each do |alert| %>
 
         <%= link_to contact_path(alert.contact) do  %>
           <div class="rappels dash d-flex">
@@ -85,7 +87,7 @@
 
 <div class="dash-back-pink-query">
 
-  <%if params[:query].present?  %>
+  <%else %>
 
 
 
@@ -101,7 +103,7 @@
     </div>
 
       <% @contacts.each do |contact| %>
-      <div class="result d-flex">
+      <div class="result d-flex justify-content-around">
 
         <!-- Avatar -->
           <div class="mt-0">
@@ -118,6 +120,8 @@
           <% end %>
 
         <!-- Icons -->
+
+        <div class="icon-dash">
 
           <div class="d-flex results-icons">
 
@@ -136,6 +140,8 @@
             <% end %>
           </div>
 
+        </div>
+
       </div>
       <% end %>
 
@@ -152,16 +158,13 @@
 
 <!-- Bouton new contact -->
 
- <div class="button-plus-footer">
+ <div class="button-plus-footer d-flex justify-content-center p-3 sticky">
     <%= link_to new_contact_path do %>
         <div class="lg-btn d-flex align-items-center justify-content-center">
           <i class="fas fa-plus"></i>
         </div>
     <% end %>
   </div>
-
-
-
 
 <!-- à conserver sur cette page -->
 <script type="text/javascript">
