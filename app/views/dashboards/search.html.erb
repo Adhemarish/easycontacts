@@ -33,14 +33,10 @@
       <% end %>
 
       <!-- formulaire d'input hidden -->
+      <div id="target"class="d-flex">
         <%= f.hidden_field :label, class: "placeholder-search", placeholder: "Tags",
          input_html: {value: ""}, label: false  %>
-
-
-
-      <%# end %> <!-- l'ancien fin du 'do' sur le link_to_dashboard supprimé ?-->
-
-      <%# end %>
+      </div>
   </div>
 </div>
 
@@ -62,6 +58,7 @@
     </div>
       <!-- submit est ICI -->
       <div class="tag-dashboard d-flex justify-content-center align-items-center">
+
       <%= f.button :submit, 'Go', class: 'tag-click' %>
       </div>
     <% end %>
@@ -70,10 +67,14 @@
 
   <div style="overflow-y:scroll; overflow-x: auto; ">
 
+<!-- classe scroll-results dans _search.scss, non fonctionnelle -->
+<div class = "scroll-results">
       <%if params[:query].present?  %>
         <% if (!params[:query][:label].empty? || !@notes.nil?) %>
           <div class="rappel-title">
-            <% if !@notes.empty? %>
+            <% if @notes.empty? %>
+              <p>Aucune note pour <%= @search %></p>
+            <% else %>
               <span class=""> Notes associées à <%= @search %></span>
           </div>
               <% @notes.each do |note| %>
@@ -98,8 +99,6 @@
                   </div>
                 <% end %>
               <% end %>
-            <% else %>
-              <p>Aucune note pour <%= @search %></p>
             <% end %>
           <% end %>
         <%# end %>

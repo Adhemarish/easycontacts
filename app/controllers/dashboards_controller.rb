@@ -7,22 +7,11 @@ class DashboardsController < ApplicationController
     if params[:query].present?
       if !params[:query][:label].empty?
         @search = params[:query][:label]
-        @notes = Note.joins(:tags).where(tags: { id: params[:note][:tag_ids] })
+        @notes = Note.joins(:tags).where(tags: { id: params[:note][:tag_ids] }).distinct
         @contacts = Contact.joins(:tags).where(tags: { id: params[:note][:tag_ids] })
       end
     end
   end
-
-      #raise
-      #@contacts = Contact.joins(:tags, :notes).where(tags: { label: @search })
-
-      # if @user_tags.include?(params[:query][:label].strip)
-      #   @search = params[:query][:label].strip
-      #   if !Tag.where(label: @search).empty?
-      #     # @notes = Note.joins(:tags).where(tags: { label: @search })
-      #     @contacts = Contact.joins(:tags, :notes).where(tags: { label: @search })
-      #   end
-
     # rails c : Contact.find_by(first_name: 'Marc').notes.first.tags
 
   def index
@@ -55,7 +44,6 @@ class DashboardsController < ApplicationController
   end
 
   def tags_params
-    params.require(:tags).permit(:label, :content, note_ids: [])  # :label ????
-    #params.require(:note).permit(:content, tags_attributes: [:id, :label, :color])
+    params.require(:tags).permit(:label, :content, note_ids: [])
   end
 end
