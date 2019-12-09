@@ -22,34 +22,28 @@
   </div>
   <div class="search-bar">
 
-    <!-- 1/ je garde le simple_form à cause de la route -->
+
     <%= simple_form_for :query, url: tag_search_path,
       method: :get, html: { class: 'form-inline' } do |f| %>
 
+      <!-- Retour à la search par nom à gauche -->
+      <%= link_to dashboard_path do%>
 
-       <!--2/  mon input que je mets de coté -> dièse  ???? -->
-      <%#= f.input :label, class: "", placeholder: "Sélection d'un tag",
-       input_html: {value: ""}, label: false  %>
-      <!--  champ d'input avec remise à zero par HTML  -->
-      <%#= link_to dashboard_path do%>
         <i class="fas fa-search mr-2 mt-2"></i>
+      <% end %>
 
-       <!-- je dièse le forme_tag et je garde le simple_form car je ne comprends pas la route ??? -->
-      <%#= form_tag dashboard_path, method: :get do %>
-      <!-- 2/ input que je garde ??? -->
-        <%= f.input :label, class: "placeholder-search", placeholder: "Tags",
+      <!-- formulaire d'input hidden -->
+        <%= f.hidden_field :label, class: "placeholder-search", placeholder: "Tags",
          input_html: {value: ""}, label: false  %>
 
-        <div class="tag-dashboard d-flex justify-content-center align-items-center">
-          <!-- je dièse car le submit est plus bas -->
-          <%#= f.button :submit, 'GO', class: 'tag-click' %>
-        </div>
+
 
       <%# end %> <!-- l'ancien fin du 'do' sur le link_to_dashboard supprimé ?-->
 
       <%# end %>
   </div>
 </div>
+
 
   <!-- PARTIE GRISE -->
 
@@ -67,14 +61,15 @@
       </div>
     </div>
       <!-- submit est ICI -->
-      <%= f.button :submit, 'Valider', class: 'btn btn-primary' %>
+      <div class="tag-dashboard d-flex justify-content-center align-items-center">
+      <%= f.button :submit, 'Go', class: 'tag-click' %>
+      </div>
     <% end %>
 
     <!-- Resultat de la recherche par tag -->
 
+  <div style="overflow-y:scroll; overflow-x: auto; ">
 
-
-<div style="overflow-y:scroll; overflow-x: auto; ">
       <%if params[:query].present?  %>
         <% if (!params[:query][:label].empty? || !@notes.nil?) %>
           <div class="rappel-title">
@@ -110,6 +105,7 @@
         <%# end %>
       <% end %>
   </div>
+</div>
 
 
 <!-- à conserver sur cette page -->
