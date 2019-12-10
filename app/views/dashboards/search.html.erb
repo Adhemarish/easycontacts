@@ -14,17 +14,12 @@
 <!-- PARTIE ROSE -->
 
 <div class="searchs-dashboard-tag">
-  <div class="d-flex flex-column salutations">
+  <div class="d-flex flex-column salutations-tag">
     <span class="dashboard-hey">Recherche par tags</span>
   </div>
-  <div class="search-bar">
+  <div class="search-bar-tag">
     <%= simple_form_for :query, url: search_by_tags_path, remote: true,
       method: :get, html: { class: 'form-inline' } do |f| %>
-
-      <!-- Retour à la search par nom à gauche -->
-      <%= link_to dashboard_path do%>
-        <i class="fas fa-search mr-2 mt-2"></i>
-      <% end %>
 
       <!-- formulaire d'input hidden -->
       <div id="target"class="d-flex">
@@ -32,11 +27,10 @@
          input_html: {value: ""}, label: false  %>
       </div>
       <!-- <div class="tag-dashboard d-flex justify-content-center align-items-center"> -->
-        <%= f.button :submit, 'Go', class: 'tag-dashboard d-flex justify-content-center align-items-center mt-0' %>
+        <%= f.button :submit, 'Go', class: 'tag-dashboard-tag d-flex justify-content-center align-items-center mt-0' %>
       <!-- </div> -->
     <% end %>
   </div>
-  <span id = tagResetDiv>nouvelle recherche</span>
 </div>
 
 <!-- PARTIE GRISE -->
