@@ -103,7 +103,9 @@ input#tag_label {
 
 
 // Colors & co
-
+.div-tag {
+  width: 95%
+}
 
 .tag-bis p {
   margin-left:10px;
@@ -164,9 +166,7 @@ input#tag_label {
 }
 
 .tag-form label {
-  background-color: rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0);
 }
 
-.div-tag {
-  width: 98%;
-}
+

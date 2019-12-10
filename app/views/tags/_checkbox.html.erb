@@ -1,10 +1,18 @@
 
-<div class="form-check form-check-inline tag-form <%= tag.color %>" data-checkbox-id="<%= tag.id %>">
-  <input hidden type="checkbox" value="<%= tag.id %>" name="note[tag_ids][]" id="note_tag_ids_<%=tag.id%>" <%= checked %>>
-  <label class="<%= tag.color %> " for="note_tag_ids_<%=tag.id%>"><%= tag.label.capitalize %></label>
+<div class="form-check form-check-inline tag-form <%= tag.color %>
+  <%= 'check-tag' if checked %>" data-checkbox-id="<%= tag.id %>">
+  <input hidden type="checkbox"
+         value="<%= tag.id %>"
+         class="note-search-tags"
+         name="note[tag_ids][]"
+         id="note_tag_ids_<%=tag.id%>"
+         <%= 'checked' if checked %> >
+  <label class="<%= tag.color %> "  for="note_tag_ids_<%=tag.id%>">
+    <%= tag.label.capitalize %>
+  </label>
   <div>
     <%= link_to tag_path(tag), method: :delete, remote: true do %>
-    <p class="cross-tag">X</p>
+      <p class="cross-tag">X</p>
     <% end %>
   </div>
 </div>

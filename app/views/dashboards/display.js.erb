@@ -1,0 +1,14 @@
+function insertToNotes() {
+  console.log('appel display')
+  const tagsZone = document.getElementById('tag-search')
+  tagsZone.style.display = "none";
+  const notesList = document.getElementById('tag-notes-results')
+  notesList.style.display= ""
+  notesList.insertAdjacentHTML('beforeend', '<%= j render "tagnotes", params: @params, notes: @notes, search: @search %>')
+}
+
+insertToNotes()
+
+
+
+

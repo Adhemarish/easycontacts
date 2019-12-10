@@ -3,15 +3,24 @@ class DashboardsController < ApplicationController
   before_action :set_tags_dashboard, only: [:search]
 
   def search # set_tags_dashboard
+  end
+
+  def display
     @user_tags = current_user.tags.map { |tag| tag.label }
-    if params[:query].present?
-      if !params[:query][:label].empty?
+    @params = params[:query]
+    if @params.present?
+      if params.dig(:search, :tag_ids).present?
         @search = params[:query][:label]
-        @notes = Note.joins(:tags).where(tags: { id: params[:note][:tag_ids] }).distinct
-        @contacts = Contact.joins(:tags).where(tags: { id: params[:note][:tag_ids] })
+        @notes = Note.joins(:tags).where(tags: { id: params[:search][:tag_ids] }).distinct
+        #@contacts = Contact.joins(:tags).where(tags: { id: params[:note][:tag_ids] })
+      end
+      #appel AJAX des notes
+      respond_to do |format|
+        format.js
       end
     end
   end
+
     # rails c : Contact.find_by(first_name: 'Marc').notes.first.tags
 
   def index

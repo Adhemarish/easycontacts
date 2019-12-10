@@ -1,0 +1,95 @@
+<!-- PARTIE BLEUE -->
+<div class="d-flex justify-content-center navbar-dashboard">
+  <div>
+    <%= link_to dashboard_path do %>
+      <%= image_tag('house-empty.svg', class: 'btn-home') %>
+    <% end %>
+  </div>
+  <p class="dashboard-title">Easycontact</p>
+  <%= link_to dashboard_path do %>
+    <%= image_tag('user.svg', class: 'btn-user') %>
+  <% end %>
+</div>
+
+<!-- PARTIE ROSE -->
+
+<div class="searchs-dashboard-tag">
+  <div class="d-flex flex-column salutations">
+    <span class="dashboard-hey">Recherche par tags</span>
+  </div>
+  <div class="search-bar">
+    <%= simple_form_for :query, url: tag_search_path,
+      method: :get, html: { class: 'form-inline' } do |f| %>
+
+      <!-- Retour à la search par nom à gauche -->
+      <%= link_to dashboard_path do%>
+        <i class="fas fa-search mr-2 mt-2"></i>
+      <% end %>
+
+      <!-- formulaire d'input hidden -->
+      <div id="target"class="d-flex">
+        <%= f.hidden_field :label, class: "placeholder-search", placeholder: "Tags",
+         input_html: {value: ""}, label: false  %>
+      </div>
+  </div>
+</div>
+
+<!-- PARTIE GRISE -->
+
+<div class="tags-display-dashboard">
+<!--  zone des tags qui nourrissent l'input si sélectionnés -->
+  <%= render 'tags', tags: @tags %>
+
+<!-- submit des tags est ICI -->
+    <div class="tag-dashboard d-flex justify-content-center align-items-center">
+    <%= f.button :submit, 'Go', class: 'tag-click' %>
+    </div>
+  <% end %>
+
+<!-- Resultat de la recherche par tag -->
+
+  <!-- classe scroll-results dans _search.scss -->
+  <div class = "scroll-results" id = "">
+    <%if @params.present?  %>
+      <% if (!@search.nil? || !@notes.nil?) %>
+        <div class="rappel-title">
+          <% if @notes.empty? %>
+            <p>Aucune note pour <%= @search %></p>
+          <% else %>
+            <span class="rappel-title"> Notes associées pour: <%= @search %></span>
+            </div>
+            <% @notes.each do |note| %>
+              <%= link_to contact_path(note.contact) do  %>
+                <div class="notes-search d-flex">
+                  <div class="d-flex flex-column">
+                    <div class="notes-text-search d-flex flex-column">
+                      <div class="d-flex justify-content-between ">
+                        <span class="name-search"><%= note.contact.first_name %> <%= note.contact.last_name.upcase %></span>
+                        <span class="notes-text-date-search"><%= note.updated_at.strftime("%d %B %y") %></span>
+                      </div>
+                      <span class="notes-text-content-search"><%= note.content %></span>
+                    </div>
+                    <div class="tags-fiche-contact-search d-flex" data-note-id="<%= note.id %>" >
+                      <% note.tags.each do |t| %>
+                        <div class="tag-bis <%= t.color %>">
+                          <p class="tag-text" data-tag-id = "<%= t.id %>" ><%= t.label %></p>
+                        </div>
+                      <% end %> <!-- affichage des tags par note -->
+                    </div>
+                  </div>
+                </div>
+              <% end %> <!-- end link_to d'un note vers le contact -->
+            <% end %> <!-- end each Intération notes associées aux tags-->
+          <% end %> <!-- end condition de l'ensemble des notes non vides -->
+      <% end %> <!-- si la requête ne retourne rien -->
+    <% end %> <!-- pour l'affichage des notes si la requête est vide -->
+  </div>
+</div>
+
+
+<!-- à conserver sur cette page -->
+<script type="text/javascript">
+    $(function(){
+        $(document).on('click','input[type=text]',function(){ this.select(); });
+    });
+</script>

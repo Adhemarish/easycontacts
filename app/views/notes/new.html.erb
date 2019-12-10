@@ -20,9 +20,9 @@
   <div class="div-tags-display">
 
 
-      <div class="tags d-flex flex-column div-tag"> x
+      <div class="tags d-flex flex-column div-tag">
         <span class="tag-header">Pensez à ajouter des tags à vos notes</span>
-        tagsCheckboxes
+
         <div id='tagsCheckboxes' >
           <% @tags.each do |un_tag| %>
             <!-- partial pour l'appel AJAX -->
@@ -30,6 +30,7 @@
           <% end %>
         </div>
       </div>
+  </div>
 
     <!-- Sauvegarder la note entière -->
 
@@ -41,7 +42,6 @@
     </button>
 
     <% end %>
-  </div>
 
   <!-- Création de tags -->
   <div class="div-tags-add">
