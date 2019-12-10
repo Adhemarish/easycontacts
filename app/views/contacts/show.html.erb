@@ -77,8 +77,9 @@
 
 <div class="footer-contact d-flex justify-content-around">
 
-  <div class="phone">
+  <div class="phone d-flex justify-content-center align-items-center">
     <%= image_tag('pinkphone.svg', class: 'card-image-footer') %>
+    <p class='phone-number'><%=  @contact.phone_number %></p>
   </div>
 
   <div class="button-plus-footer">
@@ -90,7 +91,9 @@
   </div>
 
   <div class="mail">
-    <%= image_tag('pinkmail.svg', class: 'card-image-footer') %>
+    <%= mail_to @contact.email do %>
+      <%= image_tag('pinkmail.svg', class: 'card-image-footer') %>
+    <% end %>
   </div>
 
 </div>

@@ -4,7 +4,7 @@
 
 <!-- Header -->
 
-  <div class="header-contact d-flex justify-content-center align-items-center mb-2">
+  <div class="header-contact-new d-flex justify-content-center align-items-center mb-2">
     <%= link_to dashboard_path do %>
       <%= image_tag('house-empty.svg', class: 'btn-home') %>
     <% end %>
@@ -15,8 +15,8 @@
         <div class="d-flex justify-content-center align-items-center flex-column">
           <div class="frame-picture border">
             <div class="upload-btn-wrapper">
-               <button class="btn">Photo..</button>
-              <input class="form-control-file file optional" type="file" name="contact[avatar]" id="contact_avatar">
+              <button class="btn">Photo...</button>
+              <%= f.input :avatar, label: false, class: "form-control-file file optional", type:"file", name:"contact[avatar]", id:"contact_avatar"%>
               <%= f.input :avatar_cache, as: :hidden %>
             </div>
           </div>
