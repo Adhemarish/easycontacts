@@ -1,0 +1,10 @@
+<h1>
+  New alerts
+  <% @user.contacts.each do |contact| %>
+    <% contact.alerts.each do |alert| %>
+      <p><%= alert.contact.first_name %> <%= alert.contact.last_name %></p>
+      <p><%= I18n.l(alert.datetime, format: "%e %B") %></p>
+      <p><%= alert.title %></p>
+    <% end %>
+  <% end %>
+</h1>
