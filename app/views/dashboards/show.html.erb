@@ -45,12 +45,12 @@
 
   <div class="rappels-dashboard d-flex justify-content-center">
 
-    <div class="rappels-dash mb-5">
+    <div class="rappels-dash mb-5 pb-5">
       <%  if @upcoming_contacts_alerts.any? %>
       <div class="rappel-title">
         <span class="rappel-title">Rappels à venir</span>
       </div>
-        <% @upcoming_contacts_alerts.first(4).each do |alert| %>
+        <% @upcoming_contacts_alerts.each do |alert| %>
 
         <%= link_to contact_path(alert.contact) do  %>
           <div class="rappels dash d-flex">
@@ -95,7 +95,7 @@
 
       <% if @contacts.any?%>
 
-    <div class="results">
+    <div class="results mb-5">
          <div class="rappel-title">
       <span class="rappel-title">Résultats</span>
     </div>
