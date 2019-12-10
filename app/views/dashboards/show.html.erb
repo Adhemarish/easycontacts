@@ -52,15 +52,15 @@
       </div>
         <% @upcoming_contacts_alerts.each do |alert| %>
 
-        <%= link_to contact_path(alert.contact) do  %>
-          <div class="rappels dash d-flex">
+
+          <div class="rappels dash d-flex position-relative">
 
             <div class="rappels-text-dash d-flex">
 
               <div>
                 <span class="rappels-text-date-dash d-flex align-items-center justify-content-center"><%= I18n.l(alert.datetime, format: "%e") %><br><%= I18n.l(alert.datetime, format: "%B") %></span>
               </div>
-
+              <%= link_to '', contact_path(alert.contact), class:'stretched-link'  %>
               <div class="rappels-text-content-dashboard d-flex flex-column">
                 <span class="dash-rappel-name"><%= alert.contact.first_name %> <%= alert.contact.last_name.upcase %></span>
                 <span class="dash-rappel-title"><%= alert.title %></span>
@@ -71,7 +71,6 @@
           </div>
         <% end %>
 
-        <% end %>
       <% else %>
         <p>"Vous n'avez pas d'alerte à venir."</p>
       <% end %>
@@ -109,13 +108,13 @@
           </div>
 
         <!-- Prénom / Nom -->
-          <%= link_to contact_path(contact) do%>
 
-          <div class="d-flex flex-column results-info">
+
+          <div class="d-flex flex-column results-info position-relative">
             <span class="results-name"><%= contact.first_name%> <%=contact.last_name.upcase %></span>
             <span class="result-company"><%=contact.company%></span>
+            <%= link_to '', contact_path(contact), class:'stretched-link'  %>
           </div>
-          <% end %>
 
         <!-- Icons -->
 
@@ -123,19 +122,19 @@
 
           <div class="d-flex results-icons">
 
-            <%= link_to new_contact_alert_path(contact) do%>
-            <div class="d-flex contact-dash-icon">
+
+            <div class="d-flex contact-dash-icon position-relative">
               <i class="fas fa-bell ml-3"></i>
               <i class="fas fa-plus"></i>
+              <%= link_to '', new_contact_alert_path(contact), class:'stretched-link'  %>
             </div>
-            <% end %>
 
-            <%= link_to new_contact_note_path(contact) do%>
-            <div class="d-flex contact-dash-icon ml-3">
+
+            <div class="d-flex contact-dash-icon ml-3 position-relative">
               <i class="fas fa-sticky-note"></i>
               <i class="fas fa-plus" style="margin-left:3px;"></i>
+              <%= link_to '', new_contact_note_path(contact), class:'stretched-link'  %>
             </div>
-            <% end %>
           </div>
 
         </div>
