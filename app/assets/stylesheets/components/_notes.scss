@@ -57,7 +57,8 @@
 // SEARCH TAG RESULTS
 
 .notes-search {
-  margin: 5px 20px;
+  margin: 5px auto;
+  width:90%;
   margin-bottom:10px;
   background: #FFFFFF;
   box-shadow: 0px 3px 22px rgba(0, 0, 0, 0.05);
@@ -65,9 +66,9 @@
 }
 
 .notes-text-search {
-  margin: 0px 25px;
+  margin: 0px auto;
   padding-top:10px;
-  width:100%;
+  width:90%;
 }
 
 .notes-text-date-search {
@@ -81,6 +82,7 @@
   font-weight: 300;
   font-size: 14px;
   padding-bottom:10px;
+  width:90%;
   color: rgba(0,0,0,0.7)
 }
 
