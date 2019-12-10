@@ -49,11 +49,9 @@ input#query.placeholder-search {
   color: rgba(0,0,0,0.6);
   border-style: none;
   background-color: transparent;
+  outline: none;
  }
 
- input#query.placeholder-search:a {
-  border-style: none;
- }
 
 .loupe {
   width:25px;
