@@ -136,6 +136,14 @@ input.btn-home-login-text {
   color:white;
 }
 
+// New note
+
+.fixed-btn {
+  position:fixed;
+  z-index:5;
+  bottom:2%;
+  right:20vw;
+}
 
 
 
@@ -228,4 +236,14 @@ input.btn-home-login-text {
   font-weight: 700;
   text-decoration: none;
   font-size: 18px;
+}
+
+.btn.search {
+  position: absolute;
+  right: 3px;
+  bottom: 2px;
+  height: 30px;
+  border-radius: 8px;
+  color: red;
+  background-color: transparent;
 }

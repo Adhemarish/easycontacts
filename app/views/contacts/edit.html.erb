@@ -29,7 +29,6 @@
 <div class="scrolling-wrapper-flexbox">
 
     <div class="card">
-          <%= link_to contact_path(@contact) do %>
               <div class="card-category category-notes inactive d-flex justify-content-between">
                 <%= image_tag('writing-green.svg', class: 'card-image-writing') %>
 
@@ -42,14 +41,13 @@
                     <% else %>
                     <%= @contact.notes.count %>
                     <% end %> notes</span>
+                    <%= link_to '', contact_path(@contact), class:'stretched-link' %>
                 </div>
               </div>
-            <% end %>
         </div>
 
 
     <div class="card pl-2">
-      <%= link_to contact_alerts_path(@contact) do  %>
         <div class="card-category category-rappels inactive d-flex justify-content-between">
           <%= image_tag('rappel.svg', class: 'card-image-writing') %>
           <div class="card-notes-infos d-flex flex-column justify-content-end align-items-start pr-3 pb-2">
@@ -61,9 +59,9 @@
             <% else %>
             <%= @nb_upcoming_alerts %>
             <% end %> rappels</span>
+            <%= link_to '', contact_alerts_path(@contact), class:'stretched-link'  %>
           </div>
         </div>
-      <% end %>
     </div>
 
     <div class="card pl-2 pr-2">

@@ -13,7 +13,7 @@
 // }
 
 .notes-global {
-  height:60vh;
+  height:70vh;
   overflow-y:auto;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .note-content {
-  width:100%;
+  width:85%;
 }
 
 .note a {
@@ -113,6 +113,10 @@ textarea#note_content {
   p {
   margin-bottom: 0px;
   }
+}
+
+.notes-cancel {
+  padding-left:20vw;
 }
 
 .cancel-add-notes-text {
