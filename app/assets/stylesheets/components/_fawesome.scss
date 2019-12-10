@@ -51,20 +51,12 @@
 
 // Icons Contacts Dash
 
-.contact-dash-icon i {
-  color: #8BBBF1;
+.contact-dash-icon-green i {
+  color: $green;
 }
 
-.contact-dash-icon .fa-plus {
-  font-size: 10px;
-}
-
-.contact-dash-icon .fa-bell {
-  font-size:28px;
-}
-
-.contact-dash-icon .fa-sticky-note {
-  font-size:28px;
+.contact-dash-icon-orange i {
+  color: $orange;
 }
 
 // Icon Tags

@@ -147,7 +147,8 @@ input#query_label {
 
 .results-name {
   font-size:16px;
-  color: rgba(0,0,0,0.8)
+  color: rgba(0,0,0,0.8);
+  padding-bottom:5px;
 }
 
 .result-company {
@@ -157,9 +158,21 @@ input#query_label {
 }
 
 .results-icons {
-  padding-top:20px;
+  width:100%;
+  height:100%;
 }
 
+
+// DASHBOARD
+
+.alert-add {
+  padding-top:22px;
+  margin-left:25px;
+}
+
+.avatar-dash {
+
+}
 
 .dash-back-blue {
   background-color: $darkblue;
