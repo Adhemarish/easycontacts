@@ -100,17 +100,16 @@
     </div>
 
       <% @contacts.each do |contact| %>
-      <div class="result d-flex justify-content-around">
+      <div class="result d-flex justify-content-around position-relative">
 
         <!-- Avatar -->
-          <div class="mt-0">
+          <div class="avatar-dash d-flex justify-content-center align-items-center pr-3">
             <%= cl_image_tag contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
           </div>
 
         <!-- Prénom / Nom -->
 
-
-          <div class="d-flex flex-column results-info position-relative">
+          <div class="d-flex flex-column results-info position-relative pb-1 ">
             <span class="results-name"><%= contact.first_name%> <%=contact.last_name.upcase %></span>
             <span class="result-company"><%=contact.company%></span>
             <%= link_to '', contact_path(contact), class:'stretched-link'  %>
@@ -120,21 +119,20 @@
 
         <div class="icon-dash">
 
-          <div class="d-flex results-icons">
+          <div class="d-flex results-icons justify-content-center align-items-center pr-3">
 
-
-            <div class="d-flex contact-dash-icon position-relative">
-              <i class="fas fa-bell ml-3"></i>
-              <i class="fas fa-plus"></i>
-              <%= link_to '', new_contact_alert_path(contact), class:'stretched-link'  %>
-            </div>
-
-
-            <div class="d-flex contact-dash-icon ml-3 position-relative">
-              <i class="fas fa-sticky-note"></i>
-              <i class="fas fa-plus" style="margin-left:3px;"></i>
+            <div class="d-flex contact-dash-icon-green flex-column position-relative">
+              <%= image_tag('writing-green.svg', class: 'card-image-writing') %>
+              <i class="fas fa-plus alert-add green"></i>
               <%= link_to '', new_contact_note_path(contact), class:'stretched-link'  %>
             </div>
+
+            <div class="d-flex contact-dash-icon-orange green flex-column justify-content-between position-relative">
+              <%= image_tag('rappel.svg', class: 'card-image-writing') %>
+              <%= link_to '', new_contact_alert_path(contact), class:'stretched-link'  %>
+              <i class="fas fa-plus alert-add" ></i>
+            </div>
+
           </div>
 
         </div>
