@@ -237,3 +237,13 @@ input.btn-home-login-text {
   text-decoration: none;
   font-size: 18px;
 }
+
+.btn.search {
+  position: absolute;
+  right: 3px;
+  bottom: 2px;
+  height: 30px;
+  border-radius: 8px;
+  color: red;
+  background-color: transparent;
+}
