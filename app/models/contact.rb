@@ -13,10 +13,9 @@ class Contact < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_any_word,
-
    against: [ :first_name, :last_name ],
    using: {
-     tsearch: { prefix: true, search_any_word: true }
+     tsearch: { prefix: true }
    }
 end
 
