@@ -187,3 +187,7 @@ input#query_label {
 .dash-back-pink-query {
   background-color: $pink;
 }
+
+.tag-dashboard:hover {
+  content: 'Recherche par tag';
+}
