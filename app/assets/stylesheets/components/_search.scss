@@ -41,20 +41,20 @@
 }
 
 input#query.placeholder-search {
-  margin-left:10px;
   width:75%;
   height:35px;
   padding-top:8px;
-  padding-left:10px;
+  padding-left: 75px;
   font-size:14px;
   color: rgba(0,0,0,0.6);
   border-style: none;
+  background-color: transparent;
  }
 
 .loupe {
-  width:30px;
-  height:30px;
-  padding-left:10px;
+  width:25px;
+  height:25px;
+  padding-bottom: 5px;
 }
 
 .tag-dashboard {
@@ -64,8 +64,13 @@ input#query.placeholder-search {
   width:55px;
   position:absolute;
   top:4px;
-  right:7px;
-  z-index:5
+  left:7px;
+}
+
+.loupe-dash-search {
+  position:absolute;
+  bottom: 4px;
+  right:20px;
 }
 
 .tag-click {

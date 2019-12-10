@@ -16,16 +16,21 @@
     <div class="search-bar d-flex justify-content-between">
 
         <%= form_tag dashboard_path, method: :get do %>
-          <%= image_tag('loupe.svg', class: 'loupe') %>
           <%= text_field_tag :query,
             params[:query],
             class: "placeholder-search",
             placeholder: "Jean Dupont"
           %>
-          <%= link_to tag_search_path do  %>
-          <div class="tag-dashboard d-flex justify-content-center align-items-center">
-            <span class="tag-click">TAG</span>
+
+          <div class="loupe-dash-search">
+            <%= submit_tag("", class: "btn btn-default search", :style => "width:30px;") %>
+            <%= image_tag ("loupe.svg"), :class => "loupe" %>
           </div>
+
+          <%= link_to tag_search_path do  %>
+            <div class="tag-dashboard d-flex justify-content-center align-items-center">
+              <span class="tag-click">TAG</span>
+            </div>
           <% end %>
         <% end %>
 
@@ -43,7 +48,7 @@
 
     <%if params[:query].nil?  %>
 
-  <div class="rappels-dashboard d-flex justify-content-center">
+  <div class="rappels-dashboard d-flex justify-content-center mb-3">
 
     <div class="rappels-dash mb-5 pb-5">
       <%  if @upcoming_contacts_alerts.any? %>
@@ -95,7 +100,7 @@
 
       <% if @contacts.any?%>
 
-    <div class="results mb-5">
+    <div class="results mb-5 pb-2">
          <div class="rappel-title">
       <span class="rappel-title">Résultats</span>
     </div>
