@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: [:show] # dashboardsController # show
   get '/search', to: 'dashboards#search', as: 'tag_search' # dashboardsController#search
-  get '/display', to: 'dashboards#display', as: 'notes_display'
+  get '/search_by_tags', to: 'dashboards#search_by_tags'
 
   resources :contacts do
     resources :notes, only: [:new, :create]

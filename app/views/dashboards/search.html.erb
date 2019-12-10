@@ -18,7 +18,7 @@
     <span class="dashboard-hey">Recherche par tags</span>
   </div>
   <div class="search-bar">
-    <%= simple_form_for :query, url: notes_display_path, remote: true,
+    <%= simple_form_for :query, url: search_by_tags_path, remote: true,
       method: :get, html: { class: 'form-inline' } do |f| %>
 
       <!-- Retour à la search par nom à gauche -->
@@ -31,30 +31,30 @@
         <%= f.hidden_field :label, class: "placeholder-search", placeholder: "Tags",
          input_html: {value: ""}, label: false  %>
       </div>
+      <!-- <div class="tag-dashboard d-flex justify-content-center align-items-center"> -->
+        <%= f.button :submit, 'Go', class: 'tag-dashboard d-flex justify-content-center align-items-center mt-0' %>
+      <!-- </div> -->
+    <% end %>
   </div>
-    <span id = tagResetDiv>TAG</span>
+  <span id = tagResetDiv>nouvelle recherche</span>
 </div>
 
 <!-- PARTIE GRISE -->
 
 <div class="tags-display-dashboard">
 <!--  zone des tags qui nourrissent l'input si sélectionnés -->
-<br>
+  <br>
   <div id='query-tags'>
     <%= render 'tags', tags: @tags %>
   </div>
 
 <!-- submit des tags est ICI -->
-    <div class="tag-dashboard d-flex justify-content-center align-items-center">
-    <%= f.button :submit, 'Go', class: 'tag-click' %>
-    </div>
-  <% end %>
 
 <!-- Resultat de la recherche par tag -->
 
   <!-- classe scroll-results dans _search.scss -->
   <div class = "scroll-results" id = "tag-notes-results">
-    <%= render 'tagnotes', params: @params, search: @search, notes: @notes  %>
+    <%= render 'tagnotes', notes: @notes  %>
   </div>
 
 </div>

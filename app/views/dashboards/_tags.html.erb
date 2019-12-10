@@ -1,4 +1,5 @@
-<div class="tags-search mt-2 d-flex flex-column" id="tag-search" >
+<div class="tags-search mt-2 flex-column" id="tag-search" >
+  <span class="tag-header">Cliquer sur un tag pour l'ajouter</span>
   <div class = ''>
     <% tags.each do |tag| %>
       <div class="form-check form-check-inline tag-form tag-search-id <%= tag.color %>" data-checkbox-id="<%= tag.id %>">
@@ -9,5 +10,4 @@
   </div>
 </div>
 
-<!-- <span class="tag-header">Cliquer sur un tag pour l'ajouter</span> -->
 <%#= render 'tags', tag: un_tag %>

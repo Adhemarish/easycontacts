@@ -8,7 +8,8 @@ if (tagsList) {
     tag.addEventListener('click', event => {
       // event.stopPropagation()
       const searchBox = document.getElementById('target')
-      searchBox.appendChild(event.target)
+      const cloneTag  = event.target.cloneNode(true)
+      searchBox.appendChild(cloneTag)
       // console.log(tag)
       tag.style.display = 'none'
     })
