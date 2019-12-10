@@ -13,7 +13,7 @@
                 <div class="d-flex flex-column note-content">
 
                   <div class="note-text d-flex flex-column">
-                    <span class="note-text-date"><%= note.updated_at.strftime("%d %B %y") %></span>
+                    <span class="note-text-date"><%= I18n.l(note.updated_at, format: '%d %B %y') %></span>
                     <div class="note-text-content"><%= note.content %></div>
                   </div>
 
