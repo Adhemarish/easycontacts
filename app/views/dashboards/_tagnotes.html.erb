@@ -1,0 +1,34 @@
+
+    <% if notes && notes.empty? %>
+      <p>Aucune note pour <%= tag_labels.join(', ') %></p>
+    <% elsif notes && notes.any? %>
+    <div class="d-flex flex-column results-tag-search-title">
+      <span class=""> Notes associées pour: <%= tag_labels.join(', ').capitalize %></span>
+      <span id = tagResetDiv>nouvelle recherche</span>
+    </div>
+      <% notes.each do |note| %>
+          <div class="notes-search d-flex flex-column position-relative">
+
+              <div class="notes-text-search d-flex flex-column">
+
+                <div class="d-flex justify-content-between">
+                  <span class="name-search"><%= note.contact.first_name %> <%= note.contact.last_name.upcase %></span>
+                  <span class="notes-text-date-search"><%= I18n.l(note.updated_at, format: '%d %B %y') %></span>
+                </div>
+
+                <span class="notes-text-content-search"><%= note.content %></span>
+              </div>
+
+              <div class="tags-fiche-contact-results d-flex" data-note-id="<%= note.id %>" >
+                    <% note.tags.each do |t| %>
+                    <div class="tag-bis <%= t.color %>">
+                      <span class="tag-text-note <%= tag.color %>" data-tag-id = "<%= t.id %>" ><%= t.label.capitalize %></span>
+                    </div>
+                  <% end %>
+              </div>
+
+              <%= link_to '', contact_path(note.contact), class:'stretched-link'  %>
+
+          </div>
+      <% end %> <!-- end each Intération notes associées aux tags-->
+    <% end %> <!-- end condition de l'ensemble des notes non vides -->

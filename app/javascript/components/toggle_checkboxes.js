@@ -1,9 +1,11 @@
 const checkboxList = document.getElementById('tagsCheckboxes')
 
 if (checkboxList) {
-  checkboxList.addEventListener('change', (event) => {
-    event.preventDefault()
-    event.target.parentNode.classList.toggle('check-tag')
-    }
-  )
+  const tags = document.querySelectorAll('.note-search-tags')
+  tags.forEach(tag => {
+    tag.addEventListener('click', event => {
+      event.target.parentElement.classList.toggle('check-tag')
+    })
+  })
 }
+

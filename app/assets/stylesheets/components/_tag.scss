@@ -20,6 +20,13 @@
   flex-wrap:wrap;
 }
 
+.tags-fiche-contact-results {
+  margin: 0px auto;
+  margin-top: 5px;
+  width:90%;
+  flex-wrap:wrap;
+}
+
 .tag-bis {
   height: 20px;
   border-radius:5px;
@@ -34,8 +41,7 @@
   padding-right:3px;
 }
 
-span.tag-text-note {
-  padding:0px 5px;
+.tag-bis span.tag-text-note {
 }
 // search tag results
 
@@ -44,6 +50,21 @@ span.tag-text-note {
   margin-top: 5px;
   padding-bottom:10px;
   width:275px;
+}
+
+div#target {
+  height:100%;
+  width:95%;
+  margin-top:8px;
+  margin-left:10px;
+  flex-wrap:wrap;
+}
+
+div#target label.tag-text {
+  border-radius:5px;
+  margin-right:3px;
+  padding: 3px 3px;
+  padding-bottom:0px;
 }
 
 // TAGS dans add notes

@@ -12,6 +12,11 @@
 
 }
 
+.button-plus-footer.minus .lg-btn {
+  width:40px;
+  height:40px;
+}
+
 .button-plus-footer .lg-btn {
   background-color: #F4B8AC;
   width:50px;
@@ -115,7 +120,7 @@
 
 .btn-home-login-bis {
   width:100%;
-  height:20%;
+  height:7vh;
   background-color:white;
   border-radius:15px;
 }
@@ -129,11 +134,22 @@
 
 .btn-home-login-text {
   font-size:20px;
-  color:rgba(0,0,0,0.8)
+  color:rgba(0,0,0,0.8);
+  border:none;
 }
 
 input.btn-home-login-text {
   color:white;
+  background-color: #3283F7;
+}
+
+@media (max-height: 450px) {
+  .btn-home-login-bis {
+    width:100%;
+    height:10%;
+    background-color:white;
+    border-radius:15px;
+  }
 }
 
 // New note
