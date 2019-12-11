@@ -62,9 +62,16 @@ input#alert_title {
   background-color:white;
   margin-left:10px;
   border:none;
-  width:100%;
+  width:95%;
   height:6vh;
   color:black;
+}
+
+@media (max-height: 500px) {
+
+  input#alert_title {
+    margin-left:5px;
+  }
 }
 
 .new-rappel input::placeholder {
@@ -76,6 +83,7 @@ input#alert_title {
 // DASHBOARD
 
 .rappels-dashboard {
+  min-height:300px;
   width:100%;
   height:60vh;
   background-color: #F9F9F9;

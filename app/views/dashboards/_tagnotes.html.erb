@@ -6,7 +6,6 @@
     <% elsif notes && notes.any? %>
     <div class="d-flex flex-column results-tag-search-title">
       <span class=""> Notes associées pour : <span class="tags-search-results"><%= tag_labels.join(', ').capitalize %></span></span>
-     <!--  <span id = tagResetDiv>nouvelle recherche</span> -->
     </div>
       <% notes.each do |note| %>
           <div class="notes-search d-flex flex-column position-relative">

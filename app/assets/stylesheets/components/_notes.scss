@@ -94,19 +94,22 @@ span.name-search {
 // NEW NOTE
 
 textarea#note_content {
-  background-color:white;
   margin-top:5px;
   margin-left:10px;
   border:none;
-  width:300px;
+  width:100%;
   height:12vh;
   color:black;
+  // border: 1px solid black
 }
 
 .new-note textarea::placeholder {
   color:rgba(0,0,0,0.5);
   font-weight:300px;
   font-size:18px;
+  width:100%;
+  // border:1px solid black;
+  background-color:none;
 }
 
 .cancel-add-notes {
