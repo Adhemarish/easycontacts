@@ -59,6 +59,18 @@ input#contact_job {
   border:none;
 }
 
+input#contact_relation_type {
+  border:none;
+}
+
+#contact_meeting_date {
+  border:none;
+}
+
+input#contact_meeting_place {
+  border:none;
+}
+
 .header-first-name input::placeholder {
   color:rgba(255,255,255, 0.9);
   font-size:20px;

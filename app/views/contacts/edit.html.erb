@@ -107,7 +107,7 @@
         <span>Poste</span>
       </div>
       <div class="champ">
-        <p class="info-description"><input class="info-description company" placeholder="Intitulé de poste" value="" type="text" name="" id="contact_company"></p>
+        <p class="info-description"><input class="info-description company" placeholder="Intitulé de poste" value="<%= @contact.job %>" type="text" name="contact[job]" id="contact_job"></p>
       </div>
     </div>
   </div>
@@ -129,7 +129,7 @@
         <p class="info-description"><input class="info-description tel" value="<%= @contact.phone_number %>" placeholder="N° de téléphone" type="tel" name="contact[phone_number]" id="contact_phone_number"></p>
       </div>
     </div>
-</div>
+  </div>
 
   <div class="champs row">
       <div class="col-sm-6">
@@ -137,7 +137,7 @@
           <span>Type de relation</span>
         </div>
         <div class="champ">
-          <p class="info-description"><input class="info-description" placeholder="Client, partenaire, prospect..." value="" type="text" name="" id="contact_location"></p>
+          <p class="info-description"><input class="info-description" placeholder="Client, partenaire, prospect..." value="<%= @contact.relation_type %>" type="text" name="contact[relation_type]" id="contact_relation_type"></p>
         </div>
       </div>
     <div class="col-sm-6">
@@ -145,7 +145,7 @@
         <span>Date de rencontre</span>
       </div>
       <div class="champ">
-        <p class="info-description"><input class="info-description" placeholder="Date de rencontre" value="<%@contact.meeting_date%>" type="text" name="contact[meeting_date]" id="contact_location"></p>
+        <p class="info-description"><input class="info-description" placeholder="Choisissez une date de rencontre" value="<%= @contact.meeting_date %>" type="date" name="contact[meeting_date]" id="contact_meeting_date"></p>
       </div>
     </div>
   </div>
@@ -156,22 +156,10 @@
         <span>Lieu de rencontre</span>
       </div>
       <div class="champ">
-        <p class="info-description"><input class="info-description" placeholder="Lieu de la rencontre" value="<%@contact.meeting_place%>" type="text" name="contact[meeting_place]" id="contact_location"></p>
+        <p class="info-description"><input class="info-description" placeholder="Lieu de la rencontre" value="<%= @contact.meeting_place %>" type="text" name="contact[meeting_place]" id="contact_meeting_place"></p>
       </div>
     </div>
   </div>
-
-   <div class="champs row">
-      <div class="col-sm-12">
-        <div class="champ-title">
-          <span>Centres d'intérêt</span>
-        </div>
-        <div class="champ">
-          <p class="info-description"><input class="info-description" placeholder="Principaux centres d'intérêt" value="" type="text" name="" id="contact_location"></p>
-        </div>
-      </div>
-    </div>
-
   </div>
 
 <!-- Bouton delete & valider -->
