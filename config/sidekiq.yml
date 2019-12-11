@@ -8,5 +8,5 @@
 
 :schedule:
   alerts_mail_job:
-    cron: '09***'
+    cron: '0 9 * * *'
     class: AlertsMailJob
