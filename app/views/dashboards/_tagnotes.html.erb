@@ -1,10 +1,12 @@
 
     <% if notes && notes.empty? %>
-      <p>Aucune note pour <%= tag_labels.join(', ') %></p>
+    <div class="nonote">
+      <p>Vous n'avez pas de note pour "<%= tag_labels.join('" ou "') %>".</p>
+    </div>
     <% elsif notes && notes.any? %>
     <div class="d-flex flex-column results-tag-search-title">
-      <span class=""> Notes associées pour: <%= tag_labels.join(', ').capitalize %></span>
-      <span id = tagResetDiv>nouvelle recherche</span>
+      <span class=""> Notes associées pour : <span class="tags-search-results"><%= tag_labels.join(', ').capitalize %></span></span>
+     <!--  <span id = tagResetDiv>nouvelle recherche</span> -->
     </div>
       <% notes.each do |note| %>
           <div class="notes-search d-flex flex-column position-relative">
