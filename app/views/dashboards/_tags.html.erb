@@ -12,7 +12,7 @@
     <% tags.each do |tag| %>
       <div class="form-check form-check-inline tag-form tag-search-id <%= tag.color %>" data-checkbox-id="<%= tag.id %>">
         <input hidden class="tag-bis" type="number" value="<%= tag.id %>" name="search[tag_ids][]" id="search_tag_ids_<%=tag.id%>">
-        <label  class="<%= tag.color %>" for="search_tag_ids_<%=tag.id%>"><%= tag.label.capitalize %></label>
+        <label  class="<%= tag.color %> tag-text" for="search_tag_ids_<%=tag.id%>"><%= tag.label.capitalize %></label>
       </div>
     <% end %>
   </div>
