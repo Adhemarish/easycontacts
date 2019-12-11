@@ -1,0 +1,8 @@
+function insertContacts() {
+  console.log('hello')
+  const contactsZone = document.getElementById('display-contacts')
+  contactsZone.innerHTML = ""
+  contactsZone.insertAdjacentHTML('beforeend', '<%= j render "searchcontacts", contacts: @contacts %>')
+}
+
+insertContacts()
