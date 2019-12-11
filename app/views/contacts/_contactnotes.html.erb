@@ -6,16 +6,16 @@
 
 
       <% notes.each do |note|%>
-         <div class="position-relative">
 
             <div class="note d-flex">
 
                 <div class="d-flex flex-column note-content">
-
+                  <%= link_to edit_note_path(note) do  %>
                   <div class="note-text d-flex flex-column">
                     <span class="note-text-date"><%= I18n.l(note.updated_at, format: '%d %B %y') %></span>
                     <div class="note-text-content"><%= note.content %></div>
                   </div>
+                  <% end %>
 
                   <div class="tags-fiche-contact d-flex" data-note-id="<%= note.id %>" >
                       <% note.tags.each do |t| %>
@@ -24,7 +24,6 @@
                       </div>
                     <% end %>
                   </div>
-                  <%= link_to '', edit_note_path(note), class:'stretched-link'  %>
 
                 </div>
 
@@ -45,7 +44,6 @@
                   </div>
                   <% end %>
                 </div>
-         </div>
 
 
           </div>

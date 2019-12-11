@@ -11,7 +11,7 @@
     <%= tag.label.capitalize %>
   </label>
   <div>
-    <%= link_to tag_path(tag), method: :delete, remote: true do %>
+    <%= link_to tag_path(tag), method: :delete, remote: true, data: { confirm: "Supprimer ce tag ? Il ne sera pas supprimé si il est associé à une note." }  do %>
       <p class="cross-tag">X</p>
     <% end %>
   </div>
