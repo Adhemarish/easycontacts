@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/dashboard/results', to: 'dashboards#index'
 
   require "sidekiq/web"
-  authenticate :user, lambda { |u| u.admin } do
+  authenticate :user, lambda { |_| true } do
     mount Sidekiq::Web => '/sidekiq'
   end
  end

@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'sidekiq'
+gem 'sidekiq-scheduler'
 gem 'sidekiq-failures', '~> 1.0'
 gem 'letter_opener', group: :development
 
