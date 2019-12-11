@@ -16,24 +16,23 @@ class DashboardsController < ApplicationController
     end
   end
 
-    # rails c : Contact.find_by(first_name: 'Marc').notes.first.tags
-
-  def index
-    if params[:query].present?
-      sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
-      @contacts = Contact.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @contacts = []
-    end
+  def show
   end
 
-  def show
+  def search_by_name
     if params[:query].present?
       @contacts = Contact.search_any_word("%#{params[:query]}%")
     else
       @contacts = []
     end
+    respond_to do |format|
+      format.js
+    end
   end
+
+
+    # rails c : Contact.find_by(first_name: 'Marc').notes.first.tags
+
 
   private
 

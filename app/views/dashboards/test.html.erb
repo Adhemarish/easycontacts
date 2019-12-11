@@ -1,46 +1,3 @@
-<!-- PARTIE BLEUE -->
-<%=render 'shared/navbar', user: current_user %>
-
-
-
-<!-- PARTIE ROSE -->
-<div class="dash-back-blue">
-
-  <div class="searchs-dashboard d-flex justify-content-center align-items-center flex-column pb-5">
-
-    <div class="d-flex flex-column salutations">
-      <span class="dashboard-hey">Hey <%=current_user.first_name.capitalize%></span>
-      <span class="dashboard-question">qui avez-vous vu aujourd'hui ?</span>
-    </div>
-
-    <div class="search-bar d-flex justify-content-between">
-
-        <%= form_tag search_by_name_path, method: :get, remote: true do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "placeholder-search",
-            placeholder: "Jean Dupont"
-          %>
-
-          <div class="loupe-dash-search">
-            <%= submit_tag("", class: "btn btn-default search", :style => "width:30px;") %>
-            <%= image_tag ("loupe.svg"), :class => "loupe" %>
-          </div>
-
-          <%= link_to tag_search_path do  %>
-            <div class="tag-dashboard d-flex justify-content-center align-items-center">
-              <span class="tag-click">TAG</span>
-            </div>
-          <% end %>
-        <% end %>
-
-    </div>
-
-  </div>
-
-</div>
-
-<!-- PARTIE GRISE -->
 
 <!-- Liste alerte -->
 
@@ -48,7 +5,7 @@
 
     <%if params[:query].nil?  %>
 
-  <div class="rappels-dashboard d-flex justify-content-center mb-3" id="display-contacts">
+  <div class="rappels-dashboard d-flex justify-content-center mb-3">
 
     <div class="rappels-dash mb-5 pb-5">
       <%  if @upcoming_contacts_alerts.any? %>
@@ -88,9 +45,9 @@
 <!-- Resultats query -->
 
 <div class="dash-back-pink-query" id="display-contacts">
-  <%else %>
-    <%= render 'searchcontacts', contacts: @contacts %>
-  <% end %>
+  <% else %>
+      <%= render 'searchcontacts', contacts: @contacts %>
+    <% end %>
 </div>
 
 <!-- Bouton new contact -->
