@@ -19,16 +19,19 @@
         <!-- Icons -->
         <div class="icon-dash">
           <div class="d-flex results-icons justify-content-center align-items-center pr-3">
+
+            <%= link_to new_contact_note_path(contact) do  %>
             <div class="d-flex contact-dash-icon-green flex-column position-relative">
               <%= image_tag('writing-green.svg', class: 'card-image-writing') %>
               <i class="fas fa-plus alert-add green"></i>
-              <%= link_to '', new_contact_note_path(contact), class:'stretched-link'  %>
             </div>
+            <% end %>
+            <%= link_to new_contact_alert_path(contact) do  %>
             <div class="d-flex contact-dash-icon-orange green flex-column justify-content-between position-relative">
               <%= image_tag('rappel.svg', class: 'card-image-writing') %>
-              <%= link_to '', new_contact_alert_path(contact), class:'stretched-link'  %>
               <i class="fas fa-plus alert-add" ></i>
             </div>
+            <% end %>
           </div>
         </div>
       </div>
