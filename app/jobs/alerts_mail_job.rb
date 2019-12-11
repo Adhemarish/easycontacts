@@ -1,5 +1,3 @@
-require 'sidekiq-scheduler'
-
 class AlertsMailJob < ApplicationJob
   include Sidekiq::Worker
   queue_as :default
