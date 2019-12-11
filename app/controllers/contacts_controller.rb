@@ -35,6 +35,7 @@ class ContactsController < ApplicationController
 
   def update
     @contact = Contact.find(params[:id])
+
     if @contact.update!(contact_params)
       redirect_to edit_contact_path(@contact)
     else
@@ -51,6 +52,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :email, :company, :location, :phone_number, :avatar, :job, :meeting_place, :meeting_date)
+    params.require(:contact).permit(:first_name, :last_name, :email, :company, :location, :phone_number, :avatar, :job, :meeting_place, :meeting_date, :relation_type)
   end
 end
