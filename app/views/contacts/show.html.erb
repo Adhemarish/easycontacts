@@ -77,9 +77,11 @@
 
 <div class="footer-contact d-flex justify-content-around">
 
+   <div class="num-tel">
+    <%= link_to @contact.phone_number, "tel:#{@contact.phone_number}" %>
+  </div>
   <div class="phone footer d-flex justify-content-center align-items-center">
-    <%= image_tag('pinkphone.svg', class: 'card-image-footer') %>
-    <div class="phonecall"><%= @contact.phone_number %></div>
+     <%= image_tag('pinkphone.svg', class: 'card-image-footer') %>
   </div>
 
   <div class="button-plus-footer">
