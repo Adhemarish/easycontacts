@@ -58,22 +58,21 @@
         <% @upcoming_contacts_alerts.each do |alert| %>
 
 
-          <div class="rappels dash d-flex position-relative">
+          <div class="rappels dash d-flex">
 
-            <div class="rappels-text-dash d-flex">
-
-              <div class="date-rappels-dash">
-                <span class="rappels-text-date-dash d-flex align-items-center justify-content-center"><%= I18n.l(alert.datetime, format: "%e") %><br><%= I18n.l(alert.datetime, format: "%B") %></span>
+              <div class="date-rappels-dash ">
+                <span class="rappels-text-date-dash d-flex align-items-center justify-content-center">
+                  <%= I18n.l(alert.datetime, format: "%e") %><br><%= I18n.l(alert.datetime, format: "%B") %></span>
               </div>
-              <%= link_to '', contact_path(alert.contact), class:'stretched-link'  %>
-              <div class="rappels-text-content-dashboard d-flex flex-column">
+
+              <%= link_to contact_path(alert.contact), class:'' do %>
+              <div class="rappels-text-content-dashboard d-flex flex-column ">
                 <span class="dash-rappel-name"><%= alert.contact.first_name %> <%= alert.contact.last_name.upcase %></span>
                 <span class="dash-rappel-title"><%= alert.title %></span>
               </div>
-
+              <% end %>
             </div>
 
-          </div>
         <% end %>
 
       <% else %>
