@@ -8,4 +8,6 @@ flatpickr(".datepicker", {
   position: 'below',
   locale: French,
   inline: true,
+  disableMobile: true,
+  monthSelectorType: "static",
 })
