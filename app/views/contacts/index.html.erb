@@ -10,16 +10,18 @@
 
 <div class="list-group index m-5 overflow-auto d-flex flex-column align-items-center">
   <% @contacts.each do |contact| %>
-  <div class="result index d-flex position-relative justify-content-between">
-    <div class="avatar-dash d-flex justify-content-between align-items-center pr-3 pl-3">
+  <div class="result link d-flex position-relative justify-content-between">
+    <div class="avatar-dash d-flex justify-content-between align-items-center pr-3 pl-2">
+
       <%= cl_image_tag contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
     </div>
     <%= link_to contact_path(contact) do  %>
-    <div class="d-flex results-info index position-relative pb-1  align-items-center justify-content-start pl-3">
-      <span class="results-name"><%= contact.first_name%> <%=contact.last_name.upcase %></span>
+    <div class="d-flex flex-column results-info index position-relative pb-1  align-items-start justify-content-center pl-2">
+      <span class="results-name"><%= contact.first_name%></span>
+      <span class="results-name"><%=contact.last_name.upcase %></span>
     </div>
     <% end %>
-    <div class="d-flex justify-content-center align-items-center mr-5">
+    <div class="d-flex justify-content-center align-items-center pr-3">
       <%= link_to contact_path(contact), method: :delete, data: { confirm: "Êtes-vous sûr(e) de vouloir supprimer ce contact ?" } do %>
       <div class="">
         <?xml version="1.0"?>
