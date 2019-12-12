@@ -79,4 +79,9 @@ h1 {
   position:fixed;
 }
 
+@media (max-height:500px) {
+  .home-container-image svg {
+    margin-bottom:210px;
+  }
+}
 
