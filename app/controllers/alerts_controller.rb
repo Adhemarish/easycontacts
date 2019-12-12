@@ -17,7 +17,9 @@ class AlertsController < ApplicationController
     if @alert.save
       redirect_to contact_alerts_path(@contact)
     else
+      flash[:notice] = @alert.errors.full_messages.join
       render :new
+      @alert = Alert.new(alert_params)
     end
   end
 
