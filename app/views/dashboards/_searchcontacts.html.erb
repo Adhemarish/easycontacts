@@ -5,7 +5,7 @@
       <span class="rappel-title">Résultats</span>
     </div>
       <% contacts.each do |contact| %>
-      <div class="result d-flex justify-content-around position-relative">
+      <div class="result d-flex justify-content-center position-relative">
         <!-- Avatar -->
           <div class="avatar-dash d-flex justify-content-center align-items-center pr-3">
             <%= cl_image_tag contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
