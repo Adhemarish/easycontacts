@@ -10,7 +10,7 @@
 
 <div class="list-group index m-5 overflow-auto d-flex flex-column align-items-center">
   <% @contacts.each do |contact| %>
-  <div class="result link d-flex position-relative justify-content-between">
+  <div class="result index link d-flex position-relative justify-content-between">
     <div class="avatar-dash d-flex justify-content-between align-items-center pr-3 pl-2">
 
       <%= cl_image_tag contact.avatar, height: 50, width: 50, crop: :fill, class: "dash-avatar" %>
