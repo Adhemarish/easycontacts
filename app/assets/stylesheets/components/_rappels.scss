@@ -15,16 +15,15 @@
   border-radius: 15px 0px;
   width: 90%;
   margin:10px auto;
-  padding-right: 10px;
 }
 
 .rappels-text {
-  width:90%;
+  width:87%;
 }
 
 .rappels-text-date {
   padding:10px 10px;
-  padding-left:2px;
+  padding-right:20px;
   width:20vw;
   height:100%;
   font-weight: bold;
@@ -34,12 +33,11 @@
   padding-bottom:2px;
 }
 
-
 .rappels-text-content {
   width:55vw;
   height:45px;
   margin-top:10px;
-  margin-bottom:5px;
+  margin-bottom:10px;
   padding-left:10px;
   padding-right:5px;
   border-left: 3px solid $orange;
@@ -47,6 +45,10 @@
   font-size: 16px;
   color: rgba(0,0,0,0.7);
   overflow-wrap: anywhere;
+}
+
+.trash-alert {
+  width:100%;
 }
 
 .upcoming-alerts {
@@ -95,9 +97,10 @@ input#alert_title {
 }
 
 .rappels-text-date-dash {
-  padding:10px 10px;
   padding-left:10px;
+  padding-top:5px;
   width: 80px;
+  height:100%;
   font-weight: bold;
   font-size: 14px;
   text-align:center;
@@ -107,6 +110,7 @@ input#alert_title {
 
 .rappels-text-dash {
   width:100%;
+  height:100%;
 }
 
 .rappel-title {
@@ -124,6 +128,10 @@ input#alert_title {
   margin-top:10px;
   padding-left:15px;
   border-left: 3px solid $orange;
+}
+
+.rappels.dash a {
+  width:80%;
 }
 
 .dash-rappel-name {
@@ -152,7 +160,7 @@ input#alert_title {
 }
 
 .date-rappels-dash {
-  width: 35%;
+  width: 33%;
 }
 
 .dash-rappel-name:hover, .dash-rappel-title:hover, .rappels-text-date-dash:hover {
