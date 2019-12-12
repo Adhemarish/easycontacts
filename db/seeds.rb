@@ -8,25 +8,22 @@ puts "Creating database..."
 
 ludo = User.create!(first_name: "Ludo", last_name: "Easy", email: "lhuillier.ludovic@yahoo.com", password: "ludoeasy")
 
-
-
 ct1 = Contact.new(first_name: 'Jean',last_name: 'Dupont', email: "jean_dupont@wanadoo.fr", user: ludo)
 url1 = "https://res.cloudinary.com/dqfa6bybq/image/upload/v1575468710/EASYCONTACTS/jean_skbh2e.jpg"
 ct1.remote_avatar_url = url1
 ct1.save!
-
 
 ct2 = Contact.new(first_name: 'Marc',last_name: 'Leroy', email: "marc.leroy@orange.fr", user: ludo)
 url2 = 'https://res.cloudinary.com/dqfa6bybq/image/upload/v1575468710/EASYCONTACTS/marc_nt5yhk.jpg'
 ct2.remote_avatar_url = url2
 ct2.save!
 
-ct3 = Contact.new(first_name: 'Philippe',last_name: 'Forêt', email: "philippe_foret@gmail.com", user: ludo)
+ct3 = Contact.new(first_name: 'Hugo',last_name: 'Forêt', email: "hugo_foret@gmail.com", user: ludo)
 url3 = 'https://res.cloudinary.com/dqfa6bybq/image/upload/v1575468710/EASYCONTACTS/philippe_bfdtpq.jpg'
 ct3.remote_avatar_url = url3
 ct3.save!
 
-ct4 = Contact.new(first_name: 'Michelle',last_name: 'Billot', email: "michelle.b@laposte.net", user: ludo, phone_number: "0625703774")
+ct4 = Contact.new(first_name: 'Caroline',last_name: 'Billot', email: "caroline.b@laposte.net", user: ludo, phone_number: "0625703774")
 url4 = 'https://res.cloudinary.com/dqfa6bybq/image/upload/v1575468710/EASYCONTACTS/michelle_za0a5g.jpg'
 ct4.remote_avatar_url = url4
 ct4.save!
