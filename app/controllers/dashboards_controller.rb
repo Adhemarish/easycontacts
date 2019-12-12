@@ -23,7 +23,7 @@ class DashboardsController < ApplicationController
     if params[:query].present?
       @contacts = Contact.search_any_word("%#{params[:query]}%")
     else
-      @contacts = []
+      @contacts = Contact.all.order(:last_name)
     end
     respond_to do |format|
       format.js
