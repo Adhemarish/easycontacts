@@ -82,12 +82,12 @@
                 <span class="rappels-text-date d-flex align-items-center justify-content-center"><%= I18n.l(alert.datetime, format: "%e") %><br><%= I18n.l(alert.datetime, format: "%B") %></span>
               </div>
 
-              <div>
+              <div class="rappels-text-content-alert">
                 <span class="rappels-text-content d-flex align-items-center"><%= alert.title.capitalize %></span>
               </div>
             </div>
 
-            <div class="d-flex align-items-center justify-content-center trash-alert">
+            <div class="d-flex align-items-center justify-content-center trash-alert position-relative">
               <%= link_to alert_path(alert), method: :delete, data: { confirm: "Êtes-vous sûr(e)?" } do %>
                   <?xml version="1.0"?>
                   <svg class="card-image-delete rappels" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 438.529 438.529" style="enable-background:new 0 0 438.529 438.529;" xml:space="preserve" class=""><g><g>
