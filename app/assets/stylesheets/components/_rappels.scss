@@ -136,7 +136,8 @@ input#alert_title {
 .dash-rappel-title {
   font-weight: 300;
   font-size: 16px;
-  color: rgba(0,0,0,0.7)
+  color: rgba(0,0,0,0.7);
+  overflow-wrap: anywhere;
 }
 
 .rappels.dash {
