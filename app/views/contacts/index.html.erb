@@ -7,8 +7,8 @@
 <div class="list-group">
   <% @contacts.each do |contact| %>
   <div class="list-group-item d-flex justify-content-between " style = "overflow-x:scroll">
-    <span> <%= link_to "#{contact.first_name} #{contact.last_name}", contact_path(contact) %></span>
-    <span><%= link_to 'Supprimer', contact_path(contact), method: :delete  %></span>
+    <span class="contact-name"> <%= link_to "#{contact.first_name} #{contact.last_name}", contact_path(contact) %></span>
+    <span class="contact-delete"><%= link_to 'Supprimer', contact_path(contact), method: :delete  %></span>
   </div>
   <% end %>
 </div>

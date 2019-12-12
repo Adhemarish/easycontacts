@@ -17,3 +17,25 @@
     background-color:#FFFFFF;
     border:none;
 }
+
+.contact-name a {
+  color: #8BBBF1;
+}
+
+.contact-delete a {
+  color: #8BBBF1;
+}
+
+
+a {
+  text-decoration: none;
+  color: transparent;
+  &:hover{
+  color: transparent;
+  text-decoration: none;
+  }
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+}
