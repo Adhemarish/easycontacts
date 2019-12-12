@@ -19,6 +19,14 @@ class NotesController < ApplicationController
       redirect_to contact_path(@contact)
     # else
     #   redirect_to new_contact_note_path(@contact)
+    else
+      flash[:notice] = @note.errors.full_messages.join
+      @contact = Contact.find(params[:contact_id])
+      @note = Note.new(note_params)
+      @note.contact = @contact
+      @tags = current_user.tags
+      @tag = Tag.new
+      render :new
     end
   end
 

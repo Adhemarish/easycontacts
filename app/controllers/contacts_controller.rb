@@ -23,6 +23,8 @@ class ContactsController < ApplicationController
     if @contact.save
       redirect_to contact_path(@contact)
     else
+      flash[:notice] = @contact.errors.full_messages.join
+      @contact = Contact.new(contact_params)
       render :new
     end
   end
