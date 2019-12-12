@@ -1,10 +1,108 @@
-<h1>
-  New alerts
-  <% @user.contacts.each do |contact| %>
-    <% contact.alerts.each do |alert| %>
-      <p><%= alert.contact.first_name %> <%= alert.contact.last_name %></p>
-      <p><%= I18n.l(alert.datetime, format: "%e %B") %></p>
-      <p><%= alert.title %></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Tajawal:200,300,400,500,700,800,900&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #DEDEDE
+    }
+    h1 {
+      font-size:40px;
+    }
+    .banner {
+      height:100px;
+      width:100%;
+      display:flex;
+      align-items: center;
+      color: rgba(0,0,0,0.9);
+    }
+
+    .card {
+      box-shadow: 0px 4px 6px rgba(50,50,93,.11);
+      border-radius: 4px;
+      width:50%%;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      margin:20px;
+    }
+
+    .liste-contacts {
+      /*border:1px solid black;*/
+      width:100%;
+      margin-bottom:50px;
+    }
+
+    .container {
+      margin: 20px auto;
+      width: 60%;
+      background-color:white;
+      padding:20px;
+    }
+
+    .body, h1, h2, h3, h4, h5, p {
+      font-family: 'Tajawal', 'sans-serif';
+    }
+
+    h1 {
+      padding-left:10px;
+      padding-top:10px;
+      color: #225085;
+    }
+
+    .salutations {
+      text-align:center;
+      font-size:26px;
+    }
+
+    .signature {
+      text-align:end;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="banner">
+    <%= image_tag "android-icon-48x48.png", alt: "alttext" %>
+    <h1>EasyContacts</h1>
+  </div>
+    <h2 class=""> Bonjour <%= @user.first_name.capitalize %></h2>
+  <p>Aujourd'hui, nous sommes le <strong><%= I18n.l(Date.today, format: "%e %B") %>.</strong></p>
+
+  <% if Alert.joins(contact: :user).where(contacts: {user_id: 6}, datetime: Date.today).count == 0 %>
+  <h3>Tu n'as pas de rappels.</h3>
+  <% else %>
+    <% if Alert.joins(contact: :user).where(contacts: {user_id: 6}, datetime: Date.today).count == 1 %>
+    <h3>Tu as 1 rappel.</h3>
+    <% else %>
+    <h3>Tu as <%= Alert.joins(contact: :user).where(contacts: {user_id: 6}, datetime: Date.today).count %> rappels.</h3>
     <% end %>
   <% end %>
-</h1>
+
+  <div class="liste-contacts">
+    <% @user.contacts.each do |contact| %>
+
+    <% if contact.alerts.any? %>
+      <div class="card">
+          <p><strong><%= contact.first_name %> <%= contact.last_name %></strong> </p>
+          <% contact.alerts.each do |alert| %>
+
+          <p>Titre : <%= alert.title.capitalize %></p>
+          <% end %>
+      </div>
+    <% else %>
+      <p></p>
+      <% end %>
+    <% end %>
+  </div>
+  <p class="salutations">Bonne journée !</p>
+  <p class="signature">L'équipe de EasyContacts </p>
+</div>
+</body>
+</html>
+
+

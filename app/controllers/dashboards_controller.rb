@@ -21,9 +21,9 @@ class DashboardsController < ApplicationController
 
   def search_by_name
     if params[:query].present?
-      @contacts = Contact.search_any_word("%#{params[:query]}%")
+      @contacts = Contact.search_any_word("%#{params[:query]}%").where(user: current_user)
     else
-      @contacts = Contact.all.order(:last_name)
+      @contacts = Contact.all.order(:last_name).where(user: current_user)
     end
     respond_to do |format|
       format.js
