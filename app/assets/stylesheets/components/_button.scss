@@ -53,6 +53,12 @@
   background-color: $pink;
   border:none;
   box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.12);
+  align-items: center;
+}
+
+.md-btn-contact-validate svg {
+  width: 20px;
+  height: 20px;
 }
 
 .buttons-add-cancel {
