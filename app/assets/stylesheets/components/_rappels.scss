@@ -34,6 +34,7 @@
   padding-bottom:2px;
 }
 
+
 .rappels-text-content {
   width:55vw;
   height:45px;
@@ -44,7 +45,8 @@
   border-left: 3px solid $orange;
   font-weight: 300;
   font-size: 16px;
-  color: rgba(0,0,0,0.7)
+  color: rgba(0,0,0,0.7);
+  overflow-wrap: anywhere;
 }
 
 .upcoming-alerts {
@@ -155,3 +157,4 @@ input#alert_title {
 .dash-rappel-name:hover, .dash-rappel-title:hover, .rappels-text-date-dash:hover {
   text-decoration: none;
 }
+
