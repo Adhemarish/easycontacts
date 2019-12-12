@@ -9,10 +9,12 @@
     <p class="dashboard-title">Easycontact</p>
 
 
+  <%= image_tag('user.svg', class: 'btn-user avatar dropdown-toggle', data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    <%= link_to "Mes contacts", contacts_path, class: "dropdown-item" %>
+    <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+  </div>
 
-    <%= link_to destroy_user_session_path, method: :delete do %>
-           <%= image_tag('user.svg', class: 'btn-user') %>
-     <% end %>
 </div>
 
 
