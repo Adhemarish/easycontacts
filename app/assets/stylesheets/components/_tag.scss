@@ -32,7 +32,7 @@
   height: 20px;
   border-radius:5px;
   margin-right:5px;
-  padding:3px 5px;
+  padding:3px 3px 20px 3px;
   margin-bottom:8px;
   font-size: 12px;
   background-color: rgba(236, 146, 146, 0.3);
@@ -140,35 +140,35 @@ input#tag_label {
 .red-tag {
   background-color: rgba(236,146,146,0.3); //#EC9292;
   color: rgba(236,146,146,1);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 .orange-tag {
   background-color: rgba(239, 154, 69, 0.3); // #EF9A45;
   color: rgba(239, 154, 69, 1);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 .green-tag {
   background-color: rgba(128,206,150,0.3); //#80CE96;
   color: rgba(128,206,150,1);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 .yellow-tag {
   background-color: rgba(214,193,12,0.3); //#D6C10C;
   color: rgba(214,193,12,1);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 .blue-tag {
   background-color: rgba(75,201,255,0.3);
   color: rgba(75,201,255,1);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
 }
 
@@ -176,14 +176,14 @@ input#tag_label {
   background-color: blue;
   opacity: 0.5;
   color: blue;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 .purple-tag {
   background-color: rgba(223,113,233,0.3);
   color: rgba(223,113,233,1);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
 }
 
