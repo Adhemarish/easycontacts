@@ -9,7 +9,7 @@
 
             <div class="note d-flex">
 
-                <div class="d-flex flex-column note-content">
+                <div class="d-flex flex-column note-content pl-2">
                   <%= link_to edit_note_path(note) do  %>
                   <div class="note-text d-flex flex-column">
                     <span class="note-text-date"><%= I18n.l(note.updated_at, format: '%d %B %y') %></span>
@@ -27,7 +27,7 @@
 
                 </div>
 
-                <div class="d-flex justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center position-relative">
                   <%= link_to note_path(note), method: :delete, data: { confirm: "Êtes-vous sûr(e) de vouloir supprimer cette note ?" } do %>
                   <div class="">
 
