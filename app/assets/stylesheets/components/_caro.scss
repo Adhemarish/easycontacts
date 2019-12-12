@@ -39,3 +39,12 @@ a {
 input:focus, textarea:focus, select:focus {
     outline: none;
 }
+
+svg {
+  overflow: visible;
+}
+
+.btn-add-tag svg {
+  width: 15px;
+  height: 15px;
+}
