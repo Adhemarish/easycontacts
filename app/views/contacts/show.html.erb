@@ -93,7 +93,7 @@
   </div>
 
   <div class="mail footer">
-    <%= mail_to @contact.email do %>
+    <%= mail_to @contact.email, target:'_blank' do %>
       <%= image_tag('pinkmail.svg', class: 'card-image-footer') %>
     <% end %>
   </div>
