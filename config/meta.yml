@@ -1,5 +1,5 @@
 meta_product_name: "EasyContacts"
 meta_title: "EasyContacts"
-meta_description: "EasyContacts vous permet de garder en mémoire toutes les informations que vous avez sur vos contacts. Grâce à cette mémoire, vous avez l'esprit libre et vous approffondissez facilement toutes vos relations!"
+meta_description: "EasyContacts vous permet de garder en mémoire toutes les informations que vous avez sur vos contacts. Grâce à cette mémoire, vous avez l'esprit libre et vous approfondissez facilement toutes vos relations !"
 meta_image: "cover.jpg" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
